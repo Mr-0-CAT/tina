@@ -42,6 +42,7 @@ layout: 'base.njk'
 
 <div class="row">
 
+{%- for post in collections.post -%}
 
     <div class="col d-flex justify-content-center align-items-center">
     <div class="card1">
@@ -49,16 +50,16 @@ layout: 'base.njk'
          <div class="content">
            <a href="#">
              <span class="title">
-               Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          {{ post.data.title }}
              </span>
            </a>
        
            <p class="desc">
-             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-             dolores, possimus pariatur animi temporibus nesciunt praesentium 
+      {{ post.data.desc}}
+         
            </p>
        
-           <a class="action" href="#">
+           <a class="action" href="{{post.url}}">
              Find out more
              <span aria-hidden="true">
                →
@@ -69,89 +70,7 @@ layout: 'base.njk'
 </div>
 
 
-
-<div class="col d-flex justify-content-center align-items-center">
-    <div class="card1">
-        <div class="image"></div>
-         <div class="content">
-           <a href="#">
-             <span class="title">
-               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-             </span>
-           </a>
-       
-           <p class="desc">
-             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-             dolores, possimus pariatur animi temporibus nesciunt praesentium 
-           </p>
-       
-           <a class="action" href="#">
-             Find out more
-             <span aria-hidden="true">
-               →
-             </span>
-           </a>
-         </div>
-       </div>
-</div>
-
-
-
-
-
-<div class="col d-flex justify-content-center align-items-center">
-
-    <div class="card1">
-        <div class="image"></div>
-         <div class="content">
-           <a href="#">
-             <span class="title">
-               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-             </span>
-           </a>
-       
-           <p class="desc">
-             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-             dolores, possimus pariatur animi temporibus nesciunt praesentium 
-           </p>
-       
-           <a class="action" href="#">
-             Find out more
-             <span aria-hidden="true">
-               →
-             </span>
-           </a>
-         </div>
-       </div>
-
-</div>
-
-<div class="col d-flex justify-content-center align-items-center">
-
-    <div class="card1">
-        <div class="image"></div>
-         <div class="content">
-           <a href="#">
-             <span class="title">
-               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-             </span>
-           </a>
-       
-           <p class="desc">
-             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-             dolores, possimus pariatur animi temporibus nesciunt praesentium 
-           </p>
-       
-           <a class="action" href="#">
-             Find out more
-             <span aria-hidden="true">
-               →
-             </span>
-           </a>
-         </div>
-       </div>
-
-</div>
+{%- endfor -%}
 
 
 
