@@ -4,6 +4,7 @@
   "description": "��#\u0000 \u0000t\u0000i\u0000n\u0000a\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
+    "dev":" npx tinacms dev -c ",
     "start": "eleventy --serve",
     "build": "eleventy"
   },
