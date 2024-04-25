@@ -48,6 +48,26 @@ export default defineConfig({
           },
         ],
       },
+      {
+        name: "post23332",
+        label: "Posts23332",
+        path: "src/blog",
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "rich-text",
+            name: "body",
+            label: "Body",
+            isBody: true,
+          },
+        ],
+      },
     ],
   },
 });
