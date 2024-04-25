@@ -8,7 +8,7 @@ const branch =
   "main";
 
 export default defineConfig({
-  branch: "main",
+  branch:"main",
 
   // Get this from tina.io
   clientId: "8c56e78f-8eca-42da-bdf4-b72c94dde79d",
@@ -25,12 +25,12 @@ export default defineConfig({
       publicFolder: "public",
     },
   },
-  // Schema configuration
+  // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
   schema: {
     collections: [
       {
-        name: "post",
-        label: "Posts",
+        name: "post122",
+        label: "Posts123",
         path: "content/posts",
         fields: [
           {
@@ -38,27 +38,6 @@ export default defineConfig({
             name: "title",
             label: "Title",
             isTitle: true,
-            required: true,
-          },
-          {
-            type: "rich-text",
-            name: "body",
-            label: "Body",
-            isBody: true,
-          },
-        ],
-      },
-      // New collection for blog
-      {
-        name: "blog",
-        label: "Blog Posts",
-        path: "content/blog",
-        fields: [
-          {
-            type: "string",
-            name: "title",
-            label: "Title",
-            isTitle: true, // Only one isTitle property here
             required: true,
           },
           {
