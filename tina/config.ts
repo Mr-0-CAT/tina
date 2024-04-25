@@ -29,8 +29,8 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: "meow",
-        label: "meow",
+        name: "post",
+        label: "Posts",
         path: "content/posts",
         fields: [
           {
@@ -58,14 +58,7 @@ export default defineConfig({
             type: "string",
             name: "title",
             label: "Title",
-            isTitle: true,
-            required: true,
-          },
-          {
-            type: "string",
-            name: "title",
-            label: "Title 2",
-            isTitle: true,
+            isTitle: true, // Only one isTitle property here
             required: true,
           },
           {
