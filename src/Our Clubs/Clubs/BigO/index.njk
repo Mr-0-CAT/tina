@@ -1,0 +1,660 @@
+---
+layout: 'base_club.njk'
+---
+
+<div class="container1">
+    
+  <div class='console-container'><span id='text'></span><div class='console-underscore' id='console'>&#95;</div></div>
+
+<script>// function([string1, string2],target id,[color1,color2])    
+  consoleText(['BigO', 'CP Club'], 'text',['white']);
+ 
+ function consoleText(words, id, colors) {
+   if (colors === undefined) colors = ['#fff'];
+   var visible = true;
+   var con = document.getElementById('console');
+   var letterCount = 1;
+   var x = 1;
+   var waiting = false;
+   var target = document.getElementById(id)
+   target.setAttribute('style', 'color:' + colors[0])
+   window.setInterval(function() {
+ 
+     if (letterCount === 0 && waiting === false) {
+       waiting = true;
+       target.innerHTML = words[0].substring(0, letterCount)
+       window.setTimeout(function() {
+         var usedColor = colors.shift();
+         colors.push(usedColor);
+         var usedWord = words.shift();
+         words.push(usedWord);
+         x = 1;
+         target.setAttribute('style', 'color:' + colors[0])
+         letterCount += x;
+         waiting = false;
+       }, 1000)
+     } else if (letterCount === words[0].length + 1 && waiting === false) {
+       waiting = true;
+       window.setTimeout(function() {
+         x = -1;
+         letterCount += x;
+         waiting = false;
+       }, 1000)
+     } else if (waiting === false) {
+       target.innerHTML = words[0].substring(0, letterCount)
+       letterCount += x;
+     }
+   }, 120)
+   window.setInterval(function() {
+     if (visible === true) {
+       con.className = 'console-underscore hidden'
+       visible = false;
+ 
+     } else {
+       con.className = 'console-underscore'
+ 
+       visible = true;
+     }
+   }, 400)
+ }</script>
+</div>
+
+<div class="con-info" style="overflow: hidden;">
+
+  <div class="heading">
+
+    <img class="op" src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/Ed0Wc70576JNgj9mi6GZQ3YB-uW1TdG0lcqa6b7dpdL73w?download=1
+    " alt="">
+  
+  <h1>About Us</h1>
+
+</div>
+  <div class="row">
+
+  <div class="col-sm-3 a" >
+    <div class="inner">
+<img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EafpvYd-JAJNkv9vqTHUbbQB5wrmqCD4ZM9yQ_LRsXuTkg?download=1" alt="">
+   </div>
+
+</div>
+  <div class="col">
+   <div class="info-txt">
+    <p>
+      Welcome to BigO, the premier competitive programming club of RNSIT (R. N. Shetty Institute of Technology). With a passion for coding and a drive for excellence, BigO has established itself as a prominent platform for aspiring programmers. Our vibrant community fosters a spirit of collaboration and innovation, where members come together to participate in thrilling coding contests, engage in insightful workshops, and delve into enlightening technical talks
+
+
+    </p>
+    
+</div>
+</div>
+
+
+
+
+
+
+<div class="row s">
+  <div class="col-sm-8 q">
+   
+
+    <div class="info-txt2">
+       <h3>Introduction </h3>
+      <p>
+        Whether you are a beginner taking your first steps in the world of programming or an experienced coder seeking to sharpen your skills, BigO provides the ideal environment to grow, learn, and excel. Join us on this exhilarating journey of coding prowess and unlock your true potential with BigO.
+   
+      </p>
+      
+  </div>
+  </div>
+  
+  
+  <div class="col-sm-4 qa">
+  
+       
+            <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EZsf1igDuc9LizPZOS49Ra0BQfvEuokqPvxEYDgtrSmY7g?download=1">
+            
+  
+     
+      </div>
+  </div>
+  </div>
+
+</div>
+
+
+
+<div class="mem-info" style="overflow: hidden;">
+
+    <div class="heading">
+
+        <img class="op" src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/Ed0Wc70576JNgj9mi6GZQ3YB-uW1TdG0lcqa6b7dpdL73w?download=1
+        " alt="">
+      
+      <h1>Workshops</h1>
+    
+    </div>
+<div class="mem1">
+<div class="row">
+  
+
+<div class="col a b">
+  <div class="card1">
+    <div class="image"><img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EUmYIRKTk9lDgzW4XOFxgRIBdLkW0cMNp8SKWcMJowTJvg?download=1" alt="" style="object-fit: cover;"></div>
+     <div class="content">
+      
+         <span class="title1">
+          COMPETITIVE PROGRAMMING 101 
+         </span>
+       
+       <p class="desc">
+       
+        Date:24th August 2021 <br>
+        Time:5.30pm to 6.30pm <br>
+        Venue: Online google meet <br>
+        Speakers:Mr.Himanshu Ranjan(BigO Lead) &
+                        Mr.G Ashwin(Core team member).
+<br>        Audience: 2nd sem cse students of the year
+                          2021 around 80 students attended 
+
+      </p>
+   
+       
+     </div>
+   </div>
+
+</div>
+
+<div class="col a">
+  <div class="card1">
+    <div class="image"><img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EarYsxoP9BtNm1VLBMyPCmsB5kaXPofxQGjUzmdeLtsJSA?download=1" alt=""></div>
+     <div class="content">
+       
+         <span class="title1">
+          Introduction to Web programming
+         </span>
+   
+       <p class="desc">
+        
+        Date: 29rd August 2021 <br>
+        Time:5.30pm to 6.30pm <br>
+        Venue: Online google meet <br>
+        Speakers: Ajith(BigO Lead) & Harshit P(Core team member) <br>
+        
+
+      
+      </p>
+   
+     </div>
+   </div>
+
+</div>
+
+
+
+<div class="col a">
+  <div class="card1">
+    <div class="image"><img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EdFtGlSepGVLkdISmvJ8MtMBCF0GOHvUejvmWfpn7chbbw?download=1" alt=""></div>
+     <div class="content">
+      
+         <span class="title1">
+          GITHUB 101 
+         </span>
+   
+       <p class="desc">
+        Date: 23rd August 2021 <br>
+        Time:5.30pm to 6.30pm <br>
+        Venue: Online google meet <br>
+        Speakers: Ms.Varnika Bagaria & Ms.Yashi       
+                         Garg(Core team members) <br>
+        Audience:2nd sem cse students of the year 
+                        2021 around 110 students attended.
+
+      
+      </p>
+   
+       
+     </div>
+   </div>
+
+</div>
+
+</div>
+
+
+</div>
+
+<div class="key" style="overflow: hidden;">
+  <div class="heading">
+
+    <img class="op" src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/Ed0Wc70576JNgj9mi6GZQ3YB-uW1TdG0lcqa6b7dpdL73w?download=1
+    " alt="">
+  
+  <h1>Activities</h1>
+  
+  <div class="row justify-content-center">
+    <div class="col-sm-3 a">
+<div class="inner-txt">
+  <i class="fa-solid fa-graduation-cap"></i>
+  <h1>	Recruitment drive 1 for the year 2021-2022 conducted on 17th May 2021 through an online video interview. </h1>
+  
+</div>
+
+    </div>
+
+    <div class="col-sm-3 a" >
+<div class="inner-txt">
+  <i class="fa-solid fa-people-group"></i>
+  <h1>	Competitive programming classes for first year students who were selected for the club which went for about 7 months from June 2021 to December 2021. </h1>
+  
+</div>
+
+    </div>
+
+
+    <div class="col-sm-3 a">
+
+      <div class="inner-txt">
+        <i class="fa-solid fa-people-group"></i>
+
+        <h1>Recruitment drive 2 for the year 2021- 2022 through coding contest.</h1>
+        
+      </div>
+    </div>
+
+
+  
+
+
+    <div class="col-sm-3 a">
+
+      <div class="inner-txt">
+        <i class="fa-solid fa-people-group"></i>
+
+        <h1>Conducted around 7 internal contests on Codeforces.</h1>
+       
+      </div>
+    </div>
+  </div>
+
+<iframe class="ytv"
+src="https://www.youtube.com/embed/gamop7sfPG4">
+</iframe>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="mem2" style="overflow: hidden;">
+  <div class="row justify-content-center">
+    <div class="heading" style="margin-bottom: 50px;">
+
+      <img class="op" src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/Ed0Wc70576JNgj9mi6GZQ3YB-uW1TdG0lcqa6b7dpdL73w?download=1
+      " alt="">
+    
+    <h1>Club Coordinators</h1>
+  
+  </div>
+      <div class="col "><div class="card2">
+          <div class="card-image2"><img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EdkKIAoO1mxFqWXOHgiRDq8ByrO8FIlAVuacPeuSWF-1fQ?download=1" alt="" style="object-fit: cover;"></div>
+          <div class="category">Student Co-ordinator  </div>
+          <div class="heading1"> Ajith S,TEAM HEAD, RNSIT.
+           
+          </div>
+      </div></div>
+  
+  
+  
+  
+      <div class="col "><div class="card2">
+          <div class="card-image2"><img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/ERwmAerQY3BEg3ZoDmKskLABGqDbdXc4pIDrmpNkI4F8jA?download=1" alt="" style="object-fit: cover;"></div>
+          <div class="category"> Student Co-ordinator </div>
+  
+          <div class="heading1">Sinchana A C , CORE, RNSIT.
+              
+          </div>
+      </div></div>
+  
+  
+  
+      <div class="col "><div class="card2">
+          <div class="card-image2"><img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/ESw2IUynbz5IpLJHcIr60VcBAu0LQYaocR8TZ3XsaYBLPw?download=1" alt="" style="object-fit: cover;"></div>
+          <div class="category"> Student Co-ordinator </div>
+  
+          <div class="heading1">Aman Kumar , CORE, RNSIT.
+            
+          </div>
+      </div></div>
+  
+  
+  
+      
+  
+  
+  </div>
+  
+  </div>
+
+
+<div class="gallery">
+  <div class="heading5" style="margin-bottom: 50px;">
+
+    <img class="op" src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/Ed0Wc70576JNgj9mi6GZQ3YB-uW1TdG0lcqa6b7dpdL73w?download=1
+    " alt="">
+  
+  <h1>Gallery</h1>
+
+</div>
+
+
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EQ9zbsHxL0pIpeAtIaGTmYMB3rS8ZTnoN7oBKZ-gnXv-8g?download=1" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EbzWh2RVt_pLncnU87tvwFEBcqxX9BHbnWA4N9ae--m95A?download=1" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EexKLLXB81xLhVGJA-jjf8YBuYZQg5J6wQbcQzBcd_rHvA?download=1" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EZuFwTo1FbpIhYcskjmPe5YBQ2Wa2HxB-au8fRkTexHqmw?download=1" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/Ee1XD3tqfy9LrH7HNDGOWHYBa4rnpN18NZ04SX965CEnKw?download=1" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EQ9zbsHxL0pIpeAtIaGTmYMB3rS8ZTnoN7oBKZ-gnXv-8g?download=1" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EbzWh2RVt_pLncnU87tvwFEBcqxX9BHbnWA4N9ae--m95A?download=1" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EexKLLXB81xLhVGJA-jjf8YBuYZQg5J6wQbcQzBcd_rHvA?download=1" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EZuFwTo1FbpIhYcskjmPe5YBQ2Wa2HxB-au8fRkTexHqmw?download=1" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/Ee1XD3tqfy9LrH7HNDGOWHYBa4rnpN18NZ04SX965CEnKw?download=1" alt="">
+    </div>
+
+ 
+
+
+    <!-- 15 div -->
+  </div>
+  </div>
+</div>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 15,
+        stretch: 0,
+        depth: 300,
+        modifier: 1,
+        slideShadows: true,
+      },
+      loop: true,
+    });
+  </script>
+
+
+<div class="join" style="overflow: hidden;">
+  <div class="head">
+<h1>Reach Out to us </h1>
+</div>
+
+<div class="row" style="margin-top: 40px;">
+
+  <div class="col-sm-7">
+    <div class="info-txt">
+    
+      <p> 
+      
+        The strength of BigO lies in its exceptional members who form a tight-knit community of passionate coders. As a member of BigO, you become a part of a dynamic group of individuals driven by a shared love for programming. Whether you are a beginner looking for guidance or an experienced coder willing to share your knowledge, BigO offers a welcoming and supportive environment. Our members actively engage in collaborative coding sessions, mentorship programs, and knowledge-sharing initiatives, fostering a culture of continuous learning and growth. By joining BigO, you gain access to a vast network of like-minded individuals, enabling you to connect, collaborate, and build lasting friendships with fellow coding enthusiasts. Together, we strive to inspire and empower each other, unlocking the true potential within ourselves.
+      </p>
+
+    </div>
+    <div class="info-txt3">
+    <p> 
+       <b>Call US :</b>
+        <br>Ashwin : +91 70032 15871
+        <br><br>
+        Himanshu : +91 74889 41104
+  <br><br>Faiza : +91 81975 70475
+
+  <br><br>
+<br><br>
+     <b>Insta-Id :</b> <a href="https://www.instagram.com/p/Cwox0yLS_NB"style="text-decoration: none;">  bigo_rnsit <i class="fa-brands fa-square-instagram"></i></a>
+      
+      <br>
+      </p>
+    
+
+    
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="i-11">
+    
+<div class="iframe">
+  <style>
+    .iframe{
+      text-align: center;
+    }
+  </style>
+<iframe src="https://www.instagram.com/bigo_rnsit/embed" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+</div>>
+
+
+
+</div>
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+
+<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/vendors/jquery.slimscroll.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js">
+</script>
+<script type="text/javascript">
+// fullpage customization
+
+if (jQuery(window).width() > 991) {
+  jQuery('#fullpage').fullpage({
+    sectionSelector: '.vertical-scrolling',
+    slideSelector: '.horizontal-scrolling',
+    navigation: false,
+    slidesNavigation: false,
+    controlArrows: false,
+    anchors: ['1stSection', '2ndSection', '3rdSection', '4thSection', '5thSection', '6thSection', '7thSection',
+      '8thSection', '9thSection', '10thSection', '11thSection'
+    ],
+  });
+}
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -------------------------------------------Footer script------------------------------------------------------------- -->
+
+<script src="https://www.rnsit.ac.in/wp-content/themes/twentyseventeen/js/jquery.min.js"></script>
+
+<script src="https://www.rnsit.ac.in/wp-content/themes/twentyseventeen/js/bootstrap.min.js"></script>
+
+
+
+
+
+<!-- -------------------------------------------Footer script------------------------------------------------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  
+  
+  .header_sec {
+    margin-top: 0px;
+    position: fixed;
+    transition: all .5s;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 1;
+    box-shadow: 0 0 10px #ddd;
+  }
+ 
+
+  
+ 
+  
+  @media(max-width: 991px) {
+    .header_sec {
+      position: fixed !important;
+      width: 100vw;
+      /* height: 120px; */
+    }
+    .navbar-brand img{
+      width: 50px;
+      height: 50px;
+    }
+  }
+  </style>
+
+
+

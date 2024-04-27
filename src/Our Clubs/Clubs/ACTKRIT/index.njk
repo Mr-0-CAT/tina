@@ -1,0 +1,563 @@
+---
+layout: 'base_club.njk'
+---
+
+<div class="container1">
+    
+
+
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">
+		<defs>
+			<text id="text" x="50%" y="50%" font-family="Voltaire" font-size="120px" font-weight="800" text-anchor="middle" alignment-baseline="middle">
+			 Actkrit
+			</text>
+		</defs>
+		<filter id="glow">
+		    <feGaussianBlur id="glowBlur" stdDeviation="3.5" result="coloredBlur"/>
+		    <feMerge>
+		        <feMergeNode in="coloredBlur"/>
+		        <feMergeNode in="SourceGraphic"/>
+		    </feMerge>
+		</filter>
+		<filter id="shock">
+			<feTurbulence type="fractalNoise" baseFrequency="0.2" numOctaves="1" seed="2" result="noise" id="noise">
+  <animate attributeType="XML" attributeName="seed" from="2" to="120" dur="12s" repeatCount="indefinite"/>
+</feTurbulence>
+			<feMorphology id="morph1" in="SourceGraphic" operator="dilate" radius="10" result="morph1" />
+			<feMorphology id="morph2" in="morph1" operator="dilate" radius="2" result="morph2" />
+			<feComposite operator="out" in="morph2" in2="morph1" result="strokeText"/>
+			<feDisplacementMap 
+                         xChannelSelector="R" 
+                         yChannelSelector="G" 
+                         in="strokeText" 
+                         in2="noise"
+                         result="displacementMap"
+                         color-interpolation-filters="sRGB"
+                         scale="10" />
+            <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+		    <feMerge>
+		        <feMergeNode in="coloredBlur"/>
+		        <feMergeNode in="displacementMap"/>
+		    </feMerge>
+		</filter>
+  <filter id="shock2">
+			<feTurbulence type="fractalNoise" baseFrequency="0.2" numOctaves="1" seed="2" result="noise" id="noise">
+  <animate attributeType="XML" attributeName="seed" from="2" to="120" dur="10s" repeatCount="indefinite"/>
+</feTurbulence>
+			<feMorphology id="morph3" in="SourceGraphic" operator="dilate" radius="1" result="morph1" />
+			<feMorphology id="morph4" in="morph1" operator="dilate" radius="1" result="morph2" />
+			<feComposite operator="out" in="morph2" in2="morph1" result="strokeText"/>
+			<feDisplacementMap 
+                         xChannelSelector="R" 
+                         yChannelSelector="G" 
+                         in="strokeText" 
+                         in2="noise"
+                         result="displacementMap"
+                         color-interpolation-filters="sRGB"
+                         scale="10" />
+            <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+		    <feMerge>
+		        <feMergeNode in="coloredBlur"/>
+		        <feMergeNode in="displacementMap"/>
+		    </feMerge>
+		</filter>
+    <use xlink:href="#text" id="textShock" x="2" y="2" filter="url(#shock)" stroke="0" stroke-width="1" fill="#ccc"/>
+  <use xlink:href="#text" id="textShock" x="2" y="2" filter="url(#shock2)" stroke="0" stroke-width="1" fill="#f90"/>
+    <use xlink:href="#text" id="textFill" x="0" y="0" fill="white" />
+    <use xlink:href="#text" id="textGlow" x="0" y="0" filter="url(#glow)" stroke="#f90" stroke-width="0.1" fill="transparent"/>
+	</svg>
+ 
+</div>
+
+<div class="con-info" style="overflow: hidden;">
+
+  <div class="heading">
+
+    <img class="op" src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2Fbg%2Fop.png?alt=media&token=31f4e1b2-25ba-40bf-860b-cd7f9831b6bf" alt="">
+  
+  <h1>About Us</h1>
+
+</div>
+  <div class="row">
+
+  <div class="col-sm-3 a" >
+    <div class="inner">
+<img src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2FOur%20Clubs%2F1%20club%20img%2Factkrit.jpeg?alt=media&token=450b7503-187e-419a-8ca5-7b6e140f4a9d" alt="">
+   </div>
+
+</div>
+  <div class="col">
+   <div class="info-txt">
+    <p>
+      Amidst the monotonous life of college, there exist a hidden gem that thrives on creativity and the subtle art of story telling. "ACTKRIT" club, the pioneer of the college's cultural landscape, captures the essence of art in its rawest form. 
+    </p>
+    
+</div>
+</div>
+
+
+
+
+
+
+<div class="row s">
+  <div class="col-sm-8 q">
+   
+
+    <div class="info-txt2">
+       <h3>Introduction </h3>
+      <p>
+        
+The club offers a vibrant array of artistic expressions, encompassing various forms of creative storytelling. This includes the dynamic world of street plays, where actors engage with audiences in public spaces to convey powerful messages. Skits bring humor and thought-provoking narratives to life through concise yet impactful performances. Monologues offer a platform for individual actors to delve deep into emotions and characters, providing intimate moments of introspection. Join us to unlock your creativity and explore these diverse avenues of artistic expression!  
+      </p>
+      
+  </div>
+  </div>
+  
+  
+  <div class="col-sm-4 qa">
+  
+       
+            <img src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2FOur%20Clubs%2FClubs%2FActkrit%2Fcl%2F1.jpg?alt=media&token=e64b0c23-dd97-40e2-af03-cdd04aac6679">
+            
+  
+     
+      </div>
+  </div>
+  </div>
+
+</div>
+
+
+
+<div class="mem-info" style="overflow: hidden;">
+
+    <div class="heading">
+
+        <img class="op" src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2Fbg%2Fop.png?alt=media&token=31f4e1b2-25ba-40bf-860b-cd7f9831b6bf" alt="">
+      
+      <h1>ACTIVITIES AND EVENTS</h1>
+    
+    </div>
+<div class="mem1">
+<div class="row justify-content-center">
+  
+
+<div class="col q"> 
+  <div class="card1">
+    <div class="image"><img src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2FOur%20Clubs%2FClubs%2FActkrit%2Flist%2F1.png?alt=media&token=82d2b66e-6f08-47fc-ac4f-89bce4c118c8" alt=""></div>
+     <div class="content">
+      
+         <span class="title1">
+          HALLA BOL
+         </span>
+       
+       <p class="desc">
+        Carv-Hindi, which is the drama club of RVCE, organised a Streetplay competition, in which more than 15 teams participated , where we proudly represented our college. We presented on the theme of humanity vs cruelty in the society and how in the end humanity always conquers all the evil in the society. </p>
+   
+       
+     </div>
+   </div>
+
+</div>
+
+<div class="col q">
+  <div class="card1">
+    <div class="image"><img src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2FOur%20Clubs%2FClubs%2FActkrit%2Flist%2F2.png?alt=media&token=ce07a4aa-91e1-4f10-b259-9a94d6c9e366" alt=""></div>
+     <div class="content">
+       
+         <span class="title1">
+          Incident'23 by NITK
+         </span>
+   
+       <p class="desc">
+        In the inter-college fest conducted by NITK, Incident '23 , we participated in Streetplay competition where various colleges from different states participated. Here we bagged the second prize.
+</p>
+   
+     </div>
+   </div>
+
+</div>
+
+
+
+<div class="col q">
+  <div class="card1">
+    <div class="image"><img src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2FOur%20Clubs%2FClubs%2FActkrit%2Flist%2F3.png?alt=media&token=f4e68438-7922-4396-85fa-c691faa0fb28" alt=""></div>
+     <div class="content">
+      
+         <span class="title1">
+          Anti -ragging campaign  
+         </span>
+   
+       <p class="desc">
+        Not only we participate in inter-college events, we also spread awareness through our art in the campus. One such instance was a Streetplay on Anti-Ragging which we did in our college, to educate the students about the dangerous effect of ragging in other students lives.
+        </p>
+   
+       
+     </div>
+   </div>
+
+</div>
+
+
+
+
+</div>
+
+<iframe class="ytv"
+src="https://www.youtube.com/embed/YLucDtoS4aY">
+
+</iframe>
+
+</div>
+
+</div>
+
+<div class="mem2" style="overflow: hidden;">
+  <div class="row justify-content-center">
+    <div class="heading">
+
+      <img class="op" src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2Fbg%2Fop.png?alt=media&token=31f4e1b2-25ba-40bf-860b-cd7f9831b6bf" alt="">
+    
+    <h1>Club Coordinators</h1>
+  
+  </div>
+      <div class="col q "><div class="card2">
+          <div class="card-image2"><img src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2FOur%20Clubs%2FClubs%2FActkrit%2Fcl%2F11.png?alt=media&token=816c6c05-489a-4218-aa8b-75e4adc1edf3" alt="" style="object-fit: cover;"></div>
+          <div class="category">Student Co-ordinator  </div>
+          <div class="heading1"> Saumya Sanvi, TEAM HEAD, RNSIT.
+           
+          </div>
+      </div></div>
+  
+                                                     
+  
+  
+      <div class="col z"><div class="card2">
+          <div class="card-image2"><img src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2FOur%20Clubs%2FClubs%2FActkrit%2Fcl%2F22.png?alt=media&token=e2031fbb-51b2-482e-861f-4ed976bb80fb" alt=""></div>
+          <div class="category"> Student Co-ordinator </div>
+  
+          <div class="heading1">C G Mruthunjaya,CO-HEAD, RNSIT.
+              
+          </div>
+      </div></div>
+  
+  
+  
+      <div class="col z"><div class="card2">
+          <div class="card-image2"><img src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2FOur%20Clubs%2FClubs%2FActkrit%2Fcl%2F33.png?alt=media&token=4f5f7bc1-4f3c-4abb-b2ba-8971368dcfbc" alt="" style="object-fit: cover;"></div>
+          <div class="category"> Student Co-ordinator </div>
+  
+          <div class="heading1"> Abhinav Prasoon,Manager, RNSIT.
+            
+          </div>
+      </div></div>
+  
+  
+  
+      
+  
+  
+  </div>
+  
+  </div>
+<div class="gallery">
+  <div class="heading5">
+
+    <img class="op" src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2Fbg%2Fop.png?alt=media&token=31f4e1b2-25ba-40bf-860b-cd7f9831b6bf" alt="">
+  
+  <h1>Gallery</h1>
+
+</div>
+
+
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2FOur%20Clubs%2FClubs%2FActkrit%2FGallery%2Fg1.jpg?alt=media&token=e542e4d2-81c7-4437-aaf6-5f3082ac1393" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2FOur%20Clubs%2FClubs%2FActkrit%2FGallery%2Fg2.JPG?alt=media&token=209eb608-b087-4a4b-8ae0-2a88a2cdcda8" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2FOur%20Clubs%2FClubs%2FActkrit%2FGallery%2Fg3.jpg?alt=media&token=11efed5d-e2de-4532-b089-dd801c3c9419" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2FOur%20Clubs%2FClubs%2FActkrit%2FGallery%2Fg4.jpg?alt=media&token=99f3ae2e-5fab-4d78-a688-c4ad5f22dbe3" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2FOur%20Clubs%2FClubs%2FActkrit%2FGallery%2Fg5.jpeg?alt=media&token=58cadac8-b9a4-4e8f-a8f0-f98b4f274a70" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2FOur%20Clubs%2FClubs%2FActkrit%2FGallery%2Fg1.jpg?alt=media&token=e542e4d2-81c7-4437-aaf6-5f3082ac1393" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2FOur%20Clubs%2FClubs%2FActkrit%2FGallery%2Fg2.JPG?alt=media&token=209eb608-b087-4a4b-8ae0-2a88a2cdcda8" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2FOur%20Clubs%2FClubs%2FActkrit%2FGallery%2Fg3.jpg?alt=media&token=11efed5d-e2de-4532-b089-dd801c3c9419" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2FOur%20Clubs%2FClubs%2FActkrit%2FGallery%2Fg4.jpg?alt=media&token=99f3ae2e-5fab-4d78-a688-c4ad5f22dbe3" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2FOur%20Clubs%2FClubs%2FActkrit%2FGallery%2Fg5.jpeg?alt=media&token=58cadac8-b9a4-4e8f-a8f0-f98b4f274a70" alt="">
+    </div>
+
+ 
+
+
+    <!-- 15 div -->
+  </div>
+  </div>
+</div>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 15,
+        stretch: 0,
+        depth: 300,
+        modifier: 1,
+        slideShadows: true,
+      },
+      loop: true,
+    });
+  </script>
+  
+
+<div class="join" style="overflow: hidden;">
+  <div class="head">
+<h1>Reach Out to us </h1>
+</div>
+
+<div class="row">
+
+  <div class="col-sm-7">
+    <div class="info-txt">
+    
+      <p> 
+        "Our club isn't merely about drama; it's a fusion of diverse talents, where actors find their voices, photographers capture moments, writers weave narratives, and musicians provide the soulful soundtrack. Join us, and together we'll create art that echoes through time.
+        "</p>
+
+    </div>
+    <div class="info-txt3">
+    <p> <b>Call US :</b>
+      <br>Saumya Sanvi- 7717779580
+      <br><br>
+      Abhinav Prasoon- 8100026898
+
+<br><br>
+     <b>Insta-Id :</b> <a href="https://instagram.com/actkrit_rnsit?igshid=MzRlODBiNWFlZA=="style="text-decoration: none;">  actkrit_rnsit <i class="fa-brands fa-square-instagram"></i></a>
+      
+      <br>
+      <b>Email-Id</b>: actkrit.5@gmail.com</p>
+    
+
+    
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="i-11">
+    <img src="https://firebasestorage.googleapis.com/v0/b/cultfiesta-a66b1.appspot.com/o/CultFiesta%2Fbg%2Fimage-asset.gif?alt=media&token=864ba6ec-ba8e-49dd-a5a9-4e61d73996cd" alt="">
+
+</div>
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+
+<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/vendors/jquery.slimscroll.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js">
+</script>
+<script type="text/javascript">
+// fullpage customization
+
+if (jQuery(window).width() > 991) {
+  jQuery('#fullpage').fullpage({
+    sectionSelector: '.vertical-scrolling',
+    slideSelector: '.horizontal-scrolling',
+    navigation: false,
+    slidesNavigation: false,
+    controlArrows: false,
+    anchors: ['1stSection', '2ndSection', '3rdSection', '4thSection', '5thSection', '6thSection', '7thSection',
+      '8thSection', '9thSection', '10thSection', '11thSection'
+    ],
+  });
+}
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -------------------------------------------Footer script------------------------------------------------------------- -->
+
+<script src="https://www.rnsit.ac.in/wp-content/themes/twentyseventeen/js/jquery.min.js"></script>
+
+<script src="https://www.rnsit.ac.in/wp-content/themes/twentyseventeen/js/bootstrap.min.js"></script>
+
+
+
+
+
+<!-- -------------------------------------------Footer script------------------------------------------------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  
+  
+  .header_sec {
+    margin-top: 0px;
+    position: fixed;
+    transition: all .5s;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 1;
+    box-shadow: 0 0 10px #ddd;
+  }
+ 
+
+  
+ 
+  
+  @media(max-width: 991px) {
+    .header_sec {
+      position: fixed !important;
+      width: 100vw;
+      /* height: 120px; */
+    }
+    .navbar-brand img{
+      width: 50px;
+      height: 50px;
+    }
+  }
+  </style>
