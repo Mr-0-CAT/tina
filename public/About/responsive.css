@@ -1,0 +1,242 @@
+@media(max-width: 1199px){
+    .header_sec_bottom_in ul.navbar-nav a.nav-link {
+        font-size: 15px; 
+        padding: 0 9px;   
+    }
+  
+    @media(max-width: 991px){
+    
+    .navbar-toggler-icon i {
+        color: #ff6500;
+        font-size: 40px;
+    }
+    .navbar-toggler {
+        padding: 0;
+        line-height: 1;
+        font-size: 0;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    span.navbar-toggler-icon {
+        width: auto;
+        height: auto;
+    }
+    .navbar-toggler:focus{
+        outline: 0;
+    }
+    .header_sec_bottom_in ul.navbar-nav a.nav-link {
+        font-size: 15px;
+        margin: 10px 0;
+        padding: 0;
+        border: 0;
+    }
+    .navbar-collapse {
+        padding-top: 10px;
+    }
+    .navbar_right {
+        display: flex;
+        align-items: center;
+        margin-left: 0;
+        margin-top: 11px;
+        margin-bottom: 15px;
+    }
+    .navbar_right_seach {
+        position: inherit;
+    }
+    .navbar_right_seach_con {
+        position: absolute;
+        left: 0;
+        background: #09015f;
+        border-radius: 7px;
+        width: 100%;
+        margin-top: 5px;
+        z-index: 1;
+        right: auto;
+    }
+    .form-control {
+        height: 40px;
+    }
+  
+    }
+    
+    @media(max-width: 767px){
+    body {
+        font-size: 14px;
+    }
+    a.navbar-brand {
+        flex: 0 0 60px;
+    }
+    .navbar-toggler-icon i {
+        font-size: 30px;
+    }
+    .navbar-toggler {
+        width: 30px;
+        height: 30px;
+    }
+  
+    .tabs_sec1 .nav-tabs .nav-link {
+        min-width: 80px;
+        font-size: 14px;
+    }
+    .nav-tabs .nav-item {
+        min-width: 140px;
+        max-width: 140px;
+    }
+    .tabs_sec1 .nav-tabs {
+        margin-bottom: 10px;
+    }
+
+    .header_sec_links ul {
+        display: block;
+        text-align: center;
+    }
+    .header_sec_links ul li {
+        display: inline-block;
+        padding: 0 10px;
+        vertical-align:middle;
+        max-width:110px;
+    }
+        
+    .header_sec_links > ul > li > a {
+        font-size:13px;
+        white-space:normal;
+    }	
+    
+    }
+    
+}
+@media(max-width: 990px){
+    .up{
+        margin-top: -30px;
+    }
+    .up h1{
+    font-size: 75px !important;
+
+    }
+    .about h1{
+        text-align: center  ;
+        font-size: 45px !important;
+    }
+    .img-info{
+        margin-bottom: 10%;
+    }
+    .info-txt p {
+        font-size: 15px;
+        padding: 20px;
+        padding-bottom: 0%;
+        margin-bottom: 0%;
+      }
+      .row.custom{
+        flex-direction:column-reverse;
+        padding: 0%;
+      }
+    .img-info2{
+        width: 370px;
+        text-align: center;
+        margin-left: 20px;
+        height: 250px;
+    }
+    .img1{
+        margin-top: 0px;
+    }
+    .info-txt2 h1{
+        font-size: 45px;
+        color: #090348;
+        }
+    
+        .info-txt2 p {
+            /* font-size: 22px; */
+            font-weight: 500;
+            padding: 20px;
+            font-size: 15px;
+            margin-left: 20px;
+          }
+
+      
+      .con h1{
+        margin-top: 30px;
+        font-size: 50px;
+      }
+      .con p{
+        font-size: 18px;
+        padding: 20px;
+    }
+    .myCard2{
+        width: 390px;
+        /* margin-right: 0%; */
+        margin-left: 5%;
+    }
+    .myCard{
+    
+    margin-left: 0%;
+    margin-left: 14%;
+    
+    }
+    .allimg{
+        width: 390px;
+    }
+    .con2 h1{
+        margin-top: 30px;
+        font-size: 50px;
+    }
+    .con2 p{
+        font-size: 18px;
+        padding: 20px;
+    }
+    .con3 h2{
+        margin-top: 30px;
+        padding: 20px;
+        font-size: 40px !important;
+    }
+    .con3 p{
+        font-size: 18px;
+        padding: 20px;
+        padding-top: 0%;
+    }
+    .footer p{
+        padding: 20px;
+    }
+    .info-txt h1{
+        padding: 20px;
+    }
+    .section_type9_itm {
+        margin-left: 12%;
+    }
+    .frontSide,
+    .frontSide::before {
+      background:none
+    }
+    .frontSide2,
+    .frontSide2::before {
+      background: none
+    }
+}
+
+
+@media(width<400px){
+    .up h1{
+        top: 40% !important;
+        }
+        .img-info2{
+            width: 350px;
+            height: 220px;
+        }
+        .info-txt h1{
+            padding: 20px;
+            padding-top: 0%;
+        }
+        .myCard2{
+            width: 300px;
+            margin-right: 0%;
+            margin-left: 10%;
+        }
+        .myCard{
+            width: ;
+        }
+        .allimg{
+            width: 300px;
+        }
+}

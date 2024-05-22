@@ -1,0 +1,304 @@
+---
+
+title: 
+layout: 'base.njk'
+
+
+
+
+---
+
+
+<div class="i-t" id="Home">
+  <!-- <h1><span style="color: darkorange;">R</span>NS</h1>
+  <h1><span style="color: darkorange;">C</span >ult<span style="color: darkorange;">F</span>iesta</h1> -->
+
+<div class="img-i">
+  <img src="" alt="" class="img-i">
+</div>
+
+
+<video  autoplay loop muted playsinline class="bgv">
+  <source src="https://firebasestorage.googleapis.com/v0/b/myapp-8ecc3.appspot.com/o/Cultfiesta%2Fbackground%2Fheader.mp4?alt=media&token=c05d7380-ed03-4092-a471-0d50e1ea284f" type="video/mp4 ">
+</video>
+
+
+
+
+
+
+
+</div>
+  
+
+
+<div class="list1">
+  <img class="op2" src="https://firebasestorage.googleapis.com/v0/b/myapp-8ecc3.appspot.com/o/Cultfiesta%2Fbackground%2Fop.png?alt=media&token=01436a5b-2464-40de-b1b2-a92e82c18ec5" alt="">
+  <!-- <div class="heading_type4"> -->
+    <h1>Ongoing Activities</h1>
+  
+
+
+
+<div class="banner">
+  <div class="group1">
+      <marquee behavior="fast" direction="scroll" duration="1s">
+
+{%- for post in collections.post %}
+
+
+         <p class="t1"> {{ post.data.titles}} </p> 
+       
+
+
+
+
+      {%- endfor %}
+
+      </marquee>
+  
+  </div>
+
+
+
+
+    
+
+
+
+
+<div class="dropdown2">
+  
+  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+    Sort by
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Technical</a></li>
+    <li><a class="dropdown-item" href="#">Non-Technical</a></li>
+    <li><a class="dropdown-item" href="#">Sport</a></li>
+    <li><a class="dropdown-item" href="#">workshops</a></li>
+
+  </ul>
+</div>
+</div>
+
+
+
+
+
+ <div class="list"> 
+
+  <div class="innerz">
+  <div class="row" style=" margin-top: 75px; margin-bottom: 25px; margin-left: 20px; ">
+
+
+{%- for post in collections.post %}
+
+    <div class="col" > 
+      
+    <!-- ------------------------------------------111111111111111111--------------------------------------------------------   -->
+      
+      <div class="card1" >
+     
+        <img class="img" src="{{ post.data.image}}" alt=""  >
+        <div class="card__content"> <a  class="eve1" href="{{ post.url }}">
+          <p class="card__title" style="background: -webkit-linear-gradient(rgb(188, 12, 241), rgb(212, 4, 4));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;"> {{ post.data.title}}  </p>
+
+          
+          <p class="card__description">{{ post.data.description}} <br><br> <b>Date:</b> {{post.data.date}}  <br> <b>veneu:</b> {{post.data.venu}} </p>
+        </a></div>
+      </div>
+    
+    
+    
+    
+    </div>
+      {%- endfor %}
+<!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
+ 
+
+  </div>
+  </div>
+</div>
+</div>
+  <!-- ---------------------------------- Row 2----------------------------------------------------------------------- -->
+
+ 
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+
+<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/vendors/jquery.slimscroll.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js">
+</script>
+<script type="text/javascript">
+// fullpage customization
+
+if (jQuery(window).width() > 991) {
+  jQuery('#fullpage').fullpage({
+    sectionSelector: '.vertical-scrolling',
+    slideSelector: '.horizontal-scrolling',
+    navigation: false,
+    slidesNavigation: false,
+    controlArrows: false,
+    anchors: ['1stSection', '2ndSection', '3rdSection', '4thSection', '5thSection', '6thSection', '7thSection',
+      '8thSection', '9thSection', '10thSection', '11thSection'
+    ],
+  });
+}
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -------------------------------------------Footer script------------------------------------------------------------- -->
+
+<script src="https://www.rnsit.ac.in/wp-content/themes/twentyseventeen/js/jquery.min.js"></script>
+
+<script src="https://www.rnsit.ac.in/wp-content/themes/twentyseventeen/js/bootstrap.min.js"></script>
+
+
+
+
+
+<!-- -------------------------------------------Footer script------------------------------------------------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  
+  
+  .header_sec {
+    margin-top: 0px;
+    position: fixed;
+    transition: all .5s;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 1;
+    box-shadow: 0 0 10px #ddd;
+  }
+ 
+
+  
+ 
+  
+  @media(max-width: 991px) {
+    .header_sec {
+      position: fixed !important;
+      width: 100vw;
+      /* height: 120px; */
+    }
+    .navbar-brand img{
+      width: 50px;
+      height: 50px;
+    }
+  }
+  </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
