@@ -22,7 +22,7 @@ function getPostData() {
     const data = snapshot.val();
 
     let html = "";
-    const table = document.querySelector('.innerz .row');
+    const table = document.querySelector('.main');
     for (const key in data) {
       const { title, post_content, imageURL, date, venu } = data[key];
 

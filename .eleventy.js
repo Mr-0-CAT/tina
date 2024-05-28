@@ -130,10 +130,6 @@ module.exports = function(eleventyConfig) {
    
    
     eleventyConfig.addPassthroughCopy('./src/logo.webp')
-    eleventyConfig.addPassthroughCopy('./src/js')
-    eleventyConfig.addPassthroughCopy('./src/css')
-
-
 
     return {
       dir: {
