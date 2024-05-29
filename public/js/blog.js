@@ -26,12 +26,16 @@ function getPostData() {
     for (const key in data) {
       const { title, post_content, imageURL, date, venu } = data[key];
 
+      // Dynamically generate the URL for the current post
+      const postURL = `events/index.html?id=${key}`;
+
       html += `
         <div class="col">
           <div class="card1">
             <img class="img" src="${imageURL}" alt="${title}">
             <div class="card__content">
-              <a class="eve1" href="href="/posts/${key}">
+              <!-- Set the href attribute to the dynamically generated URL -->
+              <a class="eve1" href="${postURL}">
                 <p class="card__title" style="background: -webkit-linear-gradient(rgb(188, 12, 241), rgb(212, 4, 4));
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;">${title}</p>
@@ -43,7 +47,10 @@ function getPostData() {
       `;
     }
     table.innerHTML = html;
+  }).catch((error) => {
+    console.error("Error fetching data:", error);
   });
 }
 
 getPostData();
+
