@@ -54,3 +54,53 @@ function getPostData() {
 
 getPostData();
 
+
+function GetAnnounData() {
+  const user_ref = ref(db, 'announcement/');
+  get(user_ref).then((snapshot) => {
+      const data = snapshot.val();
+
+      let html = "";
+      const announElement = document.querySelector('#announ');
+      for (const key in data) {
+          const { title, color } = data[key];
+          html += `
+              <p class="t1" style="color: ${color};">${title}</p>
+          `;
+      }
+
+      announElement.innerHTML = html;
+  }).catch(error => {
+      console.error("Error fetching data:", error);
+  });
+}
+
+// Call the function to fetch and display the data
+GetAnnounData();
+
+
+
+
+
+function GetSponsorData() {
+  const user_ref = ref(db, 'sponsors/');
+  get(user_ref).then((snapshot) => {
+      const data = snapshot.val();
+
+      let html = "";
+      const announElement = document.querySelector('#spon');
+      for (const key in data) {
+        const {  imageURL, category } = data[key];
+          html += `
+          <img class="${category}" src="${imageURL}" alt="">
+          `;
+      }
+
+      announElement.innerHTML = html;
+  }).catch(error => {
+      console.error("Error fetching data:", error);
+  });
+}
+
+// Call the function to fetch and display the data
+GetSponsorData();

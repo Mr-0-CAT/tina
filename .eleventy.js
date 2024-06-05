@@ -132,6 +132,30 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy('./src/logo.webp')
     eleventyConfig.addPassthroughCopy('./src/js')
     eleventyConfig.addPassthroughCopy('./src/css')
+    eleventyConfig.addPassthroughCopy('./src/cult_shadow-01.png')
+
+
+    eleventyConfig.addPassthroughCopy('./src/Sort-sports/style.css')
+    eleventyConfig.addPassthroughCopy('./src/Sort-sports/responsive.css')
+    eleventyConfig.addPassthroughCopy('./src/Sort-sports/sort_sports.js')
+
+    eleventyConfig.addPassthroughCopy('./src/Sort-tech/style.css')
+    eleventyConfig.addPassthroughCopy('./src/Sort-tech/responsive.css')
+    eleventyConfig.addPassthroughCopy('./src/Sort-tech/sort_tech.js')
+    
+
+    eleventyConfig.addPassthroughCopy('./src/Sort-non/style.css')
+    eleventyConfig.addPassthroughCopy('./src/Sort-non/responsive.css')
+    eleventyConfig.addPassthroughCopy('./src/Sort-non/sort_non.js')
+
+    eleventyConfig.addPassthroughCopy('./src/Sort-work/style.css')
+    eleventyConfig.addPassthroughCopy('./src/Sort-work/responsive.css')
+    eleventyConfig.addPassthroughCopy('./src/Sort-work/sort_work.js')
+
+
+    eleventyConfig.addPassthroughCopy('./src/timeline/style.css')
+    eleventyConfig.addPassthroughCopy('./src/timeline/responsive.css')
+    eleventyConfig.addPassthroughCopy('./src/timeline/timeline.js')
 
 
 
