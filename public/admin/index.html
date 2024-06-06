@@ -12,11 +12,35 @@
 </head>
 <body>
 
+
+    
     <div class="login">
-         <h2>Log In</h2>
-         <input type="text" id="email" placeholder="enter Email ...." autocomplete="off">
-         <input type="password" id="password" placeholder="enter password.... " autocomplete="off">
-         <button id="sign_in">Login</button>
+        <div class="container2">
+            <div class="heading">Log In</div>
+            <form class="form" action="">
+              <input
+                placeholder="E-mail"
+                id="email"
+                name="email"
+                type="email"
+                class="input"
+                required=""
+              />
+              <input
+                placeholder="Password"
+                id="password"
+                name="password"
+                type="password"
+                class="input"
+                required=""
+              />
+              
+              <input value="Log In" type="submit" class="login-button" id="sign_in">
+            </form>
+           
+           
+          </div>
+          
     </div>
 
 
@@ -150,12 +174,40 @@
                                         <br>
                                        
                                         <select id="colorPicker">
+                                            <option value="white">White</option>
+
                                             <option value="black">Black</option>
                                             <option value="red">Red</option>
                                             <option value="green">Green</option>
                                             <option value="blue">Blue</option>
+                                            <option value="blinking">Blinking (Red/White)</option>
                                         </select>
-                                        
+                                        <style>.blinking {
+                                            animation: blinkingAnimation 1s infinite alternate;
+                                          }
+                                          
+                                          @keyframes blinkingAnimation {
+                                            from {
+                                              color: red;
+                                            }
+                                            to {
+                                              color: white;
+                                            }
+                                          }
+                                          .blinking {
+  animation: blinkingAnimation 1s infinite alternate;
+}
+
+@keyframes blinkingAnimation {
+  from {
+    color: red;
+  }
+  to {
+    color: white;
+  }
+}
+
+                                          </style>
                                         <button id="post_btn1" class="post_btn1">Post Now</button>
                                         <br>
                                         <button id="update_btn1" class="update_btn1">Update Post</button>

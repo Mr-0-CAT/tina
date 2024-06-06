@@ -44,7 +44,7 @@ function getPostDetails(postId) {
       console.log("Post data:", data);
       document.getElementById('poster').src = data.imageURL;
       document.getElementById('title').textContent = data.title;
-      document.getElementById('long_description').textContent = data.post_content;
+      document.getElementById('long_description').textContent = data.post2_content;
       document.getElementById('date').textContent = data.date;
       document.getElementById('venue').textContent = data.venue;
       document.getElementById('prerequisites').textContent = data.prerequists;

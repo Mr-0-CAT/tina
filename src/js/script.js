@@ -37,14 +37,17 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-function SignInUser() {
+function SignInUser(event) {
+  event.preventDefault();  // Prevent default form submission
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
-  signInWithEmailAndPassword(auth, email, password).then((userCredentials) => {
-    console.log(userCredentials.user.uid);
-  }).catch((error) => {
-    console.error("Sign in error: ", error);
-  });
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredentials) => {
+      console.log(userCredentials.user.uid);
+    })
+    .catch((error) => {
+      console.error("Sign in error: ", error);
+    });
 }
 
 const sign_btn = document.querySelector('#sign_in');
@@ -86,7 +89,7 @@ function Add_Post() {
     return;
   }
 
-  const id = Math.floor(Math.random() * 100);
+  const id = Date.now();
   const imageRef = storageRef(storage, `images/${id}-${post_image.name}`);
 
   uploadBytes(imageRef, post_image).then((snapshot) => {
@@ -184,9 +187,7 @@ window.delete_data = function (key) {
     }).then(() => {
       // Notify and reload the page
       notify.innerHTML = "Post and associated image deleted successfully";
-      setTimeout(() => {
-        location.reload();
-      }, 2000);
+      
     }).catch((error) => {
       console.error("Error deleting data: ", error);
       notify.innerHTML = "Error deleting post";
@@ -320,80 +321,81 @@ window.update_data = function (key) {
 // -------------------------------------------
 const add_post_Btn1 = document.querySelector('#post_btn1');
 const update_btn1 = document.querySelector('#update_btn1');
-
-
+let updateKey = null; // Initialize updateKey
 
 function Add_Announcement() {
   const title = document.querySelector('#title2').value;
   const color = document.querySelector('#colorPicker').value; // Get the selected color
-  const id = Math.floor(Math.random() * 100);
+  const id = Date.now(); // Use Date.now() for unique identifier
 
   set(ref(db, 'announcement/' + id), {
-      title: title,
-      color: color // Save the color in Firebase
+    title: title,
+    color: color // Save the color in Firebase
   }).then(() => {
-      notify.innerHTML = "Data Added";
-      document.querySelector('#title2').value = "";
-      GetAnnounData();
+    notify.innerHTML = "Data Added";
+    document.querySelector('#title2').value = "";
+    GetAnnounData();
   }).catch(error => {
-      console.error("Error adding document: ", error);
-      notify.innerHTML = "Error adding data";
+    console.error("Error adding document: ", error);
+    notify.innerHTML = "Error adding data";
   });
 }
 add_post_Btn1.addEventListener('click', Add_Announcement);
 
-// Get Data from firebase Db
+// Get Data from Firebase Db
 function GetAnnounData() {
   const user_ref = ref(db, 'announcement/');
   get(user_ref).then((snapshot) => {
-      const data = snapshot.val();
+    const data = snapshot.val();
 
-      let html = "";
-      const table = document.querySelector('#announcement_table');
-      for (const key in data) {
-          const { title, color } = data[key];
-          let textColorClass = '';
-          switch(color) {
-              case 'white':
-                  textColorClass = 'white';
-                  break;
-              case 'green':
-                  textColorClass = 'green';
-                  break;
-              case 'red':
-                  textColorClass = 'red';
-                  break;
-              default:
-                  textColorClass = ''; // or default color class
-                  break;
-          }
-
-          html += `
-              <tr>
-                  <td><span class="postNumber"></span></td>
-                  <td class="${textColorClass}">${title}</td>
-                  <td><button class="delete" onclick="delete_data1('${key}')">Delete</button></td>
-                  <td><button class="update" onclick="updateAnnouncement('${key}')">Update</button></td>
-              </tr>
-          `;
+    let html = "";
+    const table = document.querySelector('#announcement_table');
+    for (const key in data) {
+      const { title, color } = data[key];
+      let textColorClass = '';
+      switch (color) {
+        case 'white':
+          textColorClass = 'white';
+          break;
+        case 'green':
+          textColorClass = 'green';
+          break;
+        case 'red':
+          textColorClass = 'red';
+          break;
+        case 'blinking':
+            textColorClass = 'blinking';
+            break;
+        default:
+          textColorClass = ''; // or default color class
+          break;
       }
 
-      table.innerHTML = html;
+      html += `
+        <tr>
+          <td><span class="postNumber"></span></td>
+          <td class="${textColorClass}">${title}</td>
+          <td><button class="delete" onclick="delete_data1('${key}')">Delete</button></td>
+          <td><button class="update" onclick="updateAnnouncement('${key}')">Update</button></td>
+        </tr>
+      `;
+    }
+
+    table.innerHTML = html;
   }).catch(error => {
-      console.error("Error getting documents: ", error);
+    console.error("Error getting documents: ", error);
   });
 }
 
-
 // delete_data
 window.delete_data1 = function (key) {
-    remove(ref(db, `announcement/${key}`)).then(() => {
-        notify.innerHTML = "Data Deleted";
-        GetAnnounData();
-    }).catch(error => {
-        console.error("Error deleting document: ", error);
-        notify.innerHTML = "Error deleting data";
-    });
+  remove(ref(db, `announcement/${key}`)).then(() => {
+    notify.innerHTML = "Data Deleted";
+    GetAnnounData();
+  }).catch(error => {
+    console.error("Error deleting document: ", error);
+    notify.innerHTML = "Error deleting data";
+  });
 };
 
 // get and update data
@@ -438,10 +440,9 @@ update_btn1.addEventListener('click', function () {
   }
 });
 
-
-
 // Initial data load
 GetAnnounData();
+
  
 
 // ---------------------------------------------------------------
@@ -457,7 +458,7 @@ function AddTime() {
     return;
   }
 
-  const id = Math.floor(Math.random() * 100);
+  const id = Date.now();
   const imageRef2 = storageRef(storage, `timeline/${id}-${post_image2.name}`);
 
   uploadBytes(imageRef2, post_image2).then((snapshot) => {
@@ -483,11 +484,8 @@ document.querySelector('#post_btn3').addEventListener('click', AddTime);
 function clearFieldsTimeline() {
   document.querySelector('#title3').value = "";
   document.querySelector('#post_image2').value = "";
-  document.querySelector('#category2').value = ""; 
+  document.querySelector('#category2').value = "";
 }
-
-
-
 
 function GetTimeData() {
   const user_ref = ref(db, 'timeline/');
@@ -506,8 +504,8 @@ function GetTimeData() {
             <div><b>${title}</b></div>
             <img src="${imageURL}" alt="Post Image" class="${category}" style="width:100px;height:100px;">
           </td>
-          <td class="separator"><button class="delete" onclick="deleteTimeData(${key})">Delete</button></td>
-          <td class="separator"><button class="update" onclick="updateTimeData(${key})">Update</button></td>
+          <td class="separator"><button class="delete" onclick="deleteTimeData('${key}')">Delete</button></td>
+          <td class="separator"><button class="update" onclick="updateTimeData('${key}')">Update</button></td>
           <td class="separator"><a href="../events/index.html?id=${key}" class="details">View Details</a></td>
         </tr>
       `;
@@ -523,16 +521,22 @@ window.deleteTimeData = function (key) {
 
   get(user_ref).then((snapshot) => {
     const data = snapshot.val();
-    const imageURL = data.imageURL;
+    if (!data) {
+      notify.innerHTML = "Post not found";
+      return;
+    }
 
+    const imageURL = data.imageURL;
+    const fileName = imageURL.split('%2F').pop().split('?')[0]; // Extract file name from URL
+    const imageRef = storageRef(storage, `timeline/${fileName}`);
+
+    // Remove post from database
     remove(user_ref).then(() => {
-      const imageRef = storageRef(storage, imageURL);
+      // Delete image from storage
       return deleteObject(imageRef);
     }).then(() => {
       notify.innerHTML = "Post and associated image deleted successfully";
-      setTimeout(() => {
-        location.reload();
-      }, 2000);
+      GetTimeData();
     }).catch((error) => {
       console.error("Error deleting data: ", error);
       notify.innerHTML = "Error deleting post";
@@ -545,62 +549,75 @@ window.updateTimeData = function (key) {
 
   get(user_ref).then((item) => {
     const data = item.val();
+    if (!data) {
+      notify.innerHTML = "Post not found";
+      return;
+    }
+
     document.querySelector('#title3').value = data.title;
     document.querySelector('#category2').value = data.category;
 
+    // Display update button and hide add button
     document.querySelector('#update_btn3').style.display = 'block';
     document.querySelector('#post_btn3').style.display = 'none';
 
-    document.querySelector('#update_btn3').addEventListener('click', function UpdateTimeForm() {
-      const title = document.querySelector('#title3').value;
-      const post_image2 = document.querySelector('#post_image2').files[0];
-      const category2 = document.querySelector('#category2').value;
-
-      if (post_image2) {
-        const oldImageRef2 = storageRef(storage, data.imageURL);
-
-        deleteObject(oldImageRef2).then(() => {
-          const newImageRef2 = storageRef(storage, `timeline/${key}-${post_image2.name}`);
-
-          return uploadBytes(newImageRef2, post_image2).then((snapshot) => {
-            return getDownloadURL(snapshot.ref);
-          }).then((downloadURL) => {
-            return update(ref(db, `timeline/${key}`), {
-              title: title,
-              imageURL: downloadURL,
-              category: category2
-            });
-          }).then(() => {
-            notify.innerHTML = "Post updated successfully";
-            clearFieldsTimeline();
-            GetTimeData();
-          }).catch((error) => {
-            console.error("Error uploading file: ", error);
-            notify.innerHTML = "Error updating post";
-          });
-        }).catch((error) => {
-          console.error("Error deleting old image: ", error);
-          notify.innerHTML = "Error deleting old image";
-        });
-      } else {
-        update(ref(db, `timeline/${key}`), {
-          title: title,
-          category: category2
-        }).then(() => {
-          notify.innerHTML = "Post updated successfully";
-          clearFieldsTimeline();
-          GetTimeData();
-        }).catch((error) => {
-          console.error("Error updating post: ", error);
-          notify.innerHTML = "Error updating post";
-        });
-      }
-
-      document.querySelector('#update_btn3').style.display = 'none';
-      document.querySelector('#post_btn3').style.display = 'block';
-    }, { once: true });
+    // Bind update functionality
+    document.querySelector('#update_btn3').onclick = function() {
+      updatePostData(key, data.imageURL);
+    };
   });
 }
+
+function updatePostData(key, oldImageURL) {
+  const title = document.querySelector('#title3').value;
+  const post_image2 = document.querySelector('#post_image2').files[0];
+  const category2 = document.querySelector('#category2').value;
+
+  if (post_image2) {
+    const fileName = oldImageURL.split('%2F').pop().split('?')[0];
+    const oldImageRef2 = storageRef(storage, `timeline/${fileName}`);
+    
+    deleteObject(oldImageRef2).then(() => {
+      const newImageRef2 = storageRef(storage, `timeline/${key}-${post_image2.name}`);
+
+      return uploadBytes(newImageRef2, post_image2).then((snapshot) => {
+        return getDownloadURL(snapshot.ref);
+      }).then((downloadURL) => {
+        return update(ref(db, `timeline/${key}`), {
+          title: title,
+          imageURL: downloadURL,
+          category: category2
+        });
+      }).then(() => {
+        notify.innerHTML = "Post updated successfully";
+        clearFieldsTimeline();
+        GetTimeData();
+      }).catch((error) => {
+        console.error("Error uploading file: ", error);
+        notify.innerHTML = "Error updating post";
+      });
+    }).catch((error) => {
+      console.error("Error deleting old image: ", error);
+      notify.innerHTML = "Error deleting old image";
+    });
+  } else {
+    update(ref(db, `timeline/${key}`), {
+      title: title,
+      category: category2
+    }).then(() => {
+      notify.innerHTML = "Post updated successfully";
+      clearFieldsTimeline();
+      GetTimeData();
+    }).catch((error) => {
+      console.error("Error updating post: ", error);
+      notify.innerHTML = "Error updating post";
+    });
+  }
+
+  document.querySelector('#update_btn3').style.display = 'none';
+  document.querySelector('#post_btn3').style.display = 'block';
+}
+
 
 
 
@@ -686,9 +703,7 @@ window.deleteSponsorData = function (key) {
       return deleteObject(imageRef);
     }).then(() => {
       notify.innerHTML = "Post and associated image deleted successfully";
-      setTimeout(() => {
-        location.reload();
-      }, 2000);
+    
     }).catch((error) => {
       console.error("Error deleting data: ", error);
       notify.innerHTML = "Error deleting post";

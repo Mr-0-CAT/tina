@@ -46,8 +46,11 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy('./src/Our Clubs/clubs/DCG/responsive.css')
     eleventyConfig.addPassthroughCopy('./src/Our Clubs/clubs/DCG/swiper-bundle.min.css')
    
-    eleventyConfig.addPassthroughCopy('./src/Our Clubs/clubs/Dhwani/style.css')
-    eleventyConfig.addPassthroughCopy('./src/Our Clubs/clubs/Dhwani/responsive.css')
+    eleventyConfig.addPassthroughCopy('./src/Our Clubs/clubs/Dhawni/style.css')
+    eleventyConfig.addPassthroughCopy('./src/Our Clubs/clubs/Dhawni/responsive.css')
+
+
+
    
     eleventyConfig.addPassthroughCopy('./src/Our Clubs/clubs/E yantra/style.css')
     eleventyConfig.addPassthroughCopy('./src/Our Clubs/clubs/E yantra/responsive.css')

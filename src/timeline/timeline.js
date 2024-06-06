@@ -24,37 +24,28 @@ function GetTimeData() {
     let html = "";
     const table = document.querySelector('.innerz .row');
 
-    for (const key in data) {
-      const { title, imageURL, category } = data[key];
+    // Convert data object to an array and reverse it
+    const dataArray = Object.entries(data).reverse();
 
+    dataArray.forEach(([key, { title, imageURL, category }]) => {
       html += `
-
-      <div class="col" >   
-  
-    <div class="card1">
-      <div class="image"><img class="${category}" src="${imageURL}" alt=""></div>
-       <div class="content">
-           <span class="title1">
-           ${title}
-           </span>
-         
-     
-         <p class="desc">
-         </p>
-     
-       
-       </div>
-     </div>
-  
-  
-      
-      
+      <div class="col">   
+        <div class="card1">
+          <div class="image"><img class="${category}" src="${imageURL}" alt=""></div>
+          <div class="content">
+            <span class="title1">${title}</span>
+            <p class="desc"></p>
+          </div>
+        </div>
       </div>
-    
       `;
-    }
+    });
+
     table.innerHTML = html;
+  }).catch(error => {
+    console.error("Error fetching data:", error);
   });
 }
 
+// Call the function to fetch and display the data
 GetTimeData();
