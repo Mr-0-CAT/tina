@@ -44,18 +44,19 @@ function getPostDetails(postId) {
       console.log("Post data:", data);
       document.getElementById('poster').src = data.imageURL;
       document.getElementById('title').textContent = data.title;
-      document.getElementById('long_description').textContent = data.post_content;
+      document.getElementById('long_description').textContent = data.post2_content;
       document.getElementById('date').textContent = data.date;
-      document.getElementById('venue').textContent = data.venu;
+      document.getElementById('venue').textContent = data.venue;
       document.getElementById('prerequisites').textContent = data.prerequists;
       document.getElementById('fee').textContent = data.fee;
       document.getElementById('time').textContent = data.time;
-      document.getElementById('club_name').textContent = data.Club_name;
+      document.getElementById('cName').textContent = data.cName;
       document.getElementById('department').textContent = data.Department;
       document.getElementById('outcome').textContent = data.outcome;
-      document.getElementById('contacts').textContent = `${data.number_1} ${data.number_2}`;
-      document.getElementById('register_url').href = data.url;
-      document.getElementById('explore_club_url').querySelector('a').href = data.url2;
+      document.getElementById('number1').textContent = data.number1;
+      document.getElementById('number2').textContent = data.number2;
+      document.getElementById('link1').href = data.link1;
+      document.getElementById('link2').href = data.link2;
     } else {
       console.error("No data found for the given post ID.");
     }
