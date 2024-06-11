@@ -23,8 +23,11 @@ function getPostData() {
 
     let html = "";
     const table = document.querySelector('.innerz .row');
-    for (const key in data) {
-      const { title, post_content, imageURL, date, venu } = data[key];
+
+    // Reverse the keys to display posts in reverse order
+    const keys = Object.keys(data).reverse();
+    for (const key of keys) {
+      const { title, post_content, imageURL, date, venue } = data[key];
 
       // Dynamically generate the URL for the current post
       const postURL = `events/index.html?id=${key}`;
@@ -39,7 +42,7 @@ function getPostData() {
                 <p class="card__title" style="background: -webkit-linear-gradient(rgb(188, 12, 241), rgb(212, 4, 4));
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;">${title}</p>
-                <p class="card__description">${post_content} <br><br> <b>Date:</b> ${date} <br> <b>Venue:</b> ${venu}</p>
+                <p class="card__description">${post_content} <br><br> <b>Date:</b> ${date} <br> <b>Venue:</b> ${venue}</p>
               </a>
             </div>
           </div>
@@ -54,3 +57,59 @@ function getPostData() {
 
 getPostData();
 
+
+
+function GetAnnounData() {
+  const user_ref = ref(db, 'announcement/');
+  get(user_ref).then((snapshot) => {
+      const data = snapshot.val();
+
+      let html = "";
+      const announElement = document.querySelector('#announ');
+      
+      // Convert data object to array and reverse it
+      const dataArray = Object.entries(data).reverse();
+      
+      dataArray.forEach(([key, { title, color }]) => {
+          const textColorClass = color === 'blinking' ? 'blinking' : ''; // Check if color is 'blinking'
+          html += `
+              <p class="t1 ${textColorClass}">${title}</p>
+          `;
+      });
+
+      announElement.innerHTML = html;
+  }).catch(error => {
+      console.error("Error fetching data:", error);
+  });
+}
+
+// Call the function to fetch and display the data
+GetAnnounData();
+
+
+
+
+
+
+function GetSponsorData() {
+  const user_ref = ref(db, 'sponsors/');
+  get(user_ref).then((snapshot) => {
+      const data = snapshot.val();
+
+      let html = "";
+      const announElement = document.querySelector('#spon');
+      for (const key in data) {
+        const {  imageURL, category } = data[key];
+          html += `
+          <img class="${category}" src="${imageURL}" alt="">
+          `;
+      }
+
+      announElement.innerHTML = html;
+  }).catch(error => {
+      console.error("Error fetching data:", error);
+  });
+}
+
+// Call the function to fetch and display the data
+GetSponsorData();
