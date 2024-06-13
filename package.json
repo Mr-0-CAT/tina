@@ -12,7 +12,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "github:11ty/eleventy",
     "@tinacms/cli": "^1.5.39",
     "@types/node": "^20.12.7"
   },
