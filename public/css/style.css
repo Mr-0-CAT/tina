@@ -13,7 +13,6 @@
 body{
     font-family: 'Roboto', sans-serif;
     counter-reset: section;
-    
 }
 
 
@@ -64,7 +63,7 @@ body{
 
 .container.main{
   
-border-radius: 200px;
+border-radius: 10px;
     padding: 0% !important;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(164, 19, 19, 0.24) 0px 1px 2px;
 
@@ -72,59 +71,27 @@ border-radius: 200px;
 /* header */
 
 header {
-    background: #09015f;
+    background: #111;
     color: #fff;
     width: 100%;
     padding: 10px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-header .logo {
-    margin-left: 20px;
-}
-
-header .logo img {
-    height: 40px; /* Adjust according to your logo size */
-}
-
-header nav {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    justify-content: space-between;
-}
-
-header ul {
-    list-style: none;
-    display: flex;
-    margin-right: 20px;
-    padding: 0;
+    text-align: center;
 }
 
 header ul li {
-    margin: 0 15px;
+    display: inline-block;
+    margin: 0 10px;
 }
-
-header ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
+header ul li a{
+     color: #fff;
 }
-
-header ul li a:hover {
-    color: #ff9900; /* Change to your desired hover color */
-}
-
 
 .notify {
     background: green;
     color: #fff;
     text-align: center;
     width: 50% !important;
-
+    padding: 10px;
     font-size: 18px;
     border-radius: 20px;
  margin-bottom: 2% !important;
@@ -140,7 +107,7 @@ header ul li a:hover {
 .main_content{
     display: grid;
   border: 2px solid;
-  border-radius: 200px; 
+  
 }
 
 .main_content .post_form {
@@ -175,18 +142,9 @@ header ul li a:hover {
 
 .my_blog{
     display: none;
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/myapp-8ecc3.appspot.com/o/Cultfiesta%2Fbackground%2Fbg1.png?alt=media&token=d1f773fe-4a2d-4b91-b74b-3ce3a714fb0b);
-    min-height: 70vh;
 }
-
 
 .update_btn {
-    display: none;
-}
-.update_btn1 {
-    display: none;
-}
-.update_btn3 {
     display: none;
 }
 .show{
@@ -205,7 +163,6 @@ header ul li a:hover {
     background: green;
     color: #fff;
     margin-top: 70px;
-    
 }
 
 
@@ -215,30 +172,19 @@ width: 100% !important;
 margin-bottom: 2%;
 padding: 10px;
 border-radius: 200px;
-background-color: #ffffff; /* Optional: Add a background color */
-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
 
 }
 .dropdown_trigger{
-    z-index: -1000;
 text-align: center;
-background-color: #ffffff; /* Optional: Add a background color */
 
-
-}
-
-.dropdown_trigger h3{
-    border-radius: 200px;
-    
 }
 
 .dropdown_content{
-    border-radius: 200px; /* Adjust the value for desired curvature */
+    border-radius: 10px; /* Adjust the value for desired curvature */
     border: 1px solid #ccc; /* Optional: Add a border for better visibility */
     padding: 20px; /* Optional: Add padding for better spacing */
     background-color: #f9f9f9; /* Optional: Add a background color */
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
-
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better aesthetics */
 }
 
 .separator {
@@ -247,7 +193,6 @@ background-color: #ffffff; /* Optional: Add a background color */
 }
 
 .my_content {
-    
     width: 100%;
     padding: 40px 50px; 
     
@@ -302,59 +247,7 @@ background-color: #ffffff; /* Optional: Add a background color */
     color: #111;
 }
 
-/* -----------------------------------------÷
- */
- .my_content2 {
-    width: 100%;
-    padding: 40px 50px; 
-    
-    
-}
 
- 
-.my_content2 table td b{
-    font-size: larger;
-    
-  }
-  .my_content2 table {
-      width: 100%;
-      margin: 50px auto;
-      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-      padding: 50px;
-      box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-      border-radius: 5px;
-  }
-  
-  .my_content2 table tr{
-      margin: 30px 0;
-      width: 100%;
-      padding-left: 2% !important;
-    
-  }
-  
-  
-  
-  .my_content2 table tr button{
-      padding: 7px 10px;
-      border: 1px solid #111;
-      border-radius: 15px;
-     transition: .5s ease-in;
-     color: #fff;
-     cursor: pointer;
-     margin: 5%;
-  }
-  
-  .my_content2 table tr button.delete{
-      background: rgb(106, 8, 8);
-  }
-  .my_content2 table tr button.update{
-      background: rgb(8, 67, 106);
-  }
-  .my_content2 table tr button:hover{
-      background: transparent;
-      color: #111;
-  }
-  
 /* id */
 
 .postNumber{
@@ -395,219 +288,3 @@ footer{
     background: #111;
     text-align: center;
 }
-
-.white {
-    color: white;
-}
-
-.green {
-    color: green;
-}
-
-.red {
-    color: red;
-}
-
-
-.cover {
-    object-fit: cover;
-  }
-  
-  .fill {
-    object-fit: fill;
-  }
-  
-  .contain {
-    object-fit: contain;
-  }
-  
-
-  /* ------------------------------ */
-  
-/* ------------------------------------Footer----------------------------------- */
-
-.footer{
-    background-color: #d7d7d7;
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/myapp-8ecc3.appspot.com/o/Cultfiesta%2Fbackground%2Fbg4.jpg?alt=media&token=bb6616ce-d1bf-461b-acd3-d37f6840953c );
-  
-
-
-    
-    /* height: 300px; */
-    
-width: 100%;
-text-align: center;
-padding: 30px 0;
-color: #feffff;
-
-}
-.footer h4{
-margin-bottom: 25px;
-margin-top: 15PX;
-font-weight: 600;
-font-size: 40px;
-
-
-}
-
-.icons{
-margin-bottom: 7px;
-
-}
-.icons a {
-    text-decoration: none;
-    color: #ffffff;
-    
-
-}
-
-
-
-/* ----------------------------------------------------------------------------------------- */
-.container2 {
- width: 80%;
-    background: #f8f9fd;
-    background: linear-gradient(
-      0deg,
-      rgb(255, 255, 255) 0%,
-      rgb(244, 247, 251) 100%
-    );
-    border-radius: 40px;
-    padding: 25px 35px;
-    border: 5px solid rgb(255, 255, 255);
-    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
-    margin: 20px;
-  }
-  
-  .heading {
-    text-align: center;
-    font-weight: 900;
-    font-size: 30px;
-    color: rgb(16, 137, 211);
-  }
-  
-  .form {
-    margin-top: 20px;
-  }
-  
-  .form .input {
-    width: 100%;
-    background: white;
-    border: none;
-    padding: 15px 20px;
-    border-radius: 20px;
-    margin-top: 15px;
-    box-shadow: #cff0ff 0px 10px 10px -5px;
-    border-inline: 2px solid transparent;
-  }
-  
-  .form .input::-moz-placeholder {
-    color: rgb(170, 170, 170);
-  }
-  
-  .form .input::placeholder {
-    color: rgb(170, 170, 170);
-  }
-  
-  .form .input:focus {
-    outline: none;
-    border-inline: 2px solid #12b1d1;
-  }
-  
-  .form .forgot-password {
-    display: block;
-    margin-top: 10px;
-    margin-left: 10px;
-  }
-  
-  .form .forgot-password a {
-    font-size: 11px;
-    color: #0099ff;
-    text-decoration: none;
-  }
-  
-  .form .login-button {
-    display: block;
-    width: 100%;
-    font-weight: bold;
-    background: linear-gradient(
-      45deg,
-      rgb(16, 137, 211) 0%,
-      rgb(18, 177, 209) 100%
-    );
-    color: white;
-    padding-block: 15px;
-    margin: 20px auto;
-    border-radius: 20px;
-    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
-    border: none;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .form .login-button:hover {
-    transform: scale(1.03);
-    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
-  }
-  
-  .form .login-button:active {
-    transform: scale(0.95);
-    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
-  }
-  
-  .social-account-container {
-    margin-top: 25px;
-  }
-  
-  .social-account-container .title {
-    display: block;
-    text-align: center;
-    font-size: 10px;
-    color: rgb(170, 170, 170);
-  }
-  
-  .social-account-container .social-accounts {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 5px;
-  }
-  
-  .social-account-container .social-accounts .social-button {
-    background: linear-gradient(45deg, rgb(0, 0, 0) 0%, rgb(112, 112, 112) 100%);
-    border: 5px solid white;
-    padding: 5px;
-    border-radius: 50%;
-    width: 40px;
-    aspect-ratio: 1;
-    display: grid;
-    place-content: center;
-    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 12px 10px -8px;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .social-account-container .social-accounts .social-button .svg {
-    fill: white;
-    margin: auto;
-  }
-  
-  .social-account-container .social-accounts .social-button:hover {
-    transform: scale(1.2);
-  }
-  
-  .social-account-container .social-accounts .social-button:active {
-    transform: scale(0.9);
-  }
-  
-  .agreement {
-    display: block;
-    text-align: center;
-    margin-top: 15px;
-  }
-  
-  .agreement a {
-    text-decoration: none;
-    color: #0099ff;
-    font-size: 9px;
-  }
-  

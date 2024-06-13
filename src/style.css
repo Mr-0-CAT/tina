@@ -424,8 +424,6 @@ border-radius: 50px;
 
 @media(max-width:990px){
 
-
-
     .card1{
         width: 173px !important;
         height: 210px !important; 
@@ -757,7 +755,6 @@ border-radius: 50px;
 /* ------------------------------------Footer----------------------------------- */
 
 .footer{
-    
     background-color: #d7d7d7;
     background-image: url(https://firebasestorage.googleapis.com/v0/b/myapp-8ecc3.appspot.com/o/Cultfiesta%2Fbackground%2Fbg4.jpg?alt=media&token=bb6616ce-d1bf-461b-acd3-d37f6840953c );
   
@@ -769,7 +766,6 @@ width: 100%;
 text-align: center;
 padding: 30px 0;
 color: #feffff;
-
 
 }
 .footer h4{
@@ -849,59 +845,3 @@ padding: 20px;
 
 
 
- .cover {
-    object-fit: cover;
-    margin-left: 85px;
-
-  }
-  
-  .fill {
-    object-fit: fill;
-    margin-left: 85px;
-
-
-  }
-  
-  .contain {
-    margin-left: 85px;
-
-
-    object-fit: contain;
-  }
-
-  
-  .blinking {
-    animation: blinkingAnimation 1s infinite alternate;
-  }
-  
-  @keyframes blinkingAnimation {
-    from {
-      color: red;
-    }
-    to {
-      color: white;
-    }
-  }
-  .blinking {
-animation: blinkingAnimation 1s infinite alternate;
-}
-
-@keyframes blinkingAnimation {
-from {
-color: red;
-}
-to {
-color: white;
-}
-}
-
-@keyframes blinkingAnimation {
-    0% { color: red; }
-    50% { color: white; }
-    100% { color: red; }
-  }
-  
-  .blinking {
-    animation: blinkingAnimation 1s infinite;
-  }
-  
