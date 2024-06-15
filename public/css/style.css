@@ -142,6 +142,13 @@ header ul li a{
 
 .my_blog{
     display: none;
+<<<<<<< HEAD
+=======
+}
+.my_blog11{
+   min-height: 70vh;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/myapp-8ecc3.appspot.com/o/Cultfiesta%2Fbackground%2Fbg1.png?alt=media&token=d1f773fe-4a2d-4b91-b74b-3ce3a714fb0b);
+>>>>>>> parent of d75e2d0 (done)
 }
 
 .update_btn {
@@ -287,4 +294,77 @@ footer{
     color: #fff;
     background: #111;
     text-align: center;
+<<<<<<< HEAD
 }
+=======
+}
+
+.white {
+    color: white;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+
+.cover {
+    object-fit: cover;
+  }
+  
+  .fill {
+    object-fit: fill;
+  }
+  
+  .contain {
+    object-fit: contain;
+  }
+  
+
+  /* ------------------------------ */
+  
+/* ------------------------------------Footer----------------------------------- */
+
+.footer{
+    background-color: #d7d7d7;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/myapp-8ecc3.appspot.com/o/Cultfiesta%2Fbackground%2Fbg4.jpg?alt=media&token=bb6616ce-d1bf-461b-acd3-d37f6840953c );
+  
+
+
+    
+    /* height: 300px; */
+    
+width: 100%;
+text-align: center;
+padding: 30px 0;
+color: #feffff;
+
+}
+.footer h4{
+margin-bottom: 25px;
+margin-top: 15PX;
+font-weight: 600;
+font-size: 40px;
+
+
+}
+
+.icons{
+margin-bottom: 7px;
+
+}
+.icons a {
+    text-decoration: none;
+    color: #ffffff;
+    
+
+}
+
+
+
+/* ----------------------------------------------------------------------------------------- */
+>>>>>>> parent of d75e2d0 (done)

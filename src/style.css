@@ -845,3 +845,26 @@ padding: 20px;
 
 
 
+<<<<<<< HEAD
+=======
+ .cover {
+    object-fit: cover;
+    margin-left: 85px;
+
+  }
+  
+  .fill {
+    object-fit: fill;
+    margin-left: 85px;
+
+
+  }
+  
+  .contain {
+    margin-left: 85px;
+
+
+    object-fit: contain;
+  }
+  
+>>>>>>> parent of d75e2d0 (done)
