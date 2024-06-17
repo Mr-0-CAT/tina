@@ -302,9 +302,6 @@ window.update_data = function (key) {
     }, { once: true });
   });
 }
-<<<<<<< HEAD
-=======
-
 
 
 
@@ -762,4 +759,3 @@ GetSponsorData();
 
 
 
->>>>>>> parent of d75e2d0 (done)
