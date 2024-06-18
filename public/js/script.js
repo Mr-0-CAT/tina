@@ -451,22 +451,42 @@ GetAnnounData();
 function AddTime() {
   const title = document.querySelector('#title3').value;
   const post_image2 = document.querySelector('#post_image2').files[0];
+  const post_image3 = document.querySelector('#post_image3').files[0];
+  const post_image4 = document.querySelector('#post_image4').files[0];
   const category2 = document.querySelector('#category2').value;
 
+  if (!auth.currentUser) {
+    alert("You must be logged in to upload files.");
+    return;
+  }
+
   if (!post_image2) {
-    alert("Please select an image");
+    alert("Please select the first image");
     return;
   }
 
   const id = Date.now();
-  const imageRef2 = storageRef(storage, `timeline/${id}-${post_image2.name}`);
 
-  uploadBytes(imageRef2, post_image2).then((snapshot) => {
-    return getDownloadURL(snapshot.ref);
-  }).then((downloadURL) => {
+  const uploadImage = (file, id, idx) => {
+    const imageRef = storageRef(storage, `timeline/${id}-${idx}-${file.name}`);
+    return uploadBytes(imageRef, file).then(snapshot => getDownloadURL(snapshot.ref));
+  };
+
+  // Upload each image and get the URLs
+  Promise.all([
+    uploadImage(post_image2, id, 1),
+    post_image3 ? uploadImage(post_image3, id, 2) : Promise.resolve(null),
+    post_image4 ? uploadImage(post_image4, id, 3) : Promise.resolve(null)
+  ]).then(urls => {
+    const imageData = {
+      imageURL1: urls[0],
+      imageURL2: urls[1],
+      imageURL3: urls[2]
+    };
+
     return set(ref(db, 'timeline/' + id), {
       title: title,
-      imageURL: downloadURL,
+      ...imageData,
       category: category2
     });
   }).then(() => {
@@ -484,6 +504,8 @@ document.querySelector('#post_btn3').addEventListener('click', AddTime);
 function clearFieldsTimeline() {
   document.querySelector('#title3').value = "";
   document.querySelector('#post_image2').value = "";
+  document.querySelector('#post_image3').value = "";
+  document.querySelector('#post_image4').value = "";
   document.querySelector('#category2').value = "";
 }
 
@@ -495,18 +517,19 @@ function GetTimeData() {
     const table = document.querySelector('#timeline');
 
     for (const key in data) {
-      const { title, imageURL, category } = data[key];
+      const { title, imageURL1, imageURL2, imageURL3, category } = data[key];
 
       html += `
         <tr>
           <td><span class="postNumber"></span></td>
           <td class="separator">
             <div><b>${title}</b></div>
-            <img src="${imageURL}" alt="Post Image" class="${category}" style="width:100px;height:100px;">
+            <img src="${imageURL1}" alt="Post Image 1" class="${category}" style="width:100px;height:100px;">
+      
           </td>
           <td class="separator"><button class="delete" onclick="deleteTimeData('${key}')">Delete</button></td>
           <td class="separator"><button class="update" onclick="updateTimeData('${key}')">Update</button></td>
-          <td class="separator"><a href="../events/index.html?id=${key}" class="details">View Details</a></td>
+      
         </tr>
       `;
     }
@@ -526,16 +549,17 @@ window.deleteTimeData = function (key) {
       return;
     }
 
-    const imageURL = data.imageURL;
-    const fileName = imageURL.split('%2F').pop().split('?')[0]; // Extract file name from URL
-    const imageRef = storageRef(storage, `timeline/${fileName}`);
+    const imageRefs = [data.imageURL1, data.imageURL2, data.imageURL3].filter(Boolean).map(url => {
+      const fileName = url.split('%2F').pop().split('?')[0];
+      return storageRef(storage, `timeline/${fileName}`);
+    });
 
     // Remove post from database
     remove(user_ref).then(() => {
-      // Delete image from storage
-      return deleteObject(imageRef);
+      // Delete all images from storage
+      return Promise.all(imageRefs.map(ref => deleteObject(ref)));
     }).then(() => {
-      notify.innerHTML = "Post and associated image deleted successfully";
+      notify.innerHTML = "Post and associated images deleted successfully";
       GetTimeData();
     }).catch((error) => {
       console.error("Error deleting data: ", error);
@@ -563,62 +587,56 @@ window.updateTimeData = function (key) {
 
     // Bind update functionality
     document.querySelector('#update_btn3').onclick = function() {
-      updatePostData(key, data.imageURL);
+      updatePostData(key, data.imageURL1, data.imageURL2, data.imageURL3);
     };
   });
 }
 
-function updatePostData(key, oldImageURL) {
+function updatePostData(key, oldImageURL1, oldImageURL2, oldImageURL3) {
   const title = document.querySelector('#title3').value;
   const post_image2 = document.querySelector('#post_image2').files[0];
+  const post_image3 = document.querySelector('#post_image3').files[0];
+  const post_image4 = document.querySelector('#post_image4').files[0];
   const category2 = document.querySelector('#category2').value;
 
-  if (post_image2) {
-    const fileName = oldImageURL.split('%2F').pop().split('?')[0];
-    const oldImageRef2 = storageRef(storage, `timeline/${fileName}`);
-    
-    deleteObject(oldImageRef2).then(() => {
-      const newImageRef2 = storageRef(storage, `timeline/${key}-${post_image2.name}`);
+  const deleteOldImage = (url) => {
+    if (!url) return Promise.resolve();
+    const fileName = url.split('%2F').pop().split('?')[0];
+    const oldImageRef = storageRef(storage, `timeline/${fileName}`);
+    return deleteObject(oldImageRef);
+  };
 
-      return uploadBytes(newImageRef2, post_image2).then((snapshot) => {
-        return getDownloadURL(snapshot.ref);
-      }).then((downloadURL) => {
-        return update(ref(db, `timeline/${key}`), {
-          title: title,
-          imageURL: downloadURL,
-          category: category2
-        });
-      }).then(() => {
-        notify.innerHTML = "Post updated successfully";
-        clearFieldsTimeline();
-        GetTimeData();
-      }).catch((error) => {
-        console.error("Error uploading file: ", error);
-        notify.innerHTML = "Error updating post";
-      });
-    }).catch((error) => {
-      console.error("Error deleting old image: ", error);
-      notify.innerHTML = "Error deleting old image";
-    });
-  } else {
-    update(ref(db, `timeline/${key}`), {
+  const uploadImage = (file, id, idx) => {
+    const imageRef = storageRef(storage, `timeline/${id}-${idx}-${file.name}`);
+    return uploadBytes(imageRef, file).then(snapshot => getDownloadURL(snapshot.ref));
+  };
+
+  const promises = [
+    post_image2 ? deleteOldImage(oldImageURL1).then(() => uploadImage(post_image2, key, 1)) : Promise.resolve(oldImageURL1),
+    post_image3 ? deleteOldImage(oldImageURL2).then(() => uploadImage(post_image3, key, 2)) : Promise.resolve(oldImageURL2),
+    post_image4 ? deleteOldImage(oldImageURL3).then(() => uploadImage(post_image4, key, 3)) : Promise.resolve(oldImageURL3)
+  ];
+
+  Promise.all(promises).then(urls => {
+    return update(ref(db, `timeline/${key}`), {
       title: title,
+      imageURL1: urls[0],
+      imageURL2: urls[1],
+      imageURL3: urls[2],
       category: category2
-    }).then(() => {
-      notify.innerHTML = "Post updated successfully";
-      clearFieldsTimeline();
-      GetTimeData();
-    }).catch((error) => {
-      console.error("Error updating post: ", error);
-      notify.innerHTML = "Error updating post";
     });
-  }
+  }).then(() => {
+    notify.innerHTML = "Post updated successfully";
+    clearFieldsTimeline();
+    GetTimeData();
+  }).catch((error) => {
+    console.error("Error updating post: ", error);
+    notify.innerHTML = "Error updating post";
+  });
 
   document.querySelector('#update_btn3').style.display = 'none';
   document.querySelector('#post_btn3').style.display = 'block';
 }
-
-
 
 
 

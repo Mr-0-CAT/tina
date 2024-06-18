@@ -1,0 +1,645 @@
+---
+layout: 'base_club.njk'
+---
+
+<div class="container1">
+    
+  <div class='console-container'><span id='text'></span><div class='console-underscore' id='console'>&#95;</div></div>
+
+<script>// function([string1, string2],target id,[color1,color2])    
+  consoleText(['UI Path', 'Developers Club'], 'text',['white']);
+ 
+ function consoleText(words, id, colors) {
+   if (colors === undefined) colors = ['#fff'];
+   var visible = true;
+   var con = document.getElementById('console');
+   var letterCount = 1;
+   var x = 1;
+   var waiting = false;
+   var target = document.getElementById(id)
+   target.setAttribute('style', 'color:' + colors[0])
+   window.setInterval(function() {
+ 
+     if (letterCount === 0 && waiting === false) {
+       waiting = true;
+       target.innerHTML = words[0].substring(0, letterCount)
+       window.setTimeout(function() {
+         var usedColor = colors.shift();
+         colors.push(usedColor);
+         var usedWord = words.shift();
+         words.push(usedWord);
+         x = 1;
+         target.setAttribute('style', 'color:' + colors[0])
+         letterCount += x;
+         waiting = false;
+       }, 1000)
+     } else if (letterCount === words[0].length + 1 && waiting === false) {
+       waiting = true;
+       window.setTimeout(function() {
+         x = -1;
+         letterCount += x;
+         waiting = false;
+       }, 1000)
+     } else if (waiting === false) {
+       target.innerHTML = words[0].substring(0, letterCount)
+       letterCount += x;
+     }
+   }, 120)
+   window.setInterval(function() {
+     if (visible === true) {
+       con.className = 'console-underscore hidden'
+       visible = false;
+ 
+     } else {
+       con.className = 'console-underscore'
+ 
+       visible = true;
+     }
+   }, 400)
+ }</script>
+</div>
+
+<div class="con-info" style="overflow: hidden;">
+
+  <div class="heading">
+
+    <img class="op" src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/Ed0Wc70576JNgj9mi6GZQ3YB-uW1TdG0lcqa6b7dpdL73w?download=1
+" alt="">
+  
+  <h1>About Us</h1>
+
+</div>
+  <div class="row">
+
+  <div class="col-sm-3 a" >
+    <div class="inner">
+<img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EXMdxwKiPw9Duo0DnJcw7vIB7DQg4P8_r-EoCEO5mdiUdw?download=1" alt="">
+   </div>
+
+</div>
+  <div class="col">
+   <div class="info-txt">
+    <p>
+      The UiPath Developer Club is a vibrant and dynamic community dedicated to fostering collaboration and knowledge-sharing among RPA (Robotic Process Automation) enthusiasts. As the automation landscape continues to evolve, this club serves as a hub for developers looking to enhance their skills, stay updated on industry trends, and engage with like-minded individuals.  
+    </p>
+    
+</div>
+</div>
+
+
+
+
+
+
+<div class="row s">
+  <div class="col-sm-8 q">
+   
+
+    <div class="info-txt2">
+       <h3>Introduction </h3>
+      <p>
+        By joining the UiPath Developer Club, you not only gain access to a wealth of resources but also become part of a supportive and collaborative community that is passionate about harnessing the power of automation to make work more efficient and enjoyable.
+
+
+Whether you are a seasoned RPA developer or just starting your journey in automation, the UiPath Developer Club provides a platform to learn, connect, and thrive in the rapidly evolving field of Robotic Process Automation. Join the club and elevate your RPA skills to new heights!
+
+</p>
+      
+  </div>
+  </div>
+  
+  
+  <div class="col-sm-4 qa">
+  
+       
+            <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EYpmJvCYOgRJp5LKNLQBSE0B6GHkeAkDdgne4WsrBSce8g?download=1">
+            
+  
+     
+      </div>
+  </div>
+  </div>
+
+</div>
+
+
+
+<div class="mem-info" style="overflow: hidden;">
+
+    <div class="heading">
+
+        <img class="op" src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/Ed0Wc70576JNgj9mi6GZQ3YB-uW1TdG0lcqa6b7dpdL73w?download=1
+" alt="">
+      
+      <h1>ACTIVITIES AND EVENTS</h1>
+    
+    </div>
+<div class="mem1">
+<div class="row">
+  
+
+<div class="col a b">
+  <div class="card1">
+    <div class="image"><img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/ETIZ3docZz5EsFv9K-74o_QBqkyJ00BGmaD00BJqsdmx2Q?download=1" alt="" style="object-fit: cover;"></div>
+     <div class="content">
+      
+         <span class="title1">
+          UiPath Hands on workshop
+         </span>
+       
+       <p class="desc">
+        We had a Hands-On workshop where we were thought about UiPath  Studio by a Senior RPA developer from Uipath who had visited our college. We learnt various automations using Studio, few of them are:
+        ⦁	Email Automation
+        ⦁	VDI Automation
+        ⦁	Debugging
+        ⦁	Orchestrator
+        ⦁	PDF Automation
+        ⦁	Excel Automation
+         
+      
+      </p>
+   
+       
+     </div>
+   </div>
+
+</div>
+
+<div class="col a">
+  <div class="card1">
+    <div class="image"><img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EfgVxi0sBg9Plvkcfysl4zABx2GHguVTrZ3eWnyi-myUSQ?download=1" alt=""></div>
+     <div class="content">
+       
+         <span class="title1">
+          Growing Community
+         </span>
+   
+       <p class="desc">
+        The UI Path Developer Club is a community for developers who use UiPath, a Robotic Process Automation (RPA) tool. The club provides a platform for members to connect with each other, share knowledge, and learn from one another. It offers a variety of resources to help members get started with UiPath and advance their skills, such as tutorials, example projects, forums, webinars, challenges and tournaments, and workshops. Joining the club is a great way to grow your skills, connect with other developers, and keep up with the latest advancements in the RPA industry.
+      </p>
+   
+     </div>
+   </div>
+
+</div>
+
+
+
+<div class="col a">
+  <div class="card1">
+    <div class="image"><img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EcfbWw_9l6JIgFaZsG4ErpMBFkBMqw4KNOysuPK23j-FSg?download=1" alt=""></div>
+     <div class="content">
+      
+         <span class="title1">
+          Brainstorming Sessions:
+         </span>
+   
+       <p class="desc">
+        Very interesting sessions are held regularly to discuss new ways and methods to automate repeated and time consuming tasks in our day to day lives. We also discuss about projects and use of RPA with other technology for more efficient execution of tasks.
+
+      </p>
+   
+       
+     </div>
+   </div>
+
+</div>
+
+</div>
+
+
+</div>
+
+<div class="key" style="overflow: hidden;">
+  <div class="heading">
+
+    <img class="op" src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/Ed0Wc70576JNgj9mi6GZQ3YB-uW1TdG0lcqa6b7dpdL73w?download=1
+" alt="">
+  
+  <h1>KEY FEATURES</h1>
+  
+  <div class="row justify-content-center">
+    <div class="col-sm-3 ">
+<div class="inner-txt">
+  <i class="fa-solid fa-graduation-cap"></i>
+  <h1>	Projects and Challenges </h1>
+  <p>   Engage in real-world projects and challenges to apply your RPA skills in practical   scenarios.
+    Collaborate with other club members on innovative projects to gain hands-on experience and build a robust portfolio.
+
+</p>
+</div>
+
+    </div>
+
+    <div class="col-sm-3 " >
+<div class="inner-txt">
+  <i class="fa-solid fa-people-group"></i>
+  <h1>	Club Events </h1>
+  <p>Participate in exclusive club events, including hackathons, workshops, and conferences, to stay engaged and inspired.
+    Learn from industry experts and thought leaders who share their insights and experiences in the world of RPA.
+
+</p>
+</div>
+
+    </div>
+
+
+    <div class="col-sm-3 ">
+
+      <div class="inner-txt">
+        <i class="fa-solid fa-people-group"></i>
+
+        <h1>Community Support </h1>
+        <p>Leverage the collective knowledge of the community to overcome challenges and roadblocks in your automation projects.
+          Share your experiences and learn from others, creating a supportive environment for continuous growth.
+      
+      </p>
+      </div>
+    </div>
+
+
+    <div class="col-sm-3 ">
+      <div class="inner-txt">
+        <i class="fa-solid fa-graduation-cap"></i>
+
+        <h1 style="font-size: 40px;">Certifications and Recognition</h1>
+        <p>    Access resources to prepare for UiPath certifications, enhancing your credibility as an RPA professional.
+
+      
+      </p>
+      </div>
+
+    </div>
+
+
+    <div class="col-sm-3 ">
+
+      <div class="inner-txt">
+        <i class="fa-solid fa-school"></i>
+
+        <h1 style="font-size: 40px;">Learning Resources</h1>
+        <p>         Access a rich repository of learning materials, including tutorials, documentation and                                   best practices in RPA development.
+          Stay informed about the latest UiPath updates and features to ensure you are at the forefront of automation technology.
+   
+      
+      </p>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+</div>
+
+
+
+<div class="mem2" style="overflow: hidden;">
+  <div class="row justify-content-center">
+    <div class="heading">
+
+      <img class="op" src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/Ed0Wc70576JNgj9mi6GZQ3YB-uW1TdG0lcqa6b7dpdL73w?download=1
+" alt="">
+    
+    <h1>Club Coordinators</h1>
+  
+  </div>
+      <div class="col z a"><div class="card2">
+          <div class="card-image2"><img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/ETHguVmlj3NInhJDcs-nx1EBejcK8E5GAwc6bNG3Au4Eiw?download=1" alt="" style="object-fit: cover;"></div>
+          <div class="category">Student Co-ordinator  </div>
+          <div class="heading1"> Shardul S, TEAM HEAD, RNSIT.
+           
+          </div>
+      </div></div>
+  
+  
+  
+  
+      <div class="col z"><div class="card2">
+          <div class="card-image2"><img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EcA6WAPscGlNlLRUXW2w6aAB3b29sDEro6anLuFrLBINeg?download=1" alt=""></div>
+          <div class="category"> Student Co-ordinator </div>
+  
+          <div class="heading1">Pranav S Raja,CO-HEAD, RNSIT.
+              
+          </div>
+      </div></div>
+  
+  
+  
+      <div class="col z"><div class="card2">
+          <div class="card-image2"><img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EZnnWhKgP7tBke65T04EBi4BHmc15NlxoedqvNzg6mFFoQ?download=1" alt="" style="object-fit: cover;"></div>
+          <div class="category"> Student Co-ordinator </div>
+  
+          <div class="heading1"> Sriram S,Manager, RNSIT.
+            
+          </div>
+      </div></div>
+  
+  
+  
+      
+  
+  
+  </div>
+  
+  </div>
+<div class="gallery">
+  <div class="heading5">
+
+    <img class="op" src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/Ed0Wc70576JNgj9mi6GZQ3YB-uW1TdG0lcqa6b7dpdL73w?download=1
+" alt="">
+  
+  <h1>Gallery</h1>
+
+</div>
+
+
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EVdi-SWDFsRLicb3dRd5qosBmbkj8v807lA-ydZHt4gKEA?download=1" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EazXWcaqM1RMu2NxzqpOV-ABLZzJjOPFtKjhpSMZJUmlOA?download=1" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EWwqk-eGRMZHpMAkOacYJ0EBKAmMtN0UjIHC5JNZ773KmQ?download=1" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EcLOwfe83ipDmFOrwvHqU_YB7cD4r99-5vFdAqdax91alA?download=1" alt="">
+    </div>
+   
+    <div class="swiper-slide">
+      <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EVdi-SWDFsRLicb3dRd5qosBmbkj8v807lA-ydZHt4gKEA?download=1" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EazXWcaqM1RMu2NxzqpOV-ABLZzJjOPFtKjhpSMZJUmlOA?download=1" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EWwqk-eGRMZHpMAkOacYJ0EBKAmMtN0UjIHC5JNZ773KmQ?download=1" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EcLOwfe83ipDmFOrwvHqU_YB7cD4r99-5vFdAqdax91alA?download=1" alt="">
+    </div>
+   
+    
+
+ 
+
+
+    <!-- 15 div -->
+  </div>
+  </div>
+</div>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 15,
+        stretch: 0,
+        depth: 300,
+        modifier: 1,
+        slideShadows: true,
+      },
+      loop: true,
+    });
+  </script>
+  
+
+<div class="join" style="overflow: hidden;">
+  <div class="head">
+<h1>Reach Out to us </h1>
+</div>
+
+<div class="row">
+
+  <div class="col-sm-7">
+    <div class="info-txt">
+    
+      <p> 
+        Are you passionate about the exciting world of Robotic Process Automation (RPA)? Join us at the UiPath Developer Club, where innovation meets collaboration! Our vibrant and dynamic community is dedicated to fostering knowledge-sharing among RPA enthusiasts like you. Whether you're an experienced developer or just starting your journey, our club offers a unique opportunity to enhance your skills, stay up-to-date with the ever-evolving automation landscape, and connect with like-minded individuals who share your passion for RPA. Join us today and be part of a community that's shaping the future of automation. Come explore, learn, and innovate with us!  
+      </p>
+
+    </div>
+    <div class="info-txt3">
+    <p> <b>Call US :</b>
+      <br>Dr. Archana R KULKARNI -9845083410
+
+      <br><br>
+      Shardul S - 8317353483
+
+<br><br>
+     <b>Insta-Id :</b> <a href="https://instagram.com/uipath__rnsit?igshid=MzRlODBiNWFlZA=="style="text-decoration: none;">  uipath_rnsit <i class="fa-brands fa-square-instagram"></i></a>
+      
+      <br>
+      <b>Email-Id</b>: uipathdeveloperclub@gmail.com</p>
+    
+
+    
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="i-11">
+    <img src="https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EUGKN_b4iftMr1xjkSTHXxAB5kWXizTKCvRVf4fNuXMU6Q?download=1
+AniBot_Cyber_Fly.gif" alt="">
+
+</div>
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+
+<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/vendors/jquery.slimscroll.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js">
+</script>
+<script type="text/javascript">
+// fullpage customization
+
+if (jQuery(window).width() > 991) {
+  jQuery('#fullpage').fullpage({
+    sectionSelector: '.vertical-scrolling',
+    slideSelector: '.horizontal-scrolling',
+    navigation: false,
+    slidesNavigation: false,
+    controlArrows: false,
+    anchors: ['1stSection', '2ndSection', '3rdSection', '4thSection', '5thSection', '6thSection', '7thSection',
+      '8thSection', '9thSection', '10thSection', '11thSection'
+    ],
+  });
+}
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -------------------------------------------Footer script------------------------------------------------------------- -->
+
+<script src="https://www.rnsit.ac.in/wp-content/themes/twentyseventeen/js/jquery.min.js"></script>
+
+<script src="https://www.rnsit.ac.in/wp-content/themes/twentyseventeen/js/bootstrap.min.js"></script>
+
+
+
+
+
+<!-- -------------------------------------------Footer script------------------------------------------------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  
+  
+  .header_sec {
+    margin-top: 0px;
+    position: fixed;
+    transition: all .5s;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 1;
+    box-shadow: 0 0 10px #ddd;
+  }
+ 
+
+  
+ 
+  
+  @media(max-width: 991px) {
+    .header_sec {
+      position: fixed !important;
+      width: 100vw;
+      /* height: 120px; */
+    }
+    .navbar-brand img{
+      width: 50px;
+      height: 50px;
+    }
+  }
+  </style>
+
+

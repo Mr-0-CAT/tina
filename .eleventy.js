@@ -133,6 +133,11 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy('./src/js')
     eleventyConfig.addPassthroughCopy('./src/css')
 
+    eleventyConfig.addPassthroughCopy('./src/sort-non')
+    eleventyConfig.addPassthroughCopy('./src/sort-tech')
+    eleventyConfig.addPassthroughCopy('./src/sort-sports')
+    eleventyConfig.addPassthroughCopy('./src/sort-work')
+
 
 
     return {
