@@ -12,24 +12,54 @@
 </head>
 <body>
 
+
+    
     <div class="login">
-         <h2>Log In</h2>
-         <input type="text" id="email" placeholder="enter Email ...." autocomplete="off">
-         <input type="password" id="password" placeholder="enter password.... " autocomplete="off">
-         <button id="sign_in">Login</button>
+        <div class="container2">
+            <div class="heading">Log In</div>
+            <form class="form" action="">
+              <input
+                placeholder="E-mail"
+                id="email"
+                name="email"
+                type="email"
+                class="input"
+                required=""
+              />
+              <input
+                placeholder="Password"
+                id="password"
+                name="password"
+                type="password"
+                class="input"
+                required=""
+              />
+              
+              <input value="Log In" type="submit" class="login-button" id="sign_in">
+            </form>
+           
+           
+          </div>
+          
     </div>
+
+
+    <div class="my_blog11">
 
      <!-- my blog area admin -->
       <div class="my_blog">
-          <header>
-             <nav>
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/dbms-d5864.appspot.com/o/Cultfiesta%2Flogo.webp?alt=media&token=4ccaece3-b5db-4d8b-8691-a5a1b6353b81" alt="Logo"></a>
+                </div>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                   
                     <li><a href="#" id="logout">Logout</a></li>
                 </ul>
-             </nav>
-          </header>
+            </nav>
+        </header>
           <div class="notify"></div>
           <div class="container main">
 
@@ -68,7 +98,7 @@
                                     <br>
                                     <label>Pre-requisites</label>
                                     <br>
-                                    <textarea id="prerequisites" cols="30" rows="2" placeholder="Pre-requisites"></textarea>
+                                    <textarea id="prerequists" cols="30" rows="2" placeholder="Pre-requisites"></textarea>
                                     <br>
                                     <label>Fee</label>
                                     <br>
@@ -100,6 +130,12 @@
                                     <br>
                                     <input type="text" id="link2" placeholder="Club link">
                                     <br>
+                                    <select id="category">
+                                        <option value="Technical">Technical</option>
+                                        <option value="Non-Technical">Non-Technical</option>
+                                        <option value="Sports">Sports</option>
+                                        <option value="Workshops">Workshops</option>
+                                      </select>
                                     <button id="post_btn" class="post_btn">Post Now</button>
                                     <br>
                                     <button id="update_btn" class="update_btn">Update Post</button>
@@ -134,31 +170,54 @@
                                     <div class="post_form">
                                         <label>Title</label>
                                         <br>
-                                        <input type="text" id="title" placeholder="Enter title">
+                                        <input type="text" id="title2" placeholder="Enter Announcement">
                                         <br>
                                        
-<<<<<<< HEAD
-                                     
-                                        <button id="post_btn" class="post_btn">Post Now</button>
-=======
                                         <select id="colorPicker">
+                                            <option value="white">White</option>
+
                                             <option value="black">Black</option>
                                             <option value="red">Red</option>
                                             <option value="green">Green</option>
                                             <option value="blue">Blue</option>
+                                            <option value="blinking">Blinking (Red/White)</option>
                                         </select>
-                                        
+                                        <style>.blinking {
+                                            animation: blinkingAnimation 1s infinite alternate;
+                                          }
+                                          
+                                          @keyframes blinkingAnimation {
+                                            from {
+                                              color: red;
+                                            }
+                                            to {
+                                              color: white;
+                                            }
+                                          }
+                                          .blinking {
+  animation: blinkingAnimation 1s infinite alternate;
+}
+
+@keyframes blinkingAnimation {
+  from {
+    color: red;
+  }
+  to {
+    color: white;
+  }
+}
+
+                                          </style>
                                         <button id="post_btn1" class="post_btn1">Post Now</button>
->>>>>>> parent of d75e2d0 (done)
                                         <br>
-                                        <button id="update_btn" class="update_btn">Update Post</button>
+                                        <button id="update_btn1" class="update_btn1">Update Post</button>
                                         <br>
                                     </div>
                                 </div>
                                 <div class="col">      
                                     <div class="my_content2">
-                                        <h2>My Posts</h2>
-                                        <table>
+                                     
+                                        <table id="announcement_table">
                                             <!-- Table content -->
                                         </table>
                                     </div>
@@ -169,8 +228,104 @@
                     </div>
                 </div>
             </div>
+            <!-- ====================================
             
+            -->
+            <div class="container main">
+
             
+                <div class="dropdown_container">
+                    <div class="dropdown_trigger"><h3 >Timeline</h3></div>
+                    <div class="dropdown_content">
+                        <div class="main_content" style="overflow: hidden;">
+                            <!-- post form -->
+
+    <div class="row">
+                                <div class="col"> 
+                                    <div class="post_form">
+                                        <label>Title</label>
+                                        <br>
+                                        <input type="text" id="title3" placeholder="Enter title">
+                                        <br>
+                                        <label>Poster</label>
+                                        <br>
+                                        <input type="file" id="post_image2">
+                                        
+                                        <select id="category2">
+                                            <option value="cover">Cover</option>
+                                            <option value="fill">Fill</option>
+                                            <option value="contain">Contain</option>
+                                          </select>
+                                        
+                                        <button id="post_btn3" class="post_btn3">Post Now</button>
+                                        <br>
+                                        <button id="update_btn3" class="update_btn3">Update Post</button>
+                                        <br>
+                                    </div>
+                                </div>
+                                <div class="col">      
+                                    <div class="my_content">
+                                        <h2>My Posts</h2>
+                                        <table id="timeline">
+                                            <!-- Table content -->
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Table -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ====================================
+            
+            -->
+            <div class="container main">
+
+            
+                <div class="dropdown_container">
+                    <div class="dropdown_trigger"><h3 >Sponsors</h3></div>
+                    <div class="dropdown_content">
+                        <div class="main_content" style="overflow: hidden;">
+                            <!-- post form -->
+
+    <div class="row">
+                                <div class="col"> 
+                                    <div class="post_form">
+                                        <label>Title</label>
+                                        <br>
+                                        <input type="text" id="title4" placeholder="Enter title">
+                                        <br>
+                                        <label>Poster</label>
+                                        <br>
+                                        <input type="file" id="post_image3">
+                                        
+                                        <select id="category3">
+                                            <option value="cover">Cover</option>
+                                            <option value="fill">Fill</option>
+                                            <option value="contain">Contain</option>
+                                          </select>
+                                        
+                                        <button id="post_btn4" class="post_btn3">Post Now</button>
+                                        <br>
+                                        <button id="update_btn4" class="update_btn3">Update Post</button>
+                                        <br>
+                                    </div>
+                                </div>
+                                <div class="col">      
+                                    <div class="my_content">
+                                        <h2>My Posts</h2>
+                                        <table id="Sponsors">
+                                            <!-- Table content -->
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Table -->
+                        </div>
+                    </div>
+                </div>
+            </div>
             <script>
                 // JavaScript for toggling dropdown
                 document.addEventListener("DOMContentLoaded", function() {
@@ -192,14 +347,58 @@
 
 
 
-          <footer>
-            <div class="footer_text">
-                 <p>Copy Right Text Reserve Babar Ali</p>
-            </div>
-          </footer>
-      </div>
-    
+          
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+      </div>
+    </div>
+<section class="footer">
+    <h4>About Us</h4>
+    <p>You Plan, We gather! <br>Our club dea
+      ls with Organising, Conducting
+        and Organising events </p>
+        <div class="icons">
+           <a href="https://www.instagram.com/cristiano/?hl=en"> <i class="fa-brands fa-instagram fa-beat-fade"></i></a>
+           <a href=""> <i class="fa-brands fa-discord"></i></a>
+                <i class="fa-solid fa-phone"></i>
+                <i class="fa-solid fa-location-dot"></i>
+  
+        </div>
+  <p>Made With  <i class="fa-regular fa-heart"></i> by CultFiesta</p>
+  
+  </section>
       <script type="module" src="./../js/script.js"></script>
 
       <style>
