@@ -606,82 +606,161 @@ width: 340px;
     background-attachment: fixed;
 }
 /* -------------------------------------------------------------------------------------------------------- */
-.gallery{
-     height: auto;
-    /* background-color: white; */
-    background-image: url(https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EUplt6UcnJhPl3qLIap2QCsB34kstdqkQnqCHjT3hYUEqQ?download=1);
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
-  padding-top: 50px;
-  /* margin-bottom: 50px; */
-background-attachment: fixed;
-overflow: hidden;
-padding-bottom: 100px;
+
+.gal{
+  margin: 0;
+  padding: 0;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+ text-align: center;
+ padding-bottom: 50px;
+ display: contents;
 
 }
-.heading5{
-    text-align: center;
-}
-.heading5 h1{
-    font-size: 60px;
-    color: white;
-}
-.heading5 img{
-    width: 60px;
-}
-.swiper {
-    width: 80%;
-    /* height: 100%; */
-  }
-
-  .swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: 350px;
-  }
-
-  .swiper-slide img {
-    display: block;
-    width: 350px;
-    height: 250px;
-    -webkit-box-reflect: below 1px linear-gradient(transparent, transparent , #0002 , #0004);
-  }
-
-  .join{
-    width: 100%;
-    height: auto;
-    background-color: #f3f3f3;
-    /* padding-bottom: 50px; */
-  }
-  .head h1{
-   padding-top: 50px;
-    font-size: 60px;
-    text-align: center;
-  }
+.slider{
+  width: 600px;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+ 
   
-  .info-txt{
-    text-align: center;
-    margin-top: 50px;
-    
-  }
-  .info-txt p{
-    font-size: 20px;
-    font-weight: 500px;
-  }
-  .info-txt3{
-    text-align: left;
-    padding: 40px;
-  }
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+margin: 0% !important;
+}
+
+.slides{
+  width: 500%;
+  height: 500px;
+  display: flex;
+}
+
+.slides input{
+  display: none;
+}
+
+.slide{
+  width: 20%;
+  transition: 2s;
+}
+
+.slide img{
+  width: 600px;
+  height: 500px;
+}
+
+/*css for manual slide navigation*/
+
+.navigation-manual{
+  position: absolute;
+  width: 600px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn{
+  border: 1px solid #0f1212;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+  margin-right: 40px;
+}
+
+.manual-btn:hover{
+  background: #050505;
+}
+
+#radio1:checked ~ .first{
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+  margin-left: -60%;
+}
+
+/*css for automatic navigation*/
+
+.navigation-auto{
+  position: absolute;
+  display: flex;
+  width: 600px;
+  justify-content: center;
+  margin-top: 460px;
+}
+
+.navigation-auto div{
+  border: 1px solid #0a1111;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+  margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+  background: #ffffff;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+  background: #f3f5f5;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+  background: #fdffff;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+  background: #f9ffff;
+}
+
+.join{
+  width: 100%;
+  height: auto;
+  background-color: #f3f3f3;
+  padding-bottom: 50px;
+}
+.head h1{
+ padding-top: 50px;
+  font-size: 60px;
+  text-align: center;
+}
+
+.info-txt{
+  text-align: center;
+  margin-top: 50px;
+  
+}
+.info-txt p{
+  font-size: 20px;
+  font-weight: 500px;
+}
+.info-txt3{
+  text-align: left;
+  padding: 40px;
+}
 .i-11 img{
-  width: 400px;
-  height: 400px;
+width: 400px;
+height: 400px;
 
 }
 .i-11{
-  text-align: center;
-  border-radius: 40px;
+text-align: center;
+border-radius: 40px;
 }
   /* ------------------------------------Footer----------------------------------- */
 

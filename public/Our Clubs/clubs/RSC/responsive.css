@@ -170,9 +170,7 @@
     height: 290px;
   
   }
-  .slider{
-    margin-left: 25% !important;
-  }
+
 
 }
 
@@ -191,7 +189,7 @@
 
     }
     .col-sm-4.qa{
-        margin-left: -4% !important;
+
         margin-top: 7%;
     }
 
@@ -241,10 +239,7 @@
     height: 290px;
   
   }
-.slider{
-margin-left: 18%;
 
-}
 
 }
 
@@ -438,7 +433,7 @@ overflow-x: hidden;
     }
   
 .card1 {
-    margin-left: -50px;
+   
     height: 620px;
 
 }
@@ -463,7 +458,7 @@ overflow-x: hidden;
     width: 300px;
     text-align: center;
     margin-bottom: 40px;
-margin-left: 17%;
+
 }
 .card-image2 img{
     width: 290px;
@@ -552,8 +547,8 @@ margin-left: 17%;
         width: 98vw;
         height: 250px;
         overflow: hidden;
-        margin-left: 5.5%;
-        margin-top: 4%;
+    
+  
       }
       .slides{
         height: 250px;
@@ -582,7 +577,7 @@ margin-left: 17%;
       .card1{
         /* text-align: center; */
         width: 300px;
-        margin-left: -20px;
+      
         margin-bottom: 20px;
         height: auto;
       }
@@ -598,11 +593,7 @@ margin-left: 17%;
       .mem2 h1{
         font-size: 35px;
       }
-      .card2{
-        margin-left: 12%;
-      }
-      .slider{
-        margin-left: 1%;
-      }
+      
+      
 }
 

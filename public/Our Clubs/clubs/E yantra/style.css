@@ -311,7 +311,7 @@ ul.mega-menu-links li:last-child{
       width: 100%;
       z-index: 5;
       text-shadow: none;
-      left: 43.19%;
+      
       text-align: left;
       animation: flicker 3s linear infinite;
     }
@@ -373,6 +373,7 @@ ul.mega-menu-links li:last-child{
 .info-txt p{
     font-family: 'Lora', serif;
     font-size: 20px;
+    text-align: center;
 }
 .info-txt2{
     padding: 40px;
@@ -382,9 +383,10 @@ ul.mega-menu-links li:last-child{
 .info-txt2 p{
     font-family: 'Lora', serif;
     font-size: 20px;
+    text-align: justify;
 }
 .info-txt2 {
-  margin-top: 50px;
+
     margin-bottom: 50px;
 }
 .info-txt2 h1{
@@ -399,11 +401,12 @@ ul.mega-menu-links li:last-child{
     width: 250px;
     height: 300px;
     border-radius: 40px;
+  object-fit: contain;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .col-sm-3.qa img{
-    margin-top: 40px;
-width: 400px;
+  
+width: 300px;
 height: 250px;
 border-radius: 40px;
 box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -412,6 +415,12 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
 
 
 
+.col-sm-3 {
+  flex: 0 0 auto;
+  width: 25%;
+  display: flex;
+  align-items: center;
+}
 
 
 
@@ -516,8 +525,11 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
 .mem-info{
     width: 100%;
     height:auto;
-    background-image: url(bg/bg1.png);
-    /* padding-bottom: 50px; */
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/dbms-d5864.appspot.com/o/Files%2FBackground%2Fbg1.png?alt=media&token=31323eeb-4506-4b02-a26c-774f8fdfbcd6);
+    background-position: center;
+    background-size:contain;
+    position: relative;
+    background-color: white;
     background-attachment: fixed;
     
 }
@@ -660,6 +672,7 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
   .info-txt p{
     font-size: 20px;
     font-weight: 500px;
+    text-align: justify;
   }
   .info-txt3{
     text-align: left;
@@ -679,7 +692,7 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
 
 .footer{
     background-color: #d7d7d7;
-    background-image: url(bg/bg4.jpg);
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/dbms-d5864.appspot.com/o/Files%2FBackground%2Fbg4.jpg?alt=media&token=34eb04b3-68a2-4b34-a614-a3ec85b0f130);
     /* margin-bottom: 0; */
     /* bottom: 0%; */
     /* height: 300px; */
@@ -713,9 +726,19 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
   
   }
   
+  .row.s {
+    flex-direction: column-reverse;
+    margin: 0%;
+}
+
   
-  
-  
+  .col-sm-3 {
+    flex: 0 0 auto;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
   
   /* ----------------------------------------------------------------------------------------- */
   body{

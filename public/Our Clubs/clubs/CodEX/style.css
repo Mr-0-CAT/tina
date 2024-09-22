@@ -360,7 +360,7 @@ ul.mega-menu-links li:last-child{
 }
 .col-sm-4.qa img{
     margin-top: 40px;
-width: 400px;
+width: 100%;
 height: 250px;
 border-radius: 40px;
 box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -447,17 +447,17 @@ width: 340px;
 /* ----------------------------------------------------------------------------------------------------------- */
 
 .card1 {
-  max-width: 300px;
+  width: 450px;
   border-radius: 0.5rem;
   background-color: #fff;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   border: 1px solid transparent;
   border-radius: 60px;
   /* margin: 15px; */
-  height: auto;  
+  height: 500px;  
   width: 270px;
   margin-left: 70px;
-  
+  margin-bottom: 20px;
   
 }
 
@@ -538,8 +538,7 @@ width: 340px;
 .mem-info{
     width: 100%;
     height:auto;
-    background-image: url(https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/ESCHxUaxZ2lLhTx3saQNrdEBajIVkuOnTZ6gHWon8Yed3g?download=1
-    );
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/dbms-d5864.appspot.com/o/Files%2FBackground%2Fbg1.png?alt=media&token=31323eeb-4506-4b02-a26c-774f8fdfbcd6);
     /* padding-bottom: 50px; */
     background-attachment: fixed;
 }
@@ -585,7 +584,7 @@ width: 340px;
 
 .footer{
     background-color: #d7d7d7;
-    background-image: url(https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EUplt6UcnJhPl3qLIap2QCsB34kstdqkQnqCHjT3hYUEqQ?download=1);
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/dbms-d5864.appspot.com/o/Files%2FBackground%2Fbg4.jpg?alt=media&token=34eb04b3-68a2-4b34-a614-a3ec85b0f130);
     /* margin-bottom: 0; */
     /* bottom: 0%; */
     /* height: 300px; */

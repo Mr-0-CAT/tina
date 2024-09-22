@@ -151,7 +151,7 @@
 .card2 {
     width: 350px !important;
     height: 390px;
-    margin-left: 10% !important;
+
 
   }
   .card-image2 {
@@ -186,7 +186,7 @@
     }
     .col-sm-4.qa{
         margin-left: -4% !important;
-        margin-top: 7%;
+      
     }
 
 
@@ -197,27 +197,27 @@
 
  
 .card1 {
-    width: 270px;
+    width: 300px;
  height: 450px;
- margin-left: 7% !important;
+
     
   }
 
   .image {  
     
-    width: 270px;
+    width: 300px;
   }
 
   .image img {  
     
-    width: 270px;
+    width: 300px;
   }
 
   
 .card2 {
     width: 300px;
     height: 390px;
-    margin-left: 25% !important;
+   
     margin-bottom: 5%;
 
   }
@@ -317,7 +317,7 @@ padding: 0%;
     }
     .mem1{
         text-align: center;
-        margin: 20%;
+        
         
     }
     
@@ -325,7 +325,7 @@ padding: 0%;
     .col.a{
         padding: 0%;
         margin-bottom: 5%;
-        margin-left: -5%;
+    
     }
     .card1{
         width: 300px;
@@ -337,6 +337,10 @@ padding: 0%;
     }
     .image img{
         width: 300px;
+    }
+
+    .card2{
+        margin-bottom: 4%;
     }
 
     .col.z{
@@ -415,7 +419,7 @@ padding: 0%;
         margin-left: 2%;
     }
     .heading h1{
-        font-size: 50px;
+        font-size: 35px;
     }
     .card1{
         margin-left: 0%;
@@ -425,6 +429,11 @@ padding: 0%;
     }
     .robo1{
         width: 300px;
+    }
+    .col.z {
+        margin: 0%;
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -436,15 +445,15 @@ padding: 0%;
         overflow-x: hidden;
         
         }
-        .col.a{
-        margin-left: -10%;
-
-        }
-        .col.z{
+    
+        .col.z {
             margin: 0%;
-            margin: 2.5%;
+            display: flex;
+            justify-content: center;
         }
+    
         
+    
     .sec2{
         width: 350px;
         box-shadow: none;

@@ -386,7 +386,7 @@ ul.mega-menu-links li:last-child{
     text-align: justify;
 }
 .info-txt2 {
-  margin-top: 50px;
+ 
     margin-bottom: 50px;
 }
 .info-txt2 h1{
@@ -405,7 +405,7 @@ ul.mega-menu-links li:last-child{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .col-sm-4.qa img{
-    margin-top: 40px;
+ 
 width: 400px;
 height: 250px;
 border-radius: 40px;
@@ -472,6 +472,7 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
   color: #6B7280;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  text-align: justify;
 }
 
 .action {
@@ -521,7 +522,10 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
     height:auto;
     background-image: url(https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/ESCHxUaxZ2lLhTx3saQNrdEBajIVkuOnTZ6gHWon8Yed3g?download=1
     );
-    /* padding-bottom: 50px; */
+    background-position: center;
+    background-size:contain;
+    position: relative;
+    background-color: white;
     background-attachment: fixed;
 }
 /* -------------------------------------------------------------------------------------------------------- */

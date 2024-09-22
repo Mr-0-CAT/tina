@@ -240,10 +240,7 @@
     height: 290px;
   
   }
-.slider{
-margin-left: 18%;
 
-}
 
 .col.a{
   padding: 0%;
@@ -289,6 +286,10 @@ margin-top: -25%;
 font-size: 60px;
 overflow-x: hidden;
 
+}
+.col {
+    flex: 1 0 0%;
+    display: contents;
 }
 .container1 {
 height: 220px;
@@ -351,26 +352,28 @@ overflow-x: hidden;
     }
     .mem1{
         text-align: center;
-        margin: 20%;
+        
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
         
     }
     .mem2{
-        text-align: center ;
+        text-align: center;
+        display: flex;
         align-items: center;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
         overflow: hidden;
     }
  
-    .col.a{
-        padding: 0%;
-        margin-bottom: 5%;
-    }
-    .col.a.b{
-        margin: 0%;
-        margin-top: -40px !important;
-    }
+  
     .card1{
         width: 350px;
-        margin-left: -12%;
+
     
     }
     .image{
@@ -384,7 +387,7 @@ overflow-x: hidden;
         width: 300px;
         text-align: center;
         margin-bottom: 40px;
-    margin-left: 13%;
+    
     }
     .card-image2 img{
         width: 290px;
@@ -415,8 +418,7 @@ overflow-x: hidden;
         width: 400px;
         height: 300px;
         overflow: hidden;
-        margin-left: 2.5%;
-        margin-top: 4%;
+       margin: auto;
         text-align: center;
     }
     .slides{
@@ -438,7 +440,7 @@ overflow-x: hidden;
         height: 390px;
         text-align: center;
         overflow: hidden;
-        margin-left: -28%;
+   
         
         }
     .navigation-auto{
@@ -477,13 +479,7 @@ overflow-x: hidden;
         height: 150px;
         -webkit-box-reflect: below 1px linear-gradient(transparent, transparent , #0002 , #0004);
       }
-      .col.a{
-        margin-left: -5%;
-      }
-      .col.a.b{
-        margin-left: -5%;
-        /* margin-top: 30px; */
-      }
+    
       .container1 text{
         font-size: 55px;
       }
@@ -511,12 +507,8 @@ overflow-x: hidden;
         height: 370px;
         }
          
-        .card1{
-            margin-left: -17%;
-        }
-        .card2{
-            margin-left: 9%;
-        }
+       
+       
     .col.a{
       text-align: center;
        
@@ -568,3 +560,24 @@ overflow-x: hidden;
       }
 }
 
+@media(width>1420px){
+
+    .col-sm-4.qa img{
+       margin-top: 0%;
+    width: 100%;
+    height: 250px;
+    border-radius: 40px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+    }
+    .info-txt{
+        padding: 40px;
+        text-align: center;
+        margin-top: 60px;
+    }
+    .info-txt p{
+      text-align: justify;
+        font-family: 'Lora', serif;
+        font-size: 20px;
+    }
+}
