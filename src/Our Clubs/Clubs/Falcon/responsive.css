@@ -126,12 +126,7 @@
         padding: 20px;
 
     }
-    .col-sm-4.qa{
-        margin-left: 0% !important;
-    }
-    .col-sm-4.qa img{
-        margin-left: 10% !important;
-    }
+  
     
 .card1 {
     
@@ -149,10 +144,7 @@
     width: 270px !important;
   }
 
-  
-  .slider{
-    margin-left: 25% !important;
-  }
+
 
 }
 
@@ -170,10 +162,7 @@
         padding: 20px;
 
     }
-    .col-sm-4.qa{
-        margin-left: -4% !important;
-        margin-top: 7%;
-    }
+  
 
     .col.z{
         padding: 0%;
@@ -206,8 +195,7 @@
 .card2 {
     width: 300px;
     height: 390px;
-    margin-left: 5%;
-    margin-bottom: 5%;
+  
 
   }
   .card-image2 {
@@ -220,10 +208,7 @@
     height: 290px;
   
   }
-.slider{
-margin-left: 18%;
 
-}
 
 }
 
@@ -282,7 +267,7 @@ padding: 0%;
    }
 
     .info-txt2{
-        padding: 20px;
+      
         padding-top: 20px;
     }
     .info-txt2 p{
@@ -306,7 +291,7 @@ padding: 0%;
     }
     .mem1{
         text-align: center;
-        margin: 20%;
+    
         
     }
     
@@ -335,8 +320,7 @@ padding: 0%;
         width: 400px;
         height: 300px;
         overflow: hidden;
-        margin-left: 2.5%;
-        margin-top: 4%;
+       
         text-align: center;
     }
     .slides{
@@ -386,10 +370,22 @@ padding: 0%;
     .sec2 img{
         padding: 0%;height: 350px;
         margin-top: -100px;
-        margin-left: 2%;
+      
     }
     .heading h1{
         font-size: 50px;
+    }
+    .card1{
+        width: 350px !important;
+    }
+    .image
+    {
+        width: 350px !important;
+
+    }
+    .image img{
+        width: 350px !important;
+
     }
 }
 
@@ -410,7 +406,7 @@ padding: 0%;
     .sec2 img{
         padding: 0%;height: 350px;
         margin-top: -100px;
-        margin-left: 4%;
+
     }
     .col.b{
       text-align: center;
@@ -425,9 +421,7 @@ padding: 0%;
     .col.b{
         margin-left: 70px;
     }
-    .col-sm-3.qa{
-        margin-left: 4%;
-    }
+  
     .col-sm-3.qa img{
         width: 350px;
     }
@@ -445,8 +439,7 @@ padding: 0%;
         width: 350px;
         height: 250px;
         overflow: hidden;
-        margin-left: 3.5%;
-        margin-top: 4%;
+     
       }
       .slides{
         height: 250px;

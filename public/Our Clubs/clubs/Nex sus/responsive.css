@@ -124,12 +124,7 @@
         padding: 20px;
 
     }
-    .col-sm-4.qa{
-        margin-left: 0% !important;
-    }
-    .col-sm-4.qa img{
-        margin-left: 10% !important;
-    }
+   
     
 .card1 {
     height: 440px !important;  
@@ -150,8 +145,7 @@
   
 .card2 {
     width: 350px !important;
-    height: 390px;
-    margin-left: 10% !important;
+
 
   }
   .card-image2 {
@@ -164,10 +158,7 @@
     height: 290px;
   
   }
-  .slider{
-    margin-left: 25% !important;
-  }
-
+ 
 }
 
 
@@ -184,21 +175,16 @@
         padding: 20px;
 
     }
-    .col-sm-4.qa{
-        margin-left: -4% !important;
-        margin-top: 7%;
-    }
+  
 
  
-    .col-sm-4.qa img{
-       width: 370px;
-    }
+  
 
   
 .card1 {
     width: 270px;
  height: 550px;
- margin-left: 25% !important;
+
     
   }
 
@@ -216,8 +202,7 @@
 .card2 {
     width: 300px;
     height: 390px;
-    margin-left: 5%;
-    margin-bottom: 5%;
+
 
   }
   .card-image2 {
@@ -230,10 +215,7 @@
     height: 290px;
   
   }
-.slider{
-margin-left: 18%;
 
-}
 
 }
 
@@ -270,9 +252,7 @@ height: 220px;
 overflow: hidden;
 overflow-x: hidden;
 }
-.col-sm-3.a{
-padding: 0%;
-}   
+ 
  .info-txt{
         padding: 0px;
         margin-top: 0px;
@@ -291,7 +271,7 @@ padding: 0%;
    }
 
     .info-txt2{
-        padding: 20px;
+   
         padding-top: 20px;
     }
     .info-txt2 p{
@@ -315,15 +295,11 @@ padding: 0%;
     }
     .mem1{
         text-align: center;
-        margin: 20%;
+
         
     }
     
- 
-    .col.a{
-        padding: 0%;
-        margin-bottom: 5%;
-    }
+
 
 
 
@@ -333,9 +309,7 @@ padding: 0%;
     height: 400px;
 }
 
-.col-sm-4.qa{
-    margin-left: 6px;
-}
+
 
     .gal{
         overflow: hidden;
@@ -344,8 +318,7 @@ padding: 0%;
         width: 400px;
         height: 300px;
         overflow: hidden;
-        margin-left: 2.5%;
-        margin-top: 4%;
+
         text-align: center;
     }
     .slides{
@@ -395,7 +368,7 @@ padding: 0%;
     .sec2 img{
         padding: 0%;height: 350px;
         margin-top: -100px;
-        margin-left: 2%;
+
     }
     .heading h1{
         font-size: 50px;
@@ -410,12 +383,9 @@ padding: 0%;
         height: 150px;
         -webkit-box-reflect: below 1px linear-gradient(transparent, transparent , #0002 , #0004);
       }
-.card1 {
-    margin-left: -50px;
 
-}
 .card2 {
-    margin-left: -50px;
+
     margin-bottom: 40px;
 
 }
@@ -442,7 +412,7 @@ padding: 0%;
     .sec2 img{
         padding: 0%;height: 350px;
         margin-top: -100px;
-        margin-left: 4%;
+
     }
     .col.b{
       text-align: center;
@@ -457,9 +427,7 @@ padding: 0%;
     .col.b{
         margin-left: 70px;
     }
-    .col-sm-4.qa{
-        margin-left: 4%;
-    }
+    
     .col-sm-4.qa img{
         width: 350px;
     }
@@ -477,8 +445,7 @@ padding: 0%;
         width: 350px;
         height: 250px;
         overflow: hidden;
-        margin-left: 5.5%;
-        margin-top: 4%;
+
       }
       .slides{
         height: 250px;
@@ -507,7 +474,7 @@ padding: 0%;
       .card1{
         /* text-align: center; */
         width: 300px;
-        margin-left: -20px;
+
         margin-bottom: 20px;
       }
       

@@ -374,9 +374,9 @@ text-align: justify;
     font-size: 20px;
 }
 .info-txt2{
-    padding: 40px;
+    padding: 20px;
     text-align: center;
-    padding-top: 40px;
+ 
 }
 .info-txt2 p{
     font-family: 'Lora', serif;
@@ -425,6 +425,7 @@ background-attachment: fixed;
     border-radius: 60px;
     /* margin: 15px; */
     height: 470px;
+    margin-bottom: 5%;
     
     
   }
@@ -628,3 +629,9 @@ overflow: hidden;
   
   
   /* ----------------------------------------------------------------------------------------- */
+
+  .col {
+    flex: 1 0 0%;
+    display: flex;
+    justify-content: center;
+}

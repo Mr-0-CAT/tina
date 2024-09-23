@@ -129,9 +129,7 @@
     .col-sm-4.qa{
         margin-left: 0% !important;
     }
-    .col-sm-4.qa img{
-        margin-left: 10% !important;
-    }
+    
     
 .card1 {
     height: 440px !important;  
@@ -186,10 +184,7 @@
         padding: 20px;
 
     }
-    .col-sm-4.qa{
-        margin-left: -4% !important;
-     
-    }
+
 
   
     
@@ -200,7 +195,7 @@
     
 .card1 {
     width: 270px;
- height: 550px;
+ height: 650px !important;
  /* margin-left: 7% !important; */
     
   }
@@ -219,8 +214,7 @@
 .card2 {
     width: 300px;
     height: 390px;
-    margin-left: 5%;
-    margin-bottom: 5%;
+ 
 
   }
   .card-image2 {
@@ -233,10 +227,7 @@
     height: 290px;
   
   }
-.slider{
-margin-left: 18%;
 
-}
 
 }
 
@@ -319,16 +310,12 @@ padding: 0%;
     }
     .mem1{
         text-align: center;
-        margin: 20%;
+      
         
     }
     
  
-    .col.a{
-        padding: 0%;
-        margin-bottom: 5%;
-        margin-left: -5%;
-    }
+
     .card1{
         width: 300px;
 
@@ -349,9 +336,7 @@ padding: 0%;
     height: 400px;
 }
 
-.col-sm-4.qa{
-    margin-left: 3%;
-}
+
 
     .gal{
         overflow: hidden;
@@ -360,8 +345,7 @@ padding: 0%;
         width: 400px;
         height: 300px;
         overflow: hidden;
-        margin-left: 2.5%;
-        margin-top: 4%;
+
         text-align: center;
     }
     .slides{
@@ -403,16 +387,7 @@ padding: 0%;
         height: 100px;
         margin-bottom: -330px;
     }
-    .sec2{
-        width: 400px;
-        box-shadow: none;
-        
-    }
-    .sec2 img{
-        padding: 0%;height: 350px;
-        margin-top: -100px;
-        margin-left: 2%;
-    }
+
     .heading h1{
         font-size: 50px;
     }
@@ -435,15 +410,14 @@ padding: 0%;
             /* margin: 0% !important; */
             padding: 0% !important;
             width: 150% !important;
-            margin-left: -20% !important; 
-            margin-top: -70px !important;
+        
 
         }
         .robo{
             margin: 0% !important;
             padding: 0% !important;
             width: 150% !important;
-            margin-left: -20% !important;
+        
         }
         .container1 h1{
             text-shadow: none;
@@ -454,7 +428,7 @@ padding: 0%;
             width: 300px;
             text-align: center;
             margin-bottom: 40px;
-        margin-left: 13%;
+    
         }
         .card-image2 img{
             width: 290px;
@@ -465,7 +439,7 @@ padding: 0%;
                 
                 }
                 .mem2 h1{
-                    font-size: 40px;
+                    font-size: 30px;
                 }
 }
 
@@ -481,21 +455,9 @@ padding: 0%;
         margin-left: -10%;
 
         }
-        .col.z{
-            margin: 0%;
-            margin: 2.5%;
-        }
-        
-    .sec2{
-        width: 350px;
-        box-shadow: none;
-        
-    }
-    .sec2 img{
-        padding: 0%;height: 350px;
-        margin-top: -100px;
-        margin-left: 4%;
-    }
+      
+  
+   
     .col.b{
       text-align: center;
 
@@ -506,12 +468,7 @@ padding: 0%;
         margin-right: 0%;
         padding: 0%;
     }
-    .col.b{
-        margin-left: 70px;
-    }
-    .col-sm-4.qa{
-        margin-left: 4%;
-    }
+  
     .col-sm-4.qa img{
         width: 350px;
     }
@@ -529,8 +486,7 @@ padding: 0%;
         width: 350px;
         height: 250px;
         overflow: hidden;
-        margin-left: 3.5%;
-        margin-top: 4%;
+ 
       }
       .slides{
         height: 250px;
@@ -555,9 +511,7 @@ padding: 0%;
       }
     
       .ytv{
-        /* margin-left: 0% !important; */
-        margin-left: 2.5% !important;
-        
+
         width: 360px !important;
         height: 350px;
         }
@@ -565,14 +519,12 @@ padding: 0%;
             /* margin: 0% !important; */
             padding: 0% !important;
             width: 140% !important;
-            margin-left: -10% !important; 
-            margin-top: -70px !important;
+    
         }
         .robo{
             margin: 0% !important;
             padding: 0% !important;
-            width: 140% !important;
-            margin-left: -10% !important; 
+  
         }
 }
 

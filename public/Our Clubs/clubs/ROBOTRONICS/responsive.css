@@ -124,12 +124,7 @@
         padding: 20px;
 
     }
-    .col-sm-4.qa{
-        margin-left: 0% !important;
-    }
-    .col-sm-4.qa img{
-        margin-left: 10% !important;
-    }
+
     
 .card1 {
     height: 440px !important;  
@@ -151,7 +146,7 @@
 .card2 {
     width: 350px !important;
     height: 390px;
-    margin-left: 10% !important;
+
 
   }
   .card-image2 {
@@ -164,9 +159,7 @@
     height: 290px;
   
   }
-  .slider{
-    margin-left: 25% !important;
-  }
+ 
 
 }
 
@@ -184,10 +177,7 @@
         padding: 20px;
 
     }
-    .col-sm-4.qa{
-        margin-left: -4% !important;
-        margin-top: 7%;
-    }
+  
 
     .col.z{
         padding: 0%;
@@ -202,7 +192,7 @@
 .card1 {
     width: 270px;
  height: 450px;
- margin-left: 7% !important;
+
     
   }
 
@@ -220,8 +210,7 @@
 .card2 {
     width: 300px;
     height: 390px;
-    margin-left: 5%;
-    margin-bottom: 5%;
+   
 
   }
   .card-image2 {
@@ -234,10 +223,7 @@
     height: 290px;
   
   }
-.slider{
-margin-left: 18%;
 
-}
 
 }
 
@@ -326,8 +312,7 @@ margin-left: 18%;
             font-size: 40px;
         }
         .card1{
-           margin-left: 15%;
-            margin-top: 20px;
+
             margin-bottom: 10px;
         }
         .col.s{ margin-left: 0%;}
@@ -360,7 +345,7 @@ margin-left: 18%;
             font-size: 16px;
         }
         .card1{
-            margin-left: 12%;
+     
              margin-top: 20px;
              margin-bottom: 10px;
          }

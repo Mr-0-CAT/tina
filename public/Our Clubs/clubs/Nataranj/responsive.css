@@ -125,12 +125,7 @@
         padding: 20px;
 
     }
-    .col-sm-4.qa{
-        margin-left: 0% !important;
-    }
-    .col-sm-4.qa img{
-        margin-left: 10% !important;
-    }
+
     
 .card1 {
     height: 440px !important;  
@@ -152,7 +147,7 @@
 .card2 {
     width: 350px !important;
     height: 390px;
-    margin-left: 10% !important;
+ 
 
   }
   .card-image2 {
@@ -165,9 +160,7 @@
     height: 290px;
   
   }
-  .slider{
-    margin-left: 25% !important;
-  }
+
   .iframe{
 visibility: visible !important;
 }
@@ -187,23 +180,16 @@ visibility: visible !important;
         padding: 20px;
 
     }
-    .col-sm-4.qa{
-        margin-left: -4% !important;
-      
-    }
-
+   
  
     
-    .col-sm-4.qa img{
-       width: 370px;
-    }
+  
 
    
 .card1 {
     width: 270px;
  height: 450px;
- margin-left: 7% !important;
-    
+
   }
 
   .image {  
@@ -220,8 +206,7 @@ visibility: visible !important;
 .card2 {
     width: 350px;
     height: 390px;
-    margin-left: -15%;
-    margin-bottom: 5%5
+   
 
   }
   .card-image2 {
@@ -234,10 +219,7 @@ visibility: visible !important;
     height: 290px;
   
   }
-.slider{
-margin-left: 40%;
 
-}
 
 .iframe{
     visibility: hidden;
@@ -294,10 +276,7 @@ margin-left: 40%;
           display: none;
 
         }
-        .col-sm-8.q{
-            padding: 0%;
-            padding-left: 20px;
-            }  
+        
  .info-txt{
         padding: 0px;
         margin-top: 0px;
@@ -355,20 +334,18 @@ margin-left: 40%;
  
     .col.a{
         text-align: center !important;
-        margin-bottom: 5%;
-        margin: 7.5%;
+      
     }
 
     .col.a.b{
         margin: 0%;
         text-align: center !important;
-        margin-bottom: 5%;
-        margin: 7.5%;
+    
     }
 
 .col.z{
     margin: 0%;
-    margin: 7.5%;
+
 }
 
 .sec-2 img{
@@ -376,9 +353,7 @@ margin-left: 40%;
 }
 
 
-.col-sm-4.qa{
-    margin-left:5%;
-}
+
 .col-sm-4.qa img{
 
     width: 95vw !important;
@@ -393,8 +368,7 @@ margin-left: 40%;
         width: 95vw;
         height: 300px;
         overflow: hidden;
-        margin-left: 2%;
-        margin-top: 4%;
+       
         text-align: center;
     }
     .slides{
@@ -475,9 +449,7 @@ margin-left: 40%;
         padding: 0%;
     }
   
-    .col-sm-4.qa{
-        margin-left: 5%;
-    }
+
     .col-sm-4.qa img{
         width: 95vw;
     }
@@ -495,8 +467,7 @@ margin-left: 40%;
         width: 350px;
         height: 250px;
         overflow: hidden;
-        margin-left: 3.5%;
-        margin-top: 4%;
+  
       }
       .slides{
         height: 250px;
@@ -519,11 +490,6 @@ margin-left: 40%;
         width: 350px;
         margin-top: 210px;
       }
-      .card1{
-        margin-left: -1%;
-      }
-      .card2{
-        margin-left: -5%;
-      }
+  
 }
 

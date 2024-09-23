@@ -124,34 +124,29 @@
         padding: 20px;
 
     }
-    .col-sm-4.qa{
-        margin-left: 0% !important;
-    }
-    .col-sm-4.qa img{
-        margin-left: 10% !important;
-    }
+  
     
 .card1 {
     height: 440px !important;  
-    width: 350px !important;
+    width: 260px !important;
     
   }
 
   .image {  
     
-    width: 350px !important;
+    width: 250px !important;
   }
 
   .image img {  
     
-    width: 350px !important;
+    width: 250px !important;
   }
 
   
 .card2 {
     width: 350px !important;
     height: 390px;
-    margin-left: 10% !important;
+   
 
   }
   .card-image2 {
@@ -164,9 +159,7 @@
     height: 290px;
   
   }
-  .slider{
-    margin-left: 25% !important;
-  }
+  
   .container1 img{
     width: 250px;
     height: 150px;
@@ -189,16 +182,11 @@
         padding: 20px;
 
     }
-    .col-sm-4.qa{
-        margin-left: -4% !important;
-
-    }
+  
 
  
     
-    .col-sm-4.qa img{
-       width: 370px;
-    }
+    
 
   .col.a{
     margin: 0%;
@@ -206,29 +194,25 @@
   }
 
 .card1 {
-    width: 230px;
- height: 450px;
- margin-left: 7% !important;
+    width: 250px;
+
     
   }
 
   .card-image {
     background-color: rgb(236, 236, 236);
-    width: 200px;
+    width: 250px;
     height: 230px;
     border-radius: 6px 6px 0 0;
   }
   .card-image img{
-  width: 214px;
+  width: 250px;
     height: 230px;
     border-radius: 6px 6px 0 0;
 
   }
  
-.slider{
-margin-left: 18%;
 
-}
 
 .container1 img{
     width: 250px;
@@ -286,7 +270,7 @@ height: 220px;
 
     .info-txt{
         padding: 20px;
-        margin-top: 0px;
+  
     }
     .info-txt p{
         font-size: 18px;
@@ -296,7 +280,7 @@ height: 220px;
     }
     .imgscroll{
         width: 380px;
-        margin-left: 20px;
+    
     }
 
     .info-txt2{
@@ -324,11 +308,9 @@ height: 220px;
     }
     .mem1{
         text-align: center;
-        margin-left: 60px;
+      
     }
-    .col.b{
-        margin-left: 80px;
-    }
+  
     .card2{
     width: 250px;
 
@@ -350,9 +332,7 @@ width: 240px;
     height: 400px;
 }
 
-.col-sm-3.qa{
-    margin-left: 6px;
-}
+
 
 .gal{
     overflow: hidden;
@@ -412,25 +392,8 @@ width: 240px;
         width: 360px;
         margin-left: 10px;
     }
-    .col.b{
-      text-align: center;
-
-    }
-    .col.a{
-      text-align: center;
-       
-        margin-right: 0%;
-        padding: 0%;
-    }
-    .col.b{
-        margin-left: 70px;
-    }
-    .col-sm-3.qa{
-        margin-left: 4%;
-    }
-    .col-sm-3.qa img{
-        width: 350px;
-    }
+    
+ 
     .info-txt p{
         font-size: 16px;
     }
@@ -445,8 +408,8 @@ width: 240px;
         width: 350px;
         height: 250px;
         overflow: hidden;
-        margin-left: 3.5%;
-        margin-top: 4%;
+  
+    
       }
       .slides{
         height: 250px;
@@ -471,3 +434,9 @@ width: 240px;
       }
 }
 
+@media only screen and (max-width: 500px) {
+    .row.s {
+        flex-direction: column-reverse;
+        margin: 0%;
+    }
+}

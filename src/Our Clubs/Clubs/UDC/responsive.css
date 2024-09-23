@@ -136,14 +136,7 @@
         padding: 20px;
 
     }
-    .col-sm-4.qa{
-        margin-left: 0% !important;
-    }
-    .col-sm-4.qa img{
-        margin-left: 10% !important;
-        margin-top: 0% !important;
-    }
-    
+ 
 .card1 {
     height: 570px !important;  
     width: 350px !important;
@@ -164,7 +157,7 @@
 .card2 {
     width: 350px !important;
     height: 390px;
-    margin-left: 10% !important;
+
 
   }
   .card-image2 {
@@ -177,9 +170,7 @@
     height: 290px;
   
   }
-  .slider{
-    margin-left: 25% !important;
-  }
+
 
 }
 
@@ -197,11 +188,7 @@
         padding: 20px;
 
     }
-    .col-sm-4.qa{
-        margin-left: -4% !important;
-        margin-top: 7%;
-    }
-
+    
     
     .col-sm-4.qa img{
        width: 370px;
@@ -227,7 +214,7 @@
 .card1 {
     width: 270px;
  height: 650px;
- margin-left: 7% !important;
+
     
   }
 
@@ -259,10 +246,8 @@
     height: 290px;
   
   }
-.slider{
-margin-left: 18%;
 
-}
+
 
 }
 
@@ -318,13 +303,10 @@ top: 150px;
   .inner-txt{
     justify-content: center;
     text-align: center;
-  margin-left: 14% !important;
+
   }
 
-.col-sm-3.a{
-    /* margin-left: -5%; */
-    margin-bottom: 5%;
-  }
+
  
  .info-txt{
         padding: 0px;
@@ -341,7 +323,7 @@ top: 150px;
     }
     .col-sm-8.q{
         padding: 0%;
-        padding-left: 20px;
+        
         }   
 .card1{
     margin-bottom: 10%;
@@ -380,14 +362,14 @@ top: 150px;
         font-size: 35px !important;
 margin-bottom: 0%;
 padding-bottom: 0%;
-height: 0px !important;
+
     }
     .col.a.b{
         margin-top: 0%;
     }
     .mem1{
         text-align: center;
-        margin: 20%;
+      
         
     }
     .mem2{
@@ -396,17 +378,10 @@ height: 0px !important;
         overflow: hidden;
     }
  
-    .col.a{
-        padding: 0%;
-        margin-bottom: 5%;
-    }
-    .col.a.b{
-        margin: 0%;
-        
-    }
+
     .card1{
         width: 350px;
-        margin-left: -9%;
+
     
     }
     .image{
@@ -419,7 +394,7 @@ height: 0px !important;
         width: 300px;
         text-align: center;
         margin-bottom: 40px;
-    margin-left: 16%;
+
     }
     .card-image2 img{
         width: 290px;
@@ -430,19 +405,11 @@ height: 0px !important;
             
             }
 
-.col.z.a{
-    margin-left: 0;
-    margin-top: 13%;
-}
-.col.z{
-    padding: 0%;
-}
 
 
 
-.col-sm-4.qa{
-    margin-left: 5%;
-}
+
+
 .col-sm-4.qa img{
 
     width: 95vw !important;
@@ -465,7 +432,7 @@ height: 0px !important;
     height: 270px;
     text-align: center;
     overflow: hidden;
-    margin-left: -20%;
+
     }
     .navigation-auto{
         width: 400px;
@@ -482,13 +449,7 @@ height: 0px !important;
     
     }
 
-.inner-txt{
-    margin-bottom: 5%;
-   
-}
-.inner-txt p{
-    margin-top: 100px;
-}
+
 
 
 
@@ -498,7 +459,7 @@ height: 0px !important;
     .container1 img{
         width: 200px;
         height: 100px;
-        margin-bottom: -330px;
+       
     }
   
     .heading h1{
@@ -516,43 +477,29 @@ height: 0px !important;
         -webkit-box-reflect: below 1px linear-gradient(transparent, transparent , #0002 , #0004);
       }
       .col.a{
-        margin-left: -5%;
+     
       }
       .col.a.b{
-        margin-left: -5%;
+       
         margin-top: 30px;
       }
       .container1 text{
         font-size: 55px;
       }
-      .key h1{
-        margin-bottom: 60px;
-      }
+     
 }
 
 @media(width<400px){
     .inner-txt{
         justify-content: center;
         text-align: center;
-      margin-left: 11% !important;
+ 
       }
     .col.b{
       text-align: center;
 
     }
-    .ytv{
-        margin-left: -27.5%;
-        }
-         
-        .card1{
-            margin-left: -15.5%;
-        }
-        .card2{
-            margin-left: 13%;
-        }
-        .inner-txt{
-            margin-left: 10% !important;
-        }
+  
     .col.a{
       text-align: center;
        
@@ -560,9 +507,7 @@ height: 0px !important;
         padding: 0%;
     }
   
-    .col-sm-4.qa{
-        margin-left: 5%;
-    }
+  
     .col-sm-4.qa img{
         width: 95vw;
     }
@@ -592,3 +537,17 @@ height: 0px !important;
       }
 }
 
+@media only screen and (max-width: 500px) {
+    .row.s {
+        flex-direction: column-reverse;
+        padding: 0% !important;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .heading h1 {
+        font-size: 50px;
+        margin-bottom: 5%;
+    }
+}

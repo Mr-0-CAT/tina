@@ -333,7 +333,7 @@ ul.mega-menu-links li:last-child{
 .info-txt2{
   text-align: justify !important;
 
-    padding: 40px;
+    padding: 20px;
     text-align: center;
     padding-top: 40px;
 }
@@ -394,8 +394,8 @@ width: 340px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .col-sm-4.qa video{
-    margin-top: 40px;
-width: 400px;
+ 
+width: 95% ;
 height: 250px;
 border-radius: 40px;
 box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -439,7 +439,7 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
   width: 350px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   
-  
+  margin-bottom: 5%;
 }
 
 .card1 a {
@@ -556,7 +556,7 @@ width: 340px;
 .mem-info{
     width: 100%;
     height:auto;
-    background-image: url(https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/ESCHxUaxZ2lLhTx3saQNrdEBajIVkuOnTZ6gHWon8Yed3g?download=1
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/dbms-d5864.appspot.com/o/Files%2FAbout%2Fbg%2Fbg1.png?alt=media&token=837037b8-78b4-4982-9f93-f0520767d0ca
     );
     /* padding-bottom: 50px; */
     background-attachment: fixed;
@@ -573,6 +573,8 @@ position: relative;
   align-items: center;
  text-align: center;
  padding-bottom: 90px;
+ display: flex;
+ flex-direction: column;
 }
 .slider{
   width: 700px;
@@ -580,11 +582,19 @@ position: relative;
   border-radius: 90px;
   overflow: hidden;
   text-align: center;
-  margin-left: 25%;
-  margin-top: 4%;
+
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-
+.row.s{
+  display: flex;
+  flex-direction: column;
+}
+.col {
+  flex: 1 0 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .slides{
   width: 500%;
   height: 500px;
@@ -723,7 +733,7 @@ position: relative;
 
 .footer{
     background-color: #d7d7d7;
-    background-image: url(https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EUplt6UcnJhPl3qLIap2QCsB34kstdqkQnqCHjT3hYUEqQ?download=1);
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/dbms-d5864.appspot.com/o/Files%2FAbout%2Fbg%2Fbg4.jpg?alt=media&token=ac057ea8-22a4-4655-88aa-c9b170b04d8a);
     /* margin-bottom: 0; */
     /* bottom: 0%; */
     /* height: 300px; */
@@ -756,7 +766,11 @@ position: relative;
     
   
   }
-  
+  .col-sm-4.qa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
   
   
   

@@ -317,7 +317,7 @@ ul.mega-menu-links li:last-child{
 .info-txt{
     padding: 40px;
     text-align: center;
-    margin-top: 60px;
+
 }
 .info-txt p{
     font-family: 'Lora', serif;
@@ -337,7 +337,7 @@ ul.mega-menu-links li:last-child{
 }
 .info-txt2 {
   margin-top: 50px;
-    margin-bottom: 50px;
+   
 }
 .info-txt2 h1{
     font-family: 'Lora', serif;
@@ -355,7 +355,7 @@ ul.mega-menu-links li:last-child{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .col-sm-4.qa img{
-    margin-top: 100px;
+
 width: 400px;
 height: 250px;
 border-radius: 40px;
@@ -377,6 +377,7 @@ key features */
 
 
 
+
 .col-sm-3.a{
   padding: 2%;
 }
@@ -385,6 +386,13 @@ font-size: 45px;
 padding-bottom: 25px;
 }
 
+.col-sm-4 {
+  flex: 0 0 auto;
+  width: 33.33333333%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
 /* ---------------------------------------------------------------------------------------- */
@@ -392,7 +400,7 @@ padding-bottom: 25px;
 
 
 .card1 {
-  max-width: 400px;
+
   border-radius: 0.5rem;
   background-color: #fff;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -470,16 +478,13 @@ padding-bottom: 25px;
   text-align: center;
 }
 
-.col.a.b{
-  margin-left: 30px;
-  margin-top: 0%;
-}
+
 
 
 .mem2{
   padding-bottom: 40px;
   text-align: center;
-  background-image: url(https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/ESCHxUaxZ2lLhTx3saQNrdEBajIVkuOnTZ6gHWon8Yed3g?download=1
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/dbms-d5864.appspot.com/o/Files%2FAbout%2Fbg%2Fbg1.png?alt=media&token=837037b8-78b4-4982-9f93-f0520767d0ca
 );
     /* padding-bottom: 50px; */
     background-position: center;
@@ -488,9 +493,7 @@ position: relative;
 background-color: white;
 background-attachment: fixed;
 }
-.col.z.a{
-  margin-left: 50px;
-}
+
 .card2 {
   width: 350px;
   background: white;
@@ -521,7 +524,7 @@ width: 340px;
 .mem-info{
     width: 100%;
     height:auto;
-    background-image: url(https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/ESCHxUaxZ2lLhTx3saQNrdEBajIVkuOnTZ6gHWon8Yed3g?download=1
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/dbms-d5864.appspot.com/o/Files%2FAbout%2Fbg%2Fbg1.png?alt=media&token=837037b8-78b4-4982-9f93-f0520767d0ca
 );
     /* padding-bottom: 50px; */
     background-position: center;
@@ -534,7 +537,7 @@ background-attachment: fixed;
 .gallery{
      height: auto;
     /* background-color: white; */
-    background-image: url(https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EUplt6UcnJhPl3qLIap2QCsB34kstdqkQnqCHjT3hYUEqQ?download=1);
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/dbms-d5864.appspot.com/o/Files%2FAbout%2Fbg%2Fbg4.jpg?alt=media&token=ac057ea8-22a4-4655-88aa-c9b170b04d8a);
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -613,7 +616,7 @@ padding-bottom: 100px;
 
 .footer{
     background-color: #d7d7d7;
-    background-image: url(https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EUplt6UcnJhPl3qLIap2QCsB34kstdqkQnqCHjT3hYUEqQ?download=1);
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/dbms-d5864.appspot.com/o/Files%2FAbout%2Fbg%2Fbg4.jpg?alt=media&token=ac057ea8-22a4-4655-88aa-c9b170b04d8a);
     /* margin-bottom: 0; */
     /* bottom: 0%; */
     /* height: 300px; */
@@ -648,9 +651,17 @@ padding-bottom: 100px;
   }
   
   
+  .col {
+    flex: 1 0 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
   
-  
-  
+.col.x{
+  display: contents;
+}
+
   /* ----------------------------------------------------------------------------------------- */
   body{
     overflow-x: hidden;

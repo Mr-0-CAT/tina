@@ -320,7 +320,7 @@ ul.mega-menu-links li:last-child{
     text-align: justify;
 }
 .info-txt2{
-    padding: 40px;
+    padding: 20px;
     text-align: center;
     padding-top: 40px;
 }
@@ -330,7 +330,7 @@ ul.mega-menu-links li:last-child{
     text-align: justify;
 }
 .info-txt2 {
-  margin-top: 50px;
+
     margin-bottom: 50px;
 }
 .info-txt2 h1{
@@ -349,8 +349,8 @@ ul.mega-menu-links li:last-child{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .col-sm-4.qa img{
-    margin-top: 40px;
-width: 400px;
+
+width: 95%;
 height: 250px;
 border-radius: 40px;
 box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -463,9 +463,14 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
 .mem-info{
     width: 100%;
     height:auto;
-    background-image: url(https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/ESCHxUaxZ2lLhTx3saQNrdEBajIVkuOnTZ6gHWon8Yed3g?download=1
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/dbms-d5864.appspot.com/o/Files%2FAbout%2Fbg%2Fbg1.png?alt=media&token=837037b8-78b4-4982-9f93-f0520767d0ca
     );
     /* padding-bottom: 50px; */
+    background-attachment: fixed;
+    background-position: center;
+    background-size:contain;
+    position: relative;
+    background-color: white;
     background-attachment: fixed;
 }
 /* -------------------------------------------------------------------------------------------------------- */
@@ -511,7 +516,7 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
 
 .footer{
     background-color: #d7d7d7;
-    background-image: url(https://rnsit-my.sharepoint.com/:i:/g/personal/1rn22cd066_rnsit_onmicrosoft_com/EUplt6UcnJhPl3qLIap2QCsB34kstdqkQnqCHjT3hYUEqQ?download=1);
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/dbms-d5864.appspot.com/o/Files%2FAbout%2Fbg%2Fbg4.jpg?alt=media&token=ac057ea8-22a4-4655-88aa-c9b170b04d8a);
     /* margin-bottom: 0; */
     /* bottom: 0%; */
     /* height: 300px; */
@@ -545,9 +550,18 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
   
   }
   
+  .col.a {
+    text-align: center;
+    margin-right: 0%;
+    padding: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
   
-  
-  
+  .row.s{
+    margin: 0;
+  }
   
   /* ----------------------------------------------------------------------------------------- */
   body{

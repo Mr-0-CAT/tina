@@ -387,7 +387,7 @@ ul.mega-menu-links li:last-child{
 
 }
 .info-txt2 {
-  margin-top: 50px;
+
     margin-bottom: 50px;
 }
 .info-txt2 h1{
@@ -405,8 +405,8 @@ ul.mega-menu-links li:last-child{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .col-sm-4.qa img{
-    margin-top: 40px;
-width: 400px;
+
+width: 100% !important; 
 height: 250px;
 border-radius: 40px;
 box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -532,15 +532,17 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
     height: auto;
     justify-content: center;
     align-items: center;
-   text-align: center;
-   padding-bottom: 50px;
+    text-align: center;
+    display: flex;
+    padding-bottom: 50px;
+    flex-direction: column;
 }
 .slider{
     width: 600px;
     height: 500px;
     border-radius: 10px;
     overflow: hidden;
-    margin-left: 25%;
+    
     margin-top: 4%;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
@@ -716,12 +718,23 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
     
   
   }
+  .col.a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
   
   
-  
-  
+.row.s {
+  margin: 0;
+}
   
   /* ----------------------------------------------------------------------------------------- */
   body{
     overflow-x: hidden;
   }
+  .col-sm-4.qa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
