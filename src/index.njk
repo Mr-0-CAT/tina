@@ -8,8 +8,16 @@ layout: 'base.njk'
 
 ---
 
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-<div class="i-t" id="Home">
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<div class="i-t" id="Home" style="overflow: hidden;">
   <!-- <h1><span style="color: darkorange;">R</span>NS</h1>
   <h1><span style="color: darkorange;">C</span >ult<span style="color: darkorange;">F</span>iesta</h1> -->
 
@@ -82,7 +90,7 @@ layout: 'base.njk'
  <div class="list"> 
 
   <div class="innerz">
-  <div class="row" style=" margin-top: 75px; margin-bottom: 25px; margin-left: 20px; ">
+  <div class="row" style=" margin-top: 75px;">
 
 
 {%- for post in collections.post %}
