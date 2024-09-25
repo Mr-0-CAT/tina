@@ -650,7 +650,12 @@ border-radius: 50px;
      .club-info{
         text-align: center;
      }
+    .cssbuttons-io-button {
+   
+        margin-top: 20px !important;
 
+
+}
 .row.s{
     flex-direction: column-reverse;
 }
@@ -681,14 +686,10 @@ border-radius: 50px;
     /* width: 600px; */
     height: auto;
 }
-.con-but {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 
     .cssbuttons-io-button {
-
+      
         margin-top: 50px;
         background: darkorange;
         color: white;
@@ -902,5 +903,9 @@ color: white;
     flex: 1 0 0%;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+.con-but {
+    display: flex;
     justify-content: center;
 }

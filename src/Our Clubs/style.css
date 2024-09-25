@@ -395,7 +395,7 @@ ul.mega-menu-links li:last-child{
         transform: skewX(-15deg);
         border: none;
         text-align: center;
-        margin-left: 40%;
+   
       }
       
       .cta:focus {
@@ -583,12 +583,7 @@ background-attachment: fixed;
          font-weight: 500;
      }
      
-     .pics
-    {
-    margin: 60px;
     
-
-    }
     .small{
         width: 350px;
         border-radius: 10px;
@@ -686,3 +681,17 @@ color: rgb(254, 254, 255);
 
     color: rgb(255, 255, 255);
  }
+ .col {
+    flex: 1 0 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3%;
+}
+
+
+.con-but {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

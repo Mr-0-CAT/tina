@@ -140,13 +140,13 @@ header ul li a:hover {
 .main_content{
     display: grid;
   border: 2px solid;
-  border-radius: 200px; 
+  border-radius: 40px; 
 }
 
 .main_content .post_form {
     width: 450px;
-    margin: 100px auto;
-    box-shadow: rgba(red, green, blue, 0.16) 0px 1px 4px;
+
+
     padding: 20px !important;
 }
 
@@ -165,6 +165,8 @@ header ul li a:hover {
     padding: 5px 0;
     border: 1px solid #111;
     transition: 0.5s ease-in-out;
+    margin-top: 5%;
+    border-radius: 20px;
 }
 .main_content .post_form button:hover{
     background: midnightblue;
@@ -177,6 +179,11 @@ header ul li a:hover {
     display: none;
     background-image: url(https://firebasestorage.googleapis.com/v0/b/myapp-8ecc3.appspot.com/o/Cultfiesta%2Fbackground%2Fbg1.png?alt=media&token=d1f773fe-4a2d-4b91-b74b-3ce3a714fb0b);
     min-height: 70vh;
+    background-position: center;
+    background-size:contain;
+    position: relative;
+    background-color: white;
+    background-attachment: fixed;
 }
 
 
@@ -214,7 +221,7 @@ header ul li a:hover {
 width: 100% !important;
 margin-bottom: 2%;
 padding: 10px;
-border-radius: 200px;
+border-radius: 20px;
 background-color: #ffffff; /* Optional: Add a background color */
 box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
 
@@ -232,14 +239,6 @@ background-color: #ffffff; /* Optional: Add a background color */
     
 }
 
-.dropdown_content{
-    border-radius: 200px; /* Adjust the value for desired curvature */
-    border: 1px solid #ccc; /* Optional: Add a border for better visibility */
-    padding: 20px; /* Optional: Add padding for better spacing */
-    background-color: #f9f9f9; /* Optional: Add a background color */
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
-
-}
 
 .separator {
     border-bottom: 3px solid black;
@@ -249,7 +248,7 @@ background-color: #ffffff; /* Optional: Add a background color */
 .my_content {
     
     width: 100%;
-    padding: 40px 50px; 
+ 
     
     
 }
@@ -270,7 +269,7 @@ background-color: #ffffff; /* Optional: Add a background color */
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 50px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-    border-radius: 5px;
+    border-radius: 30px;
 }
 
 .my_content table tr{
@@ -306,11 +305,15 @@ background-color: #ffffff; /* Optional: Add a background color */
  */
  .my_content2 {
     width: 100%;
-    padding: 40px 50px; 
+ 
     
     
 }
-
+.col {
+  flex: 1 0 0%;
+  display: flex;
+  justify-content: center;
+}
  
 .my_content2 table td b{
     font-size: larger;
@@ -322,7 +325,8 @@ background-color: #ffffff; /* Optional: Add a background color */
       box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
       padding: 50px;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-      border-radius: 5px;
+      border-radius: 20px;
+      background-color: #060616;
   }
   
   .my_content2 table tr{
