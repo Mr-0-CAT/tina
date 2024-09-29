@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Data Visualization</title>
+    <!-- Bootstrap CSS for Styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: Arial, sans-serif;
+        
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        #filterForm {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="date"], button, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            text-align: left; /* Align text to the left */
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #charts {
+            margin-top: 30px;
+        }
+        canvas {
+            width: 100%;
+            height: auto;
+            max-height: 400px; /* Adjusted max-height for better visibility */
+            margin: 10px 0;
+        }
+        /* Loading Spinner Styles */
+        #loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+        #loading img {
+            width: 350px; /* Set logo width */
+            animation: blink-animation 1s steps(2, start) infinite; /* Blink animation */
+        }
+        @keyframes blink-animation {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Checkbox Container Styles */
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .checkbox-group label {
+            margin-bottom: 5px;
+        }
+        
+header {
+    background: #09015f;
+    color: #fff;
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    margin-left: 20px;
+}
+
+header .logo img {
+    height: 40px; /* Adjust according to your logo size */
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    justify-content: space-between;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+    padding: 0;
+}
+
+header ul li {
+    margin: 0 15px;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header ul li a:hover {
+    color: #ff9900; /* Change to your desired hover color */
+}
+
+.head {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2%;
+}
+img.op2 {
+    width: 4%;
+}
+.head {
+    text-align: center;
+    display: block;
+}
+.row{
+    overflow: hidden;
+}
+
+/* ------------------------------------Footer----------------------------------- */
+
+.footer{
+    background-color: #d7d7d7;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/myapp-8ecc3.appspot.com/o/Cultfiesta%2Fbackground%2Fbg4.jpg?alt=media&token=bb6616ce-d1bf-461b-acd3-d37f6840953c );
+  
+    
+    
+    /* height: 300px; */
+    
+width: 100%;
+text-align: center;
+padding: 30px ;
+color: #feffff;
+
+}
+.footer h4{
+margin-bottom: 25px;
+margin-top: 15PX;
+font-weight: 600;
+font-size: 40px;
+
+
+}
+
+.icons{
+margin-bottom: 7px;
+
+}
+.icons a {
+    text-decoration: none;
+    color: #ffffff;
+    
+
+}
+
+
+
+/* ----------------------------------------------------------------------------------------- */
+
+
+.col-md-5 {
+      
+        margin-top: 5%;
+    }
+
+.all{
+    overflow: hidden;
+}
+
+@media(max-width: 500px){
+    img.op2 {
+    width: 10%;
+}
+
+
+
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/dbms-d5864.appspot.com/o/Cultfiesta%2Flogo.webp?alt=media&token=4ccaece3-b5db-4d8b-8691-a5a1b6353b81" alt="Logo"></a>
+            </div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+               
+                <li><a href="../index.html">Report</a></li>
+
+                <li><a href="#" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="all">
+    <div class="head">
+    <img class="op2" src="https://firebasestorage.googleapis.com/v0/b/myapp-8ecc3.appspot.com/o/Cultfiesta%2Fbackground%2Fop.png?alt=media&token=01436a5b-2464-40de-b1b2-a92e82c18ec5" alt="">
+
+<h1>Report Analysis</h1>
+
+</div>
+
+<div class="row">
+    <!-- Filter Form -->
+    <div class="col-md-5">
+        <form id="filterForm">
+            <!-- Attribute Selection Checkboxes -->
+            <label><strong>Select attributes to visualize:</strong></label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="dept" value="dept"> Department</label>
+                <label><input type="checkbox" id="club" value="club"> Club</label>
+            </div>
+
+            <!-- Department Dropdown for Filtering -->
+            <label for="departmentSelect"><strong>Filter by Department:</strong></label>
+            <select id="departmentSelect">
+                <option value="All">All Departments</option>
+                <option value="AI&ML">AI&ML</option>
+                <option value="ECE">ECE</option>
+                <option value="CSE">CSE</option>
+                <option value="Mechanical">Mechanical</option>
+                <!-- Add more departments as needed -->
+            </select>
+
+            <!-- Category Selection via Multiple Checkboxes -->
+            <label><strong>Select Categories:</strong></label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" class="category" value="Technical"> Technical</label>
+                <label><input type="checkbox" class="category" value="Non-Technical"> Non-Technical</label>
+                <label><input type="checkbox" class="category" value="Sports"> Sports</label>
+                <label><input type="checkbox" class="category" value="Workshops"> Workshops</label>
+            </div>
+
+            <!-- Date Filters -->
+            <label for="startDate"><strong>Select Start Date:</strong></label>
+            <input type="date" id="startDate" value="2022-01-01"><br>
+
+            <label for="endDate"><strong>Select End Date:</strong></label>
+            <input type="date" id="endDate" value="2024-12-31"><br>
+
+            <button type="submit">Visualize</button>
+        <button id="downloadBtn" class="btn btn-success mt-3">Download Report</button>
+
+        </form>
+    </div>
+
+    <!-- Chart Containers -->
+    <div class="col-md-7">
+        <div id="charts">
+            <canvas id="barChartContainer"></canvas>
+            <canvas id="pieChartContainer"></canvas>
+        </div>
+    </div>
+</div>
+
+<!-- Loading Spinner -->
+
+<div id="loading">
+    <img src="logo.png" alt="Loading..."> <!-- Replace with your logo file name -->
+</div>
+
+</div>
+<!-- Firebase SDKs -->
+<!-- Firebase App (the core Firebase SDK) -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<!-- Firebase Database -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<!-- Chart.js Library -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    // Your Firebase configuration (Replace with your actual config)
+    const firebaseConfig = {
+        apiKey: "AIzaSyClkiHJX3mR4SdQQ2jzuG-n7ZNzuYD2REE",
+        authDomain: "dbms-d5864.firebaseapp.com",
+        projectId: "dbms-d5864",
+        storageBucket: "dbms-d5864.appspot.com",
+        messagingSenderId: "478043315963",
+        appId: "1:478043315963:web:02a9cd2c70c4755bce5a5e",
+        measurementId: "G-W7EKCZXJ0J"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+    // Event Listener for Form Submission
+    document.getElementById('filterForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Show loading spinner
+        showLoading(true);
+
+        // Get selected attributes and filters
+        var selectedAttributes = getSelectedAttributes();
+        var startDate = document.getElementById('startDate').value;
+        var endDate = document.getElementById('endDate').value;
+        var selectedCategories = getSelectedCategories(); // Handle multiple categories
+        var selectedDepartment = document.getElementById('departmentSelect').value;
+
+        // Fetch logs from Firebase
+        fetchLogs().then(logs => {
+            // Filter data based on user input
+            var filteredData = filterLogs(logs, startDate, endDate, selectedCategories, selectedDepartment);
+
+            if (filteredData.length === 0) {
+                alert("No data found for the selected filters.");
+                // Clear existing charts if any
+                clearCharts();
+                showLoading(false);
+                return;
+            }
+
+            // Visualize the filtered data
+            visualizeBarChart(filteredData, selectedAttributes);
+            visualizePieChart(filteredData, selectedAttributes);
+        }).catch(error => {
+            console.error("Error fetching logs:", error);
+            alert("Error fetching data from the database.");
+        }).finally(() => {
+            // Hide loading spinner
+            showLoading(false);
+        });
+    });
+
+
+    document.getElementById('downloadBtn').addEventListener('click', function() {
+        showLoading(true);
+        var startDate = document.getElementById('startDate').value;
+        var endDate = document.getElementById('endDate').value;
+        var selectedCategories = getSelectedCategories();
+        var selectedDepartment = document.getElementById('departmentSelect').value;
+
+        fetchLogs().then(logs => {
+            var filteredData = filterLogs(logs, startDate, endDate, selectedCategories, selectedDepartment);
+
+            if (filteredData.length === 0) {
+                alert("No data available to generate the report.");
+                showLoading(false);
+                return;
+            }
+
+            generateTxtReport(filteredData, selectedDepartment, startDate, endDate);
+        }).catch(error => {
+            console.error("Error fetching logs:", error);
+            alert("Error fetching data from the database: " + error.message);
+            showLoading(false);
+        });
+    });
+
+
+
+    function generateTxtReport(data, department, startDate, endDate) {
+        let reportContent = `Activities Report\n\n`;
+        reportContent += `Department Analysis from ${startDate} to ${endDate}:\n`;
+        let departmentCounts = {};
+        
+        data.forEach(log => {
+            if (!departmentCounts[log.department]) {
+                departmentCounts[log.department] = {
+                    total: 0,
+                    clubs: {}
+                };
+            }
+            departmentCounts[log.department].total++;
+            if (!departmentCounts[log.department].clubs[log.club]) {
+                departmentCounts[log.department].clubs[log.club] = 0;
+            }
+            departmentCounts[log.department].clubs[log.club]++;
+        });
+
+        for (const dept in departmentCounts) {
+            reportContent += `${dept} conducted ${departmentCounts[dept].total} events.\n`;
+            for (const club in departmentCounts[dept].clubs) {
+                reportContent += `    Club: ${club} - ${departmentCounts[dept].clubs[club]} events\n`;
+            }
+            reportContent += '\n';
+        }
+
+        const blob = new Blob([reportContent], { type: 'text/plain' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `Activities_Report_${startDate.replace(/-/g, '')}_${endDate.replace(/-/g, '')}.txt`;
+        a.click();
+        window.URL.revokeObjectURL(url);
+        showLoading(false);
+    }
+
+
+    // Function to get selected attributes
+    function getSelectedAttributes() {
+        var selected = [];
+        if (document.getElementById('dept').checked) selected.push('dept');
+        if (document.getElementById('club').checked) selected.push('club');
+        return selected;
+    }
+
+    // Function to get selected categories (multiple)
+    function getSelectedCategories() {
+        var selectedOptions = Array.from(document.querySelectorAll('.category:checked'));
+        return selectedOptions.map(option => option.value);
+    }
+
+    // Function to fetch logs from Firebase
+    async function fetchLogs() {
+        const snapshot = await db.ref('logs').once('value');
+        const data = snapshot.val();
+        let logs = [];
+        for (const key in data) {
+            if (data.hasOwnProperty(key)) {
+                logs.push(data[key]);
+            }
+        }
+        return logs;
+    }
+
+    // Function to filter logs based on selected criteria
+    function filterLogs(logs, startDate, endDate, selectedCategories, selectedDepartment) {
+        const start = new Date(startDate);
+        const end = new Date(endDate);
+        return logs.filter(log => {
+            const logDate = new Date(log.date);
+            const matchesDate = logDate >= start && logDate <= end;
+            const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(log.category);
+            const matchesDepartment = selectedDepartment === "All" || log.department === selectedDepartment;
+            return matchesDate && matchesCategory && matchesDepartment;
+        });
+    }
+
+    // Function to visualize data in a bar chart
+    function visualizeBarChart(data, selectedAttributes) {
+        var labels = [];
+        var values = [];
+        var categoryCounts = {};
+
+        data.forEach(log => {
+            var dept = log.department;       // Department
+            var club = log.club;             // Club
+            var key = buildKey(dept, club, selectedAttributes);
+
+            if (!categoryCounts[key]) {
+                categoryCounts[key] = 0;
+            }
+            categoryCounts[key]++;
+        });
+
+        // Prepare labels and values for the bar chart
+        for (var key in categoryCounts) {
+            labels.push(key);
+            values.push(categoryCounts[key]);
+        }
+
+        // Destroy old chart instance if any
+        if (window.barChart) {
+            window.barChart.destroy();
+        }
+
+        // Generate Bar Chart
+        var ctx = document.getElementById('barChartContainer').getContext('2d');
+        window.barChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Event Count',
+                    data: values,
+                    backgroundColor: generateColors(values.length, 0.7),
+                    borderColor: generateColors(values.length, 1),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Event Count by ' + getChartTitle(selectedAttributes)
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    // Function to visualize data in a pie chart
+    function visualizePieChart(data, selectedAttributes) {
+        var labels = [];
+        var values = [];
+        var categoryCounts = {};
+
+        data.forEach(log => {
+            var dept = log.department;       // Department
+            var club = log.club;             // Club
+            var key = buildKey(dept, club, selectedAttributes);
+
+            if (!categoryCounts[key]) {
+                categoryCounts[key] = 0;
+            }
+            categoryCounts[key]++;
+        });
+
+        // Prepare labels and values for the pie chart
+        for (var key in categoryCounts) {
+            labels.push(key);
+            values.push(categoryCounts[key]);
+        }
+
+        // Destroy old chart instance if any
+        if (window.pieChart) {
+            window.pieChart.destroy();
+        }
+
+        // Generate Pie Chart
+        var ctx = document.getElementById('pieChartContainer').getContext('2d');
+        window.pieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Event Distribution',
+                    data: values,
+                    backgroundColor: generateColors(values.length, 0.7),
+                    borderColor: generateColors(values.length, 1),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Event Distribution by ' + getChartTitle(selectedAttributes)
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                var label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                label += context.raw;
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    // Function to build chart labels based on selected attributes
+    function buildKey(dept, club, selectedAttributes) {
+        return selectedAttributes.map(attr => {
+            if (attr === 'dept') return dept || 'Unknown Dept';
+            if (attr === 'club') return club || 'Unknown Club';
+        }).join(' - ');
+    }
+
+    // Function to generate a range of distinct colors using HSL
+    function generateColors(count, opacity) {
+        const colors = [];
+        const hueStep = 360 / count;
+        for (let i = 0; i < count; i++) {
+            const hue = i * hueStep;
+            const saturation = 70; // 70%
+            const lightness = 50;  // 50%
+            colors.push(`hsla(${hue}, ${saturation}%, ${lightness}%, ${opacity})`);
+        }
+        return colors;
+    }
+
+    // Function to determine the chart title based on selected attributes
+    function getChartTitle(selectedAttributes) {
+        if (selectedAttributes.includes('dept') && selectedAttributes.includes('club')) {
+            return 'Department and Club';
+        } else if (selectedAttributes.includes('dept')) {
+            return 'Department';
+        } else if (selectedAttributes.includes('club')) {
+            return 'Club';
+        } else {
+            return 'All Attributes';
+        }
+    }
+
+    // Function to clear existing charts
+    function clearCharts() {
+        if (window.barChart) {
+            window.barChart.destroy();
+            window.barChart = null;
+        }
+        if (window.pieChart) {
+            window.pieChart.destroy();
+            window.pieChart = null;
+        }
+    }
+
+    // Function to show/hide loading spinner
+    function showLoading(isLoading) {
+        const loadingSpinner = document.getElementById('loading');
+        loadingSpinner.style.display = isLoading ? 'block' : 'none';
+    }
+</script>
+
+
+
+<section class="footer">
+  <h4>About Us</h4>
+  <p>You Plan, We gather! <br>Our club dea
+    ls with Organising, Conducting
+      and Organising events </p>
+      <div class="icons">
+         <a href="https://www.instagram.com/cristiano/?hl=en"> <i class="fa-brands fa-instagram fa-beat-fade"></i></a>
+         <a href=""> <i class="fa-brands fa-discord"></i></a>
+              <i class="fa-solid fa-phone"></i>
+              <i class="fa-solid fa-location-dot"></i>
+
+      </div>
+<p>Made With  <i class="fa-regular fa-heart"></i> by CultFiesta</p>
+
+</section>
+</body>
+</html>

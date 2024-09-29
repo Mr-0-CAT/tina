@@ -46,8 +46,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy('./src/Our Clubs/clubs/DCG/responsive.css')
     eleventyConfig.addPassthroughCopy('./src/Our Clubs/clubs/DCG/swiper-bundle.min.css')
    
-    eleventyConfig.addPassthroughCopy('./src/Our Clubs/clubs/Dhwani/style.css')
-    eleventyConfig.addPassthroughCopy('./src/Our Clubs/clubs/Dhwani/responsive.css')
+
    
     eleventyConfig.addPassthroughCopy('./src/Our Clubs/clubs/E yantra/style.css')
     eleventyConfig.addPassthroughCopy('./src/Our Clubs/clubs/E yantra/responsive.css')
@@ -138,7 +137,10 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy('./src/sort-sports')
     eleventyConfig.addPassthroughCopy('./src/sort-work')
 
+    eleventyConfig.addPassthroughCopy('./src/Analysis/index.html')
 
+    eleventyConfig.addPassthroughCopy('./src/Our Clubs/clubs/Dhawni/style.css')
+    eleventyConfig.addPassthroughCopy('./src/Our Clubs/clubs/Dhawni/responsive.css')
 
     return {
       dir: {

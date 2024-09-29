@@ -56,6 +56,8 @@
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                    
+                    <li><a href="../Analysis/index.html">Report</a></li>
+
                     <li><a href="#" id="logout">Logout</a></li>
                 </ul>
             </nav>
@@ -111,6 +113,18 @@
                                     <label>Club Name</label>
                                     <br>
                                     <input type="text" id="cName" placeholder="Club Name">
+                                    <br>
+                                    <label for="department">Department:</label>
+                                    <br>
+                                    <select id="department">
+                                      <option value="AI&ML">AI&ML</option>
+                                      <option value="ECE">ECE</option>
+                                      <option value="CSE">CSE</option>
+                                      <option value="Mechanical">Mechanical</option>
+                                      <option value="Civil">Civil</option>
+                                      <option value="Electrical">Electrical</option>
+                                    </select>
+                                    
                                     <br>
                                     <label>Outcome</label>
                                     <br>
@@ -413,13 +427,970 @@
   <p>Made With  <i class="fa-regular fa-heart"></i> by CultFiesta</p>
   
   </section>
-      <script type="module" src="../js/script.js"></script>
+      <script type="module" >// Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+        import { getDatabase, set, ref, get, remove, update } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
+        import { getStorage, ref as storageRef, uploadBytes, getDownloadURL, deleteObject } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-storage.js";
+        
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyClkiHJX3mR4SdQQ2jzuG-n7ZNzuYD2REE",
+          authDomain: "dbms-d5864.firebaseapp.com",
+          projectId: "dbms-d5864",
+          storageBucket: "dbms-d5864.appspot.com",
+          messagingSenderId: "478043315963",
+          appId: "1:478043315963:web:02a9cd2c70c4755bce5a5e",
+          measurementId: "G-W7EKCZXJ0J"
+        };
+        
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getDatabase(app);
+        const storage = getStorage(app);
+        
+        const my_blog = document.querySelector('.my_blog');
+        const login_page = document.querySelector('.login');
+        const notify = document.querySelector('.notify');
+        const add_post_btn = document.querySelector('#post_btn');
+        const update_btn = document.querySelector('.update_btn');
+        
+        // Admin UID and Regular User UIDs with names
+        const adminUID = {'n4GDbNQKRvS7DZMSHv2EBhenCwh1': 'Preetham'} ;  // Admin UID
+        const users = {
+          'QkNkwVJ8eva41VrDFcyvJxlQwLl1': 'Anil',
+          '3OcTKWI54ZAeynbdFGQQf8cTmIdB3': 'Bunny'
+        }; // Regular User UIDs and names
+        
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            my_blog.classList.add('show');
+            login_page.classList.add('hide');
+          } else {
+            my_blog.classList.remove('show');
+            login_page.classList.remove('hide');
+          }
+        });
+        
+        function SignInUser(event) {
+          event.preventDefault();  // Prevent default form submission
+          const email = document.getElementById('email').value;
+          const password = document.getElementById('password').value;
+          signInWithEmailAndPassword(auth, email, password)
+            .then((userCredentials) => {
+              console.log(userCredentials.user.uid);
+            })
+            .catch((error) => {
+              console.error("Sign in error: ", error);
+            });
+        }
+        
+        const sign_btn = document.querySelector('#sign_in');
+        sign_btn.addEventListener('click', SignInUser);
+        
+        const sign_out_btn = document.querySelector('#logout');
+        sign_out_btn.addEventListener('click', () => {
+          signOut(auth).then(() => {
+            notify.innerHTML = "Signed out successfully";
+            setTimeout(() => {
+              location.reload();
+            }, 2000);
+          }).catch((error) => {
+            console.log("Sign out error: ", error);
+          });
+        });
+        
+        // Modify Add_Post function to include user UID and selected category
+        function LogPostDetails(id,department, cName, date, category) {
+    const logRef = ref(db, `logs/${id}`);
+    set(logRef, {
+        
+        department: department,
+        club: cName, // Log cName as club
+        date: date,
+        category: category
+
+    }).then(() => {
+        console.log("Post details logged successfully.");
+    }).catch((error) => {
+        console.error("Error logging post details: ", error);
+    });
+}
+
+// Function to Add a New Post
+function Add_Post() {
+    const title = document.querySelector('#title').value;
+    const post_content = document.querySelector('#post_content').value;
+    const post2_content = document.querySelector('#post2_content').value;
+    const post_image = document.querySelector('#post_image').files[0];
+    const date = document.querySelector('#date').value;
+    const venue = document.querySelector('#venue').value;
+    const prerequists = document.querySelector('#prerequists').value;
+    const fee = document.querySelector('#fee').value;
+    const time = document.querySelector('#time').value;
+    const cName = document.querySelector('#cName').value;
+    const outcome = document.querySelector('#outcome').value;
+    const number1 = document.querySelector('#number1').value;
+    const number2 = document.querySelector('#number2').value;
+    const link1 = document.querySelector('#link1').value;
+    const link2 = document.querySelector('#link2').value;
+    const category = document.querySelector('#category').value;
+    const department = document.querySelector('#department').value; // Get selected category from dropdown
+
+    const user = auth.currentUser; // Get the logged-in user
+
+    if (!user) {
+        alert("You must be logged in to add a post.");
+        return;
+    }
+
+    if (!post_image) {
+        alert("Please select an image");
+        return;
+    }
+
+    const id = Date.now();
+    const imageRef = storageRef(storage, `images/${id}-${post_image.name}`);
+
+    uploadBytes(imageRef, post_image).then((snapshot) => {
+        return getDownloadURL(snapshot.ref);
+    }).then((downloadURL) => {
+        return set(ref(db, 'post/' + id), {
+            title: title,
+            post_content: post_content,
+            post2_content: post2_content,
+            imageURL: downloadURL,
+            date: date,
+            venue: venue,
+            prerequists: prerequists,
+            fee: fee,
+            time: time,
+            cName: cName,
+            outcome: outcome,
+            number1: number1,
+            number2: number2,
+            link1: link1,
+            link2: link2,
+            category: category,
+            department: department,
+            uid: user.uid // Store the UID of the user creating the post
+        });
+    }).then(() => {
+        // Log post details separately
+        LogPostDetails(id, department, cName, date, category);
+
+        notify.innerHTML = "Data Added";
+        clearFields();
+        GetPostData();
+    }).catch((error) => {
+        console.error("Error uploading file: ", error);
+        notify.innerHTML = "Error adding data";
+    });
+}
+
+add_post_btn.addEventListener('click', Add_Post);
+
+// Function to Clear Input Fields
+function clearFields() {
+    document.querySelector('#title').value = "";
+    document.querySelector('#post_content').value = "";
+    document.querySelector('#post2_content').value = "";
+    document.querySelector('#post_image').value = "";
+    document.querySelector('#date').value = "";
+    document.querySelector('#venue').value = "";
+    document.querySelector('#prerequists').value = "";
+    document.querySelector('#fee').value = "";
+    document.querySelector('#time').value = "";
+    document.querySelector('#cName').value = "";
+    document.querySelector('#outcome').value = "";
+    document.querySelector('#number1').value = "";
+    document.querySelector('#number2').value = "";
+    document.querySelector('#link1').value = "";
+    document.querySelector('#link2').value = "";
+    document.querySelector('#category').value = "";
+    document.querySelector('#department').value = "";
+    // Removed: document.querySelector('#club').value = ""; // No longer needed
+}
+
+// Function to Retrieve and Display Posts
+function GetPostData() {
+    const user_ref = ref(db, 'post/');
+    get(user_ref).then((snapshot) => {
+        const data = snapshot.val();
+        let html = "";
+        const table = document.querySelector('table');
+
+        for (const key in data) {
+            const { title, post_content, post2_content, imageURL, uid } = data[key];
+            const username = users[uid] || "ADMIN"; // Get username or default to "Unknown User"
+
+            html += `
+            <tr>
+                <td><span class="postNumber"></span></td>
+                <td class="separator">
+                    <div><b>${title}</b> by <i>${username}</i></div>
+                    <img src="${imageURL}" alt="Post Image" style="width:100px;height:100px;">
+                </td>
+                <td class="separator">
+                    <button class="delete" onclick="delete_data('${key}', '${uid}')">Delete</button>
+                </td>
+                <td class="separator">
+                    <button class="update" onclick="update_data('${key}', '${uid}')">Update</button>
+                </td>
+                <td class="separator">
+                    <a href="../events/index.html?id=${key}" class="details">View Details</a>
+                </td>
+            </tr>`;
+        }
+
+        table.innerHTML = html;
+    }).catch((error) => {
+        console.error("Error fetching posts: ", error);
+        notify.innerHTML = "Error fetching posts";
+    });
+}
+
+GetPostData();
+
+// Function to Delete a Post
+window.delete_data = function (key, postUID) {
+    const user = auth.currentUser;
+
+    if (!user) {
+        alert("You must be logged in to delete a post.");
+        return;
+    }
+
+    if (user.uid === adminUID || user.uid === postUID) { // Admin or owner can delete
+        const post_ref = ref(db, `post/${key}`);
+
+        get(post_ref).then((snapshot) => {
+            if (!snapshot.exists()) {
+                alert("Post does not exist.");
+                return;
+            }
+
+            const data = snapshot.val();
+            const imageURL = data.imageURL;
+
+            // Remove the post data
+            remove(post_ref).then(() => {
+                // Extract the image path from the imageURL
+                const storagePath = decodeURIComponent(imageURL.split('/o/')[1].split('?')[0]);
+                const imageRef = storageRef(storage, storagePath);
+                return deleteObject(imageRef);
+            }).then(() => {
+                notify.innerHTML = "Post and associated image deleted successfully";
+                GetPostData();
+            }).catch((error) => {
+                console.error("Error deleting data: ", error);
+                notify.innerHTML = "Error deleting post";
+            });
+        }).catch((error) => {
+            console.error("Error fetching post data: ", error);
+            notify.innerHTML = "Error fetching post data";
+        });
+    } else {
+        alert("You can only delete posts created by you!");
+    }
+}
+
+// Function to Update a Post
+window.update_data = function (key, postUID) {
+    const user = auth.currentUser;
+
+    if (!user) {
+        alert("You must be logged in to update a post.");
+        return;
+    }
+
+    if (user.uid === adminUID || user.uid === postUID) { // Admin or owner can update
+        update_btn.classList.remove('hide');
+        add_post_btn.classList.add('hide');
+        const post_ref = ref(db, `post/${key}`);
+        get(post_ref).then((snapshot) => {
+            if (!snapshot.exists()) {
+                alert("Post does not exist.");
+                return;
+            }
+
+            const data = snapshot.val();
+            document.querySelector('#title').value = data.title;
+            document.querySelector('#post_content').value = data.post_content;
+            document.querySelector('#post2_content').value = data.post2_content;
+            document.querySelector('#date').value = data.date;
+            document.querySelector('#venue').value = data.venue;
+            document.querySelector('#prerequists').value = data.prerequists;
+            document.querySelector('#fee').value = data.fee;
+            document.querySelector('#time').value = data.time;
+            document.querySelector('#cName').value = data.cName;
+            document.querySelector('#outcome').value = data.outcome;
+            document.querySelector('#number1').value = data.number1;
+            document.querySelector('#number2').value = data.number2;
+            document.querySelector('#link1').value = data.link1;
+            document.querySelector('#link2').value = data.link2;
+            document.querySelector('#category').value = data.category; // Populate category field
+            document.querySelector('#department').value = data.department;
+
+            // Store the key for updating
+            update_btn.setAttribute('data-key', key);
+        }).catch((error) => {
+            console.error("Error fetching post data: ", error);
+            notify.innerHTML = "Error fetching post data";
+        });
+    } else {
+        alert("You can only update posts created by you!");
+    }
+}
+
+// Event Listener for Update Button
+update_btn.addEventListener('click', () => {
+    const key = update_btn.getAttribute('data-key');
+    const title = document.querySelector('#title').value;
+    const post_content = document.querySelector('#post_content').value;
+    const post2_content = document.querySelector('#post2_content').value;
+    const date = document.querySelector('#date').value;
+    const venue = document.querySelector('#venue').value;
+    const prerequists = document.querySelector('#prerequists').value;
+    const fee = document.querySelector('#fee').value;
+    const time = document.querySelector('#time').value;
+    const cName = document.querySelector('#cName').value;
+    const outcome = document.querySelector('#outcome').value;
+    const number1 = document.querySelector('#number1').value;
+    const number2 = document.querySelector('#number2').value;
+    const link1 = document.querySelector('#link1').value;
+    const link2 = document.querySelector('#link2').value;
+    const category = document.querySelector('#category').value; // Get selected category from dropdown
+    const department = document.querySelector('#department').value;
+    // Removed: const club = document.querySelector('#club').value; // No longer needed
+
+    const user = auth.currentUser; // Get the logged-in user
+
+    if (!user) {
+        alert("You must be logged in to update a post.");
+        return;
+    }
+
+    const post_ref = ref(db, `post/${key}`);
+    update(post_ref, {
+        title: title,
+        post_content: post_content,
+        post2_content: post2_content,
+        date: date,
+        venue: venue,
+        prerequists: prerequists,
+        fee: fee,
+        time: time,
+        cName: cName,
+        outcome: outcome,
+        number1: number1,
+        number2: number2,
+        link1: link1,
+        link2: link2,
+        category: category, // Include selected category in the post data
+        department: department,
+        uid: user.uid // Update the UID of the user creating the post (if changed)
+    }).then(() => {
+        // After updating the post, also update the log if necessary
+        // Optionally, you can update the logs here if any of the logged fields have changed
+
+        notify.innerHTML = "Data Updated";
+        clearFields();
+        GetPostData();
+        update_btn.classList.add('hide');
+        add_post_btn.classList.remove('hide');
+    }).catch((error) => {
+        console.error("Error updating data: ", error);
+        notify.innerHTML = "Error updating data";
+    });
+});
+
+// -------------------------------------------
+const add_post_Btn1 = document.querySelector('#post_btn1');
+const update_btn1 = document.querySelector('#update_btn1');
+let updateKey = null; // Initialize updateKey
+
+// ============================ Announcement Features ============================ //
+
+// Add Announcement Function
+function Add_Announcement() {
+  const title = document.querySelector('#title2').value;
+  const color = document.querySelector('#colorPicker').value; // Get the selected color
+  const user = auth.currentUser; // Get the logged-in user
+
+  if (!title) {
+    alert("Please enter a title for the announcement.");
+    return;
+  }
+
+  const id = Date.now(); // Use Date.now() for unique identifier
+
+  set(ref(db, 'announcement/' + id), {
+    title: title,
+    color: color, // Save the color in Firebase
+    uid: user.uid // Store the UID of the user creating the announcement
+  }).then(() => {
+    notify.innerHTML = "Announcement Added Successfully";
+    document.querySelector('#title2').value = "";
+    document.querySelector('#colorPicker').value = "#ffffff"; // Reset color picker to default
+    GetAnnounData();
+  }).catch(error => {
+    console.error("Error adding announcement: ", error);
+    notify.innerHTML = "Error adding announcement";
+  });
+}
+
+add_post_Btn1.addEventListener('click', Add_Announcement);
+
+// Get Announcement Data Function
+function GetAnnounData() {
+  const announ_ref = ref(db, 'announcement/');
+  get(announ_ref).then((snapshot) => {
+    const data = snapshot.val();
+
+    let html = "";
+    const table = document.querySelector('#announcement_table');
+    for (const key in data) {
+      const { title, color, uid } = data[key];
+      let textColorClass = '';
+      switch (color) {
+        case 'white':
+          textColorClass = 'white';
+          break;
+        case 'green':
+          textColorClass = 'green';
+          break;
+        case 'red':
+          textColorClass = 'red';
+          break;
+        case 'blinking':
+          textColorClass = 'blinking';
+          break;
+        default:
+          textColorClass = ''; // or default color class
+          break;
+      }
+
+      const username = (uid === adminUID) ? "ADMIN" : (users[uid] || "ADMIN");
+
+      html += `
+        <tr>
+          <td><span class="postNumber"></span></td>
+          <td class="${textColorClass}">${title} <br>  <small style="color: white;">by: ${username}</small></td>
+          <td><button class="delete" onclick="delete_data1('${key}', '${uid}')">Delete</button></td>
+          <td><button class="update" onclick="updateAnnouncement('${key}', '${uid}')">Update</button></td>
+        </tr>
+      `;
+    }
+
+    table.innerHTML = html;
+  }).catch(error => {
+    console.error("Error fetching announcements: ", error);
+    notify.innerHTML = "Error fetching announcements";
+  });
+}
+
+// Delete Announcement Function
+window.delete_data1 = function (key, announUID) {
+  const user = auth.currentUser;
+
+  if (user.uid === adminUID || user.uid === announUID) { // Admin or owner can delete
+    const announ_ref = ref(db, `announcement/${key}`);
+
+    remove(announ_ref).then(() => {
+      notify.innerHTML = "Announcement Deleted Successfully";
+      GetAnnounData();
+    }).catch(error => {
+      console.error("Error deleting announcement: ", error);
+      notify.innerHTML = "Error deleting announcement";
+    });
+  } else {
+    alert("You can only delete announcements created by you!");
+  }
+};
+
+// Update Announcement Function
+window.updateAnnouncement = function (key, announUID) {
+  const user = auth.currentUser;
+
+  if (user.uid === adminUID || user.uid === announUID) { // Admin or owner can update
+    update_btn1.classList.remove('hide');
+    add_post_Btn1.classList.add('hide');
+    const announ_ref = ref(db, `announcement/${key}`);
+    get(announ_ref).then((snapshot) => {
+      const data = snapshot.val();
+      document.querySelector('#title2').value = data.title;
+      const colorPicker = document.querySelector('#colorPicker');
+      colorPicker.value = data.color; // Set color picker value
+      updateKey = key;
+
+      // Log color value just before updating database
+      console.log("Color before update:", data.color);
+    }).catch(error => {
+      console.error("Error fetching announcement for update: ", error);
+      notify.innerHTML = "Error fetching announcement data";
+    });
+  } else {
+    alert("You can only update announcements created by you!");
+  }
+}
+
+update_btn1.addEventListener('click', function () {
+  const title = document.querySelector('#title2').value;
+  const color = document.querySelector('#colorPicker').value; // Get selected color
+  const user = auth.currentUser; // Get the logged-in user
+
+  if (updateKey) {
+    console.log("Color before update:", color); // Log color value before updating
+    update(ref(db, `announcement/${updateKey}`), {
+      title: title,
+      color: color, // Update color value
+      uid: user.uid // Update UID if necessary (typically, UID shouldn't change)
+    }).then(() => {
+      notify.innerHTML = "Announcement Updated Successfully";
+      document.querySelector('#title2').value = "";
+      document.querySelector('#colorPicker').value = "#ffffff"; // Reset color picker to default
+      updateKey = null;
+      update_btn1.classList.add('hide');
+      add_post_Btn1.classList.remove('hide');
+      GetAnnounData();
+    }).catch(error => {
+      console.error("Error updating announcement: ", error);
+      notify.innerHTML = "Error updating announcement";
+    });
+  }
+});
+
+// Initial Data Load
+
+GetAnnounData();
+
+//  --------------------------------
+
+
+
+// AddTime function to upload post data
+function AddTime() {
+  const title = document.querySelector('#title3').value;
+  const post_image2 = document.querySelector('#post_image2').files[0];
+  const post_image3 = document.querySelector('#post_image3').files[0];
+  const post_image4 = document.querySelector('#post_image4').files[0];
+  const category2 = document.querySelector('#category2').value;
+
+  const user = auth.currentUser;
+  if (!user) {
+    alert("You must be logged in to add a post.");
+    return;
+  }
+
+  if (!post_image2) {
+    alert("Please select the first image");
+    return;
+  }
+
+  const id = Date.now();
+
+  const uploadImage = (file, id, idx) => {
+    const imageRef = storageRef(storage, `timeline/${id}-${idx}-${file.name}`);
+    return uploadBytes(imageRef, file).then(snapshot => getDownloadURL(snapshot.ref));
+  };
+
+  Promise.all([
+    uploadImage(post_image2, id, 1),
+    post_image3 ? uploadImage(post_image3, id, 2) : Promise.resolve(null),
+    post_image4 ? uploadImage(post_image4, id, 3) : Promise.resolve(null)
+  ]).then(urls => {
+    const imageData = {
+      imageURL1: urls[0],
+      imageURL2: urls[1],
+      imageURL3: urls[2]
+    };
+
+    return set(ref(db, 'timeline/' + id), {
+      title: title,
+      ...imageData,
+      category: category2,
+      userId: user.uid,  // Store user ID
+      userName: user.displayName || "Anonymous"  // Optionally store the user’s name
+    });
+  }).then(() => {
+    notify.innerHTML = "Data Added";
+    clearFieldsTimeline();
+    GetTimeData();
+  }).catch((error) => {
+    console.error("Error uploading file: ", error);
+    notify.innerHTML = "Error adding data";
+  });
+}
+
+// Bind AddTime function to the post button
+document.querySelector('#post_btn3').addEventListener('click', AddTime);
+
+// Clear form fields after data is added
+function clearFieldsTimeline() {
+  document.querySelector('#title3').value = "";
+  document.querySelector('#post_image2').value = "";
+  document.querySelector('#post_image3').value = "";
+  document.querySelector('#post_image4').value = "";
+  document.querySelector('#category2').value = "";
+}
+
+// Get timeline data and display in the table
+function GetTimeData() {
+  const user_ref = ref(db, 'timeline/');
+  get(user_ref).then((snapshot) => {
+    const data = snapshot.val();
+    let html = "";
+    const table = document.querySelector('#timeline');
+
+    for (const key in data) {
+      const { title, imageURL1, imageURL2, imageURL3, category, userName } = data[key];
+
+      html += `
+        <tr>
+          <td><span class="postNumber"></span></td>
+          <td class="separator">
+            <div><b>${title}</b></div>
+            <div>Added by: ${userName || "Unknown"}</div>
+            <img src="${imageURL1}" alt="Post Image 1" class="${category}" style="width:100px;height:100px;">
+           
+          </td>
+          <td class="separator"><button class="delete" onclick="deleteTimeData('${key}')">Delete</button></td>
+          <td class="separator"><button class="update" onclick="updateTimeData('${key}')">Update</button></td>
+        </tr>
+      `;
+    }
+    table.innerHTML = html;
+  });
+}
+
+// Delete timeline data
+window.deleteTimeData = function (key) {
+  const user = auth.currentUser;
+  if (!user) {
+    alert("You must be logged in to delete a post.");
+    return;
+  }
+
+  const user_ref = ref(db, `timeline/${key}`);
+  get(user_ref).then((snapshot) => {
+    const data = snapshot.val();
+    if (!data) {
+      notify.innerHTML = "Post not found";
+      return;
+    }
+
+    // Check if the current user is the owner of the post
+    if (data.userId !== user.uid) {
+      alert("You can only delete your own posts.");
+      return;
+    }
+
+    const imageRefs = [data.imageURL1, data.imageURL2, data.imageURL3].filter(Boolean).map(url => {
+      const fileName = url.split('%2F').pop().split('?')[0];
+      return storageRef(storage, `timeline/${fileName}`);
+    });
+
+    remove(user_ref).then(() => {
+      return Promise.all(imageRefs.map(ref => deleteObject(ref)));
+    }).then(() => {
+      notify.innerHTML = "Post and associated images deleted successfully";
+      GetTimeData();
+    }).catch((error) => {
+      console.error("Error deleting data: ", error);
+      notify.innerHTML = "Error deleting post";
+    });
+  });
+}
+
+// Update timeline data
+window.updateTimeData = function (key) {
+  const user = auth.currentUser;
+  if (!user) {
+    alert("You must be logged in to update a post.");
+    return;
+  }
+
+  const user_ref = ref(db, `timeline/${key}`);
+  get(user_ref).then((item) => {
+    const data = item.val();
+    if (!data) {
+      notify.innerHTML = "Post not found";
+      return;
+    }
+
+    // Check if the current user is the owner of the post
+    if (data.userId !== user.uid) {
+      alert("You can only update your own posts.");
+      return;
+    }
+
+    document.querySelector('#title3').value = data.title;
+    document.querySelector('#category2').value = data.category;
+
+    // Display update button and hide add button
+    document.querySelector('#update_btn3').style.display = 'block';
+    document.querySelector('#post_btn3').style.display = 'none';
+
+    // Bind update functionality
+    document.querySelector('#update_btn3').onclick = function() {
+      updatePostData(key, data.imageURL1, data.imageURL2, data.imageURL3);
+    };
+  });
+}
+
+// Update post data logic
+function updatePostData(key, oldImageURL1, oldImageURL2, oldImageURL3) {
+  const title = document.querySelector('#title3').value;
+  const post_image2 = document.querySelector('#post_image2').files[0];
+  const post_image3 = document.querySelector('#post_image3').files[0];
+  const post_image4 = document.querySelector('#post_image4').files[0];
+  const category2 = document.querySelector('#category2').value;
+
+  const deleteOldImage = (url) => {
+    if (!url) return Promise.resolve();
+    const fileName = url.split('%2F').pop().split('?')[0];
+    const oldImageRef = storageRef(storage, `timeline/${fileName}`);
+    return deleteObject(oldImageRef);
+  };
+
+  const uploadImage = (file, id, idx) => {
+    const imageRef = storageRef(storage, `timeline/${id}-${idx}-${file.name}`);
+    return uploadBytes(imageRef, file).then(snapshot => getDownloadURL(snapshot.ref));
+  };
+
+  const promises = [
+    post_image2 ? deleteOldImage(oldImageURL1).then(() => uploadImage(post_image2, key, 1)) : Promise.resolve(oldImageURL1),
+    post_image3 ? deleteOldImage(oldImageURL2).then(() => uploadImage(post_image3, key, 2)) : Promise.resolve(oldImageURL2),
+    post_image4 ? deleteOldImage(oldImageURL3).then(() => uploadImage(post_image4, key, 3)) : Promise.resolve(oldImageURL3)
+  ];
+
+  Promise.all(promises).then(urls => {
+    return update(ref(db, `timeline/${key}`), {
+      title: title,
+      imageURL1: urls[0],
+      imageURL2: urls[1],
+      imageURL3: urls[2],
+      category: category2
+    });
+  }).then(() => {
+    notify.innerHTML = "Post updated successfully";
+    clearFieldsTimeline();
+    GetTimeData();
+  }).catch((error) => {
+    console.error("Error updating post: ", error);
+    notify.innerHTML = "Error updating post";
+  });
+
+  document.querySelector('#update_btn3').style.display = 'none';
+  document.querySelector('#post_btn3').style.display = 'block';
+}
+
+// Initial call to load timeline data
+GetTimeData();
+
+/* _-------------------------------- */
+
+// Function to add a sponsor
+function AddSponsor() {
+  const title = document.querySelector('#title4').value;
+  const post_image3 = document.querySelector('#post_image3').files[0];
+  const category3 = document.querySelector('#category3').value;
+
+  const user = auth.currentUser;
+  if (!user) {
+    alert("You must be logged in to add a post.");
+    return;
+  }
+
+  if (!post_image3) {
+    alert("Please select an image");
+    return;
+  }
+
+  const id = Date.now();
+  const imageRef3 = storageRef(storage, `sponsors/${id}-${post_image3.name}`);
+
+  uploadBytes(imageRef3, post_image3).then((snapshot) => {
+    return getDownloadURL(snapshot.ref);
+  }).then((downloadURL) => {
+    return set(ref(db, 'sponsors/' + id), {
+      title: title,
+      imageURL: downloadURL,
+      category: category3,
+      userId: user.uid,  // Store user ID
+      userName: user.displayName || "Anonymous"  // Optionally store user name
+    });
+  }).then(() => {
+    notify.innerHTML = "Sponsor Added Successfully";
+    clearFieldsSponsors();
+    GetSponsorData();
+  }).catch((error) => {
+    console.error("Error uploading file: ", error);
+    notify.innerHTML = "Error adding sponsor";
+  });
+}
+
+// Function to clear sponsor input fields
+function clearFieldsSponsors() {
+  document.querySelector('#title4').value = "";
+  document.querySelector('#post_image3').value = "";
+  document.querySelector('#category3').value = ""; 
+}
+
+// Function to retrieve sponsor data and display in the table
+function GetSponsorData() {
+  const user_ref = ref(db, 'sponsors/');
+  get(user_ref).then((snapshot) => {
+    const data = snapshot.val();
+    let html = "";
+    const table = document.querySelector('#Sponsors');
+
+    for (const key in data) {
+      const { title, imageURL, category, userName } = data[key];
+
+      html += `
+        <tr>
+          <td><span class="postNumber"></span></td>
+          <td class="separator">
+            <div><b>${title}</b></div>
+            <div>Added by: ${userName || "Unknown"}</div>
+            <img src="${imageURL}" alt="Sponsor Image" class="${category}" style="width:100px;height:100px;">
+          </td>
+          <td class="separator"><button class="delete" onclick="deleteSponsorData('${key}')">Delete</button></td>
+          <td class="separator"><button class="update" onclick="updateSponsorData('${key}')">Update</button></td>
+        </tr>
+      `;
+    }
+    table.innerHTML = html;
+  });
+}
+
+// Function to delete sponsor data
+window.deleteSponsorData = function (key) {
+  const user = auth.currentUser;
+  if (!user) {
+    alert("You must be logged in to delete a post.");
+    return;
+  }
+
+  const user_ref = ref(db, `sponsors/${key}`);
+  get(user_ref).then((snapshot) => {
+    const data = snapshot.val();
+    if (!data) {
+      notify.innerHTML = "Sponsor not found";
+      return;
+    }
+
+    // Check if the current user is the owner of the post
+    if (data.userId !== user.uid) {
+      alert("You can only delete your own posts.");
+      return;
+    }
+
+    const imageRef = storageRef(storage, data.imageURL);
+    remove(user_ref).then(() => {
+      return deleteObject(imageRef);
+    }).then(() => {
+      notify.innerHTML = "Sponsor and associated image deleted successfully";
+      GetSponsorData();
+    }).catch((error) => {
+      console.error("Error deleting data: ", error);
+      notify.innerHTML = "Error deleting sponsor";
+    });
+  });
+}
+
+// Function to update sponsor data
+window.updateSponsorData = function (key) {
+  const user = auth.currentUser;
+  if (!user) {
+    alert("You must be logged in to update a post.");
+    return;
+  }
+
+  const user_ref = ref(db, `sponsors/${key}`);
+  get(user_ref).then((item) => {
+    const data = item.val();
+    if (!data) {
+      notify.innerHTML = "Sponsor not found";
+      return;
+    }
+
+    // Check if the current user is the owner of the post
+    if (data.userId !== user.uid) {
+      alert("You can only update your own posts.");
+      return;
+    }
+
+    document.querySelector('#title4').value = data.title;
+    document.querySelector('#category3').value = data.category;
+
+    // Display update button and hide add button
+    document.querySelector('#update_btn4').style.display = 'block';
+    document.querySelector('#post_btn4').style.display = 'none';
+
+    // Bind update functionality
+    document.querySelector('#update_btn4').onclick = function() {
+      updateSponsorData(key, data.imageURL);
+    };
+  });
+}
+
+// Update sponsor data logic
+function updateSponsorData(key, oldImageURL) {
+  const title = document.querySelector('#title4').value;
+  const post_image3 = document.querySelector('#post_image3').files[0];
+  const category3 = document.querySelector('#category3').value;
+
+  const deleteOldImage = (url) => {
+    const oldImageRef = storageRef(storage, url);
+    return deleteObject(oldImageRef);
+  };
+
+  const uploadNewImage = (file, id) => {
+    const newImageRef = storageRef(storage, `sponsors/${id}-${file.name}`);
+    return uploadBytes(newImageRef, file).then(snapshot => getDownloadURL(snapshot.ref));
+  };
+
+  const promises = post_image3 ? deleteOldImage(oldImageURL).then(() => uploadNewImage(post_image3, key)) : Promise.resolve(oldImageURL);
+
+  promises.then((newImageURL) => {
+    return update(ref(db, `sponsors/${key}`), {
+      title: title,
+      imageURL: newImageURL,
+      category: category3
+    });
+  }).then(() => {
+    notify.innerHTML = "Sponsor updated successfully";
+    clearFieldsSponsors();
+    GetSponsorData();
+  }).catch((error) => {
+    console.error("Error updating sponsor: ", error);
+    notify.innerHTML = "Error updating sponsor";
+  });
+
+  document.querySelector('#update_btn4').style.display = 'none';
+  document.querySelector('#post_btn4').style.display = 'block';
+}
+
+document.querySelector('#post_btn4').addEventListener('click', AddSponsor);
+// Initial call to load sponsor data
+GetSponsorData();
+
+        </script>
 
       <style>
         /* Styles for dropdown */
         .dropdown_content {
             display: none;
             /* Adjust other styles as needed */
+
+
+
+
+
         }
     </style>
 </body>
