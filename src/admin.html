@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+   
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
@@ -1395,3 +1394,832 @@ GetSponsorData();
     </style>
 </body>
 </html>
+
+
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,900;1,500;1,700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    counter-reset: section;
+    
+}
+
+
+/* login  */
+
+.login{
+    width: 50%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.login h1{
+    text-align: end;
+    padding: 5px;
+}
+
+.login input {
+    display: block;
+    margin: 10px 0;
+    padding: 5px 10px;
+    border: 1px solid #111;
+     outline: none;
+     width: 100%;
+}
+
+.login button{
+    width: 100%;
+    padding: 5px 10px;
+    background: #111;
+    border: 1px solid #111;
+    color: #fff;
+    text-align: center;
+    transition: 0.4s ease-in;
+    cursor: pointer;
+
+}
+
+.login button:hover{
+    background: transparent;
+    color: #111;
+}
+
+
+.container.main{
+  
+border-radius: 200px;
+    padding: 0% !important;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(164, 19, 19, 0.24) 0px 1px 2px;
+
+}
+/* header */
+
+header {
+    background: #09015f;
+    color: #fff;
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    margin-left: 20px;
+}
+
+header .logo img {
+    height: 40px; /* Adjust according to your logo size */
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    justify-content: space-between;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+    padding: 0;
+}
+
+header ul li {
+    margin: 0 15px;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header ul li a:hover {
+    color: #ff9900; /* Change to your desired hover color */
+}
+
+
+.notify {
+    background: green;
+    color: #fff;
+    text-align: center;
+    width: 50% !important;
+
+    font-size: 18px;
+    border-radius: 20px;
+ margin-bottom: 2% !important;
+ margin-top: 2% !important;
+
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+
+/* post */
+
+.main_content{
+    display: grid;
+  border: 2px solid;
+  border-radius: 40px; 
+}
+
+.main_content .post_form {
+    width: 450px;
+
+
+    padding: 20px !important;
+}
+
+.main_content .post_form input ,textarea{
+    width: 100%;
+    border: 2px solid #111;
+    padding: 5px ;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.main_content .post_form button{
+    width: 100%;
+    background: #111;
+    color: #fafafa;
+    padding: 5px 0;
+    border: 1px solid #111;
+    transition: 0.5s ease-in-out;
+    margin-top: 5%;
+    border-radius: 20px;
+}
+.main_content .post_form button:hover{
+    background: midnightblue;
+}
+
+
+/* update_btn */
+
+.my_blog{
+    display: none;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/myapp-8ecc3.appspot.com/o/Cultfiesta%2Fbackground%2Fbg1.png?alt=media&token=d1f773fe-4a2d-4b91-b74b-3ce3a714fb0b);
+    min-height: 70vh;
+    background-position: center;
+    background-size:contain;
+    position: relative;
+    background-color: white;
+    background-attachment: fixed;
+}
+
+
+.update_btn {
+    display: none;
+}
+.update_btn1 {
+    display: none;
+}
+.update_btn3 {
+    display: none;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+/* notify */
+
+.notify {
+    width: 80%;
+    display: block;
+    margin:  0 auto;
+    text-align: center;
+    background: green;
+    color: #fff;
+    margin-top: 70px;
+    
+}
+
+
+/* my_content */
+.dropdown_container{
+width: 100% !important;
+margin-bottom: 2%;
+padding: 10px;
+border-radius: 20px;
+background-color: #ffffff; /* Optional: Add a background color */
+box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+
+}
+.dropdown_trigger{
+    z-index: -1000;
+text-align: center;
+background-color: #ffffff; /* Optional: Add a background color */
+
+
+}
+
+.dropdown_trigger h3{
+    border-radius: 200px;
+    
+}
+
+
+.separator {
+    border-bottom: 3px solid black;
+    padding-bottom: 5%;
+}
+
+.my_content {
+    
+    width: 100%;
+ 
+    
+    
+}
+
+.my_content table td img{
+    object-fit: contain;
+    height: 150px !important;
+    margin-top: 0% !important;
+}
+
+.my_content table td b{
+  font-size: larger;
+  
+}
+.my_content table {
+    width: 100%;
+    margin: 50px auto;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 50px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border-radius: 30px;
+}
+
+.my_content table tr{
+    margin: 30px 0;
+    width: 100%;
+    padding-left: 2% !important;
+  
+}
+
+
+
+.my_content table tr button{
+    padding: 7px 10px;
+    border: 1px solid #111;
+    border-radius: 15px;
+   transition: .5s ease-in;
+   color: #fff;
+   cursor: pointer;
+}
+
+.my_content table tr button.delete{
+    background: rgb(106, 8, 8);
+}
+.my_content table tr button.update{
+    background: rgb(8, 67, 106);
+}
+.my_content table tr button:hover{
+    background: transparent;
+    color: #111;
+}
+
+/* -----------------------------------------÷
+ */
+ .my_content2 {
+    width: 100%;
+ 
+    
+    
+}
+.col {
+  flex: 1 0 0%;
+  display: flex;
+  justify-content: center;
+}
+ 
+.my_content2 table td b{
+    font-size: larger;
+    
+  }
+  .my_content2 table {
+      width: 100%;
+      margin: 50px auto;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      padding: 50px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+      border-radius: 20px;
+      background-color: #060616;
+  }
+  
+  .my_content2 table tr{
+      margin: 30px 0;
+      width: 100%;
+      padding-left: 2% !important;
+    
+  }
+  
+  
+  
+  .my_content2 table tr button{
+      padding: 7px 10px;
+      border: 1px solid #111;
+      border-radius: 15px;
+     transition: .5s ease-in;
+     color: #fff;
+     cursor: pointer;
+     margin: 5%;
+  }
+  
+  .my_content2 table tr button.delete{
+      background: rgb(106, 8, 8);
+  }
+  .my_content2 table tr button.update{
+      background: rgb(8, 67, 106);
+  }
+  .my_content2 table tr button:hover{
+      background: transparent;
+      color: #111;
+  }
+  
+/* id */
+
+.postNumber{
+    height: 20px;
+    display: inline-block;
+    width: 20px;
+}
+
+.postNumber::before{
+    counter-increment: section;
+    content: counter(section) ;
+}
+
+
+/*  */
+
+
+.main {
+    width: 70%;
+    margin: 0  auto;
+    padding: 60px 0;
+}
+
+.post {
+    margin: 20px 0;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 20px;
+}
+.post h2{
+    padding: 10px 0;
+}
+
+footer{
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    color: #fff;
+    background: #111;
+    text-align: center;
+}
+
+.white {
+    color: white;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+
+.cover {
+    object-fit: cover;
+  }
+  
+  .fill {
+    object-fit: fill;
+  }
+  
+  .contain {
+    object-fit: contain;
+  }
+  
+
+  /* ------------------------------ */
+  
+/* ------------------------------------Footer----------------------------------- */
+
+.footer{
+    background-color: #d7d7d7;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/myapp-8ecc3.appspot.com/o/Cultfiesta%2Fbackground%2Fbg4.jpg?alt=media&token=bb6616ce-d1bf-461b-acd3-d37f6840953c );
+  
+
+
+    
+    /* height: 300px; */
+    
+width: 100%;
+text-align: center;
+padding: 30px 0;
+color: #feffff;
+
+}
+.footer h4{
+margin-bottom: 25px;
+margin-top: 15PX;
+font-weight: 600;
+font-size: 40px;
+
+
+}
+
+.icons{
+margin-bottom: 7px;
+
+}
+.icons a {
+    text-decoration: none;
+    color: #ffffff;
+    
+
+}
+
+
+
+/* ----------------------------------------------------------------------------------------- */
+.container2 {
+ width: 80%;
+    background: #f8f9fd;
+    background: linear-gradient(
+      0deg,
+      rgb(255, 255, 255) 0%,
+      rgb(244, 247, 251) 100%
+    );
+    border-radius: 40px;
+    padding: 25px 35px;
+    border: 5px solid rgb(255, 255, 255);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
+    margin: 20px;
+  }
+  
+  .heading {
+    text-align: center;
+    font-weight: 900;
+    font-size: 30px;
+    color: rgb(16, 137, 211);
+  }
+  
+  .form {
+    margin-top: 20px;
+  }
+  
+  .form .input {
+    width: 100%;
+    background: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin-top: 15px;
+    box-shadow: #cff0ff 0px 10px 10px -5px;
+    border-inline: 2px solid transparent;
+  }
+  
+  .form .input::-moz-placeholder {
+    color: rgb(170, 170, 170);
+  }
+  
+  .form .input::placeholder {
+    color: rgb(170, 170, 170);
+  }
+  
+  .form .input:focus {
+    outline: none;
+    border-inline: 2px solid #12b1d1;
+  }
+  
+  .form .forgot-password {
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  
+  .form .forgot-password a {
+    font-size: 11px;
+    color: #0099ff;
+    text-decoration: none;
+  }
+  
+  .form .login-button {
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    background: linear-gradient(
+      45deg,
+      rgb(16, 137, 211) 0%,
+      rgb(18, 177, 209) 100%
+    );
+    color: white;
+    padding-block: 15px;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+    border: none;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .form .login-button:hover {
+    transform: scale(1.03);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+  }
+  
+  .form .login-button:active {
+    transform: scale(0.95);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+  }
+  
+  .social-account-container {
+    margin-top: 25px;
+  }
+  
+  .social-account-container .title {
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    color: rgb(170, 170, 170);
+  }
+  
+  .social-account-container .social-accounts {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 5px;
+  }
+  
+  .social-account-container .social-accounts .social-button {
+    background: linear-gradient(45deg, rgb(0, 0, 0) 0%, rgb(112, 112, 112) 100%);
+    border: 5px solid white;
+    padding: 5px;
+    border-radius: 50%;
+    width: 40px;
+    aspect-ratio: 1;
+    display: grid;
+    place-content: center;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 12px 10px -8px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .social-account-container .social-accounts .social-button .svg {
+    fill: white;
+    margin: auto;
+  }
+  
+  .social-account-container .social-accounts .social-button:hover {
+    transform: scale(1.2);
+  }
+  
+  .social-account-container .social-accounts .social-button:active {
+    transform: scale(0.9);
+  }
+  
+  .agreement {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .agreement a {
+    text-decoration: none;
+    color: #0099ff;
+    font-size: 9px;
+  }
+  </style>
+
+
+
+
+<!-- responsive   -->
+
+
+<style>@media(max-width: 1199px){
+  .header_sec_bottom_in ul.navbar-nav a.nav-link {
+      font-size: 15px; 
+      padding: 0 9px;   
+  }
+
+  @media(max-width: 991px){
+  
+  .navbar-toggler-icon i {
+      color: #ff6500;
+      font-size: 40px;
+  }
+  .navbar-toggler {
+      padding: 0;
+      line-height: 1;
+      font-size: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  span.navbar-toggler-icon {
+      width: auto;
+      height: auto;
+  }
+  .navbar-toggler:focus{
+      outline: 0;
+  }
+  .header_sec_bottom_in ul.navbar-nav a.nav-link {
+      font-size: 15px;
+      margin: 10px 0;
+      padding: 0;
+      border: 0;
+  }
+  .navbar-collapse {
+      padding-top: 10px;
+  }
+  .navbar_right {
+      display: flex;
+      align-items: center;
+      margin-left: 0;
+      margin-top: 11px;
+      margin-bottom: 15px;
+  }
+  .navbar_right_seach {
+      position: inherit;
+  }
+  .navbar_right_seach_con {
+      position: absolute;
+      left: 0;
+      background: #09015f;
+      border-radius: 7px;
+      width: 100%;
+      margin-top: 5px;
+      z-index: 1;
+      right: auto;
+  }
+  .form-control {
+      height: 40px;
+  }
+
+  }
+  
+  @media(width > 1500px){
+      .bgv{
+          /* position: absolute; */
+          right: 0;
+          bottom: 0;
+          z-index: -1;
+          height: 100% !important;
+        
+         
+      }
+
+
+
+  }
+  @media(max-width: 767px){
+ 
+  a.navbar-brand {
+      flex: 0 0 60px;
+  }
+  .navbar-toggler-icon i {
+      font-size: 30px;
+  }
+  .navbar-toggler {
+      width: 30px;
+      height: 30px;
+  }
+
+  .tabs_sec1 .nav-tabs .nav-link {
+      min-width: 80px;
+      font-size: 14px;
+  }
+  .nav-tabs .nav-item {
+      min-width: 140px;
+      max-width: 140px;
+  }
+  .tabs_sec1 .nav-tabs {
+      margin-bottom: 10px;
+  }
+
+  .header_sec_links ul {
+      display: block;
+      text-align: center;
+  }
+  .header_sec_links ul li {
+      display: inline-block;
+      padding: 0 10px;
+      vertical-align:middle;
+      max-width:110px;
+  }
+      
+  .header_sec_links > ul > li > a {
+      font-size:13px;
+      white-space:normal;
+  }	
+  
+  }
+  
+}
+
+@media(width<400px){
+
+  .main_content .post_form {
+ 
+      width: 90% !important;
+   
+      
+  }
+  
+  .main_content .post_form input ,textarea{
+      width: 95%;
+    
+   
+     
+  }
+  .main_content .post_form button{
+      width: 95%;
+    
+  }
+  .my_content2 {
+      width: 100%;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+  }
+
+  .my_content {
+      width: 100%;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+
+}
+
+@media only screen and (max-width: 500px){
+.main_content .post_form input, textarea {
+  width: 90%;
+  border: 2px solid #111;
+  padding: 5px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.my_content {
+  width: 100%;
+  padding:0;
+}
+
+.my_content table {
+  width: 90%;
+  margin: 0;
+  margin-top: 10%;
+}
+
+
+.my_content2 {
+  width: 100%;
+  padding: 0;
+}
+
+.my_content2 table {
+  width: 90%;
+ 
+  background-color: #1d1d5e;
+  border-radius: 20px;
+}
+
+.my_content2 table {
+
+  margin:0;
+  margin-top: 5%;
+  margin-bottom: 5%;
+
+}
+}</style>
