@@ -142,6 +142,15 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy('./src/Our Clubs/clubs/Dhawni/style.css')
     eleventyConfig.addPassthroughCopy('./src/Our Clubs/clubs/Dhawni/responsive.css')
 
+
+    eleventyConfig.addPassthroughCopy('./src/css/style.css')
+    eleventyConfig.addPassthroughCopy('./src/css/responsive.css')
+
+    eleventyConfig.addPassthroughCopy('./src/js/blog.js')
+
+
+
+
     return {
       dir: {
         input: "src",
