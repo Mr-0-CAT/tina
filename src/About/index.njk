@@ -1,42 +1,14 @@
+---
 
-
-<!DOCTYPE html>
-
-<html lang="en-US" class="no-js no-svg">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="stylesheet" type="text/css" href="https://www.rnsit.ac.in/wp-content/themes/twentyseventeen/css/bootstrap.min.css">
-
-
-<link href="style.css" type="text/css" rel="stylesheet">
-
-<link href="./responsive.css" type="text/css" rel="stylesheet">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css">
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
-	<!-- This site is optimized with the Yoast SEO plugin v20.5 - https://yoast.com/wordpress/plugins/seo/ -->
-	<title>RNSIT</title>
-	
+title: 
+layout: 'base_sort.njk'
 
 
 
 
-</head>
+---
 
-<body >
 
-{% include 'header.njk'%}
 
 
 
@@ -118,9 +90,7 @@
       <div class="info-txt" style="text-align: justify;">    
       <h1>You Plan We Gather!</h1>
 
-      <p >CultFiesta its a one stop destination for all your events and clubs, our club deals with the maintaing 
-        and the development of the website and also deals with conducting / organising  Events and also
-      create collaberative events with other clubs  </p>
+      <p >At CultFiesta, we don’t just host events, We cultivate a vibrant community, fostering connections between clubs and creating a dynamic space where creativity, collaboration, and innovation thrive. Every event is a celebration of unity, bringing together diverse ideas and talents under one roof. </p>
   
   </div>
     
@@ -315,20 +285,13 @@
      
       <h1 >Team CultFiesta</h1>
      
-     
+{#      
         <div class="myCard" >
-          <div class="innerCard">
-              <div class="frontSide">
-                <img class="me-img" src="" alt="">
+          
+          <img src="data:image/jpeg;base64,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" alt="">
 
-              </div>
-              <div class="backSide">
-                  <p class="title">BACK SIDE</p>
-                  <p>Leave Me</p>
-              </div>
-          </div>
       </div>
-    
+     #}
 
 </div>
     
@@ -365,24 +328,6 @@
 
 
 
-
-
-
-
-<section class="footer">
-  <h4>About Us</h4>
-  <p>You Plan, We gather! <br>Our club deals with Organising, Conducting
-      and Organising events </p>
-      <div class="icons">
-         <a href="https://www.instagram.com/cristiano/?hl=en"> <i class="fa-brands fa-instagram fa-beat-fade"></i></a>
-         <a href=""> <i class="fa-brands fa-discord"></i></a>
-              <i class="fa-solid fa-phone"></i>
-              <i class="fa-solid fa-location-dot"></i>
-
-      </div>
-<p>Made With  <i class="fa-regular fa-heart"></i> by CultFiesta</p>
-
-</section>
 
 
 

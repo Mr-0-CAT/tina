@@ -157,7 +157,7 @@
 .card2 {
     width: 350px !important;
     height: 390px;
-    margin-left: 10% !important;
+
 
   }
   .card-image2 {
@@ -170,9 +170,7 @@
     height: 290px;
   
   }
-  .slider{
-    margin-left: 27% !important;
-  }
+
 
 }
 
@@ -208,10 +206,7 @@
         padding: 20px;
 
     }
-    .col-sm-4.qa{
-        margin-left: -4% !important;
     
-    }
 
     .col.z{
         padding: 0%;
@@ -222,13 +217,11 @@
        width: 370px;
     }
 
-    .col-sm-8.q{
-        margin-left: -5% !important;
-    }
+   
 .card1 {
     width: 270px;
  height: 450px;
- margin-left: 7% !important;
+
     
   }
 
@@ -246,7 +239,7 @@
 .card2 {
     width: 300px;
     height: 390px;
-    margin-left: 5%;
+
     margin-bottom: 5%;
 
   }
@@ -260,10 +253,7 @@
     height: 290px;
   
   }
-.slider{
-margin-left: 20%;
 
-}
 
 }
 
@@ -334,7 +324,7 @@ height: 220px;
     }
     .mem1{
         text-align: center;
-        margin: 20%;
+
         margin-bottom: 0%;
         
     }
@@ -354,10 +344,9 @@ height: 220px;
     }
 
 
-      .card1 {
-        margin-left: -4%;
-    
-    }
+ .card1{
+    margin-bottom: 5%;
+ }
 
     .col-sm-4.qa{
         margin-left: 5%;
@@ -375,8 +364,7 @@ height: 220px;
         width: 400px;
         height: 300px;
         overflow: hidden;
-        margin-left: 2.5%;
-        margin-top: 4%;
+     
         text-align: center;
     }
     .slides{
@@ -436,16 +424,11 @@ height: 220px;
         margin-right: 0%;
         padding: 0%;
     }
-    .card1 {
-        margin-left: -8%;
-    
-    }
+  
     .col.b{
         margin-left: 70px;
     }
-    .col-sm-4.qa{
-        margin-left: 5%;
-    }
+    
     .col-sm-4.qa img{
         width: 350px;
     }
@@ -463,8 +446,7 @@ height: 220px;
         width: 350px;
         height: 250px;
         overflow: hidden;
-        margin-left: 3.5%;
-        margin-top: 4%;
+     
       }
       .slides{
         height: 250px;
