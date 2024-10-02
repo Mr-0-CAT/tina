@@ -1191,192 +1191,200 @@ GetTimeData();
 
 /* _-------------------------------- */
 
-// Function to add a sponsor
+// Function to add a new sponsor
 function AddSponsor() {
-  const title = document.querySelector('#title4').value;
-  const post_image3 = document.querySelector('#post_image3').files[0];
-  const category3 = document.querySelector('#category3').value;
+    const title = document.querySelector('#title4').value;
+    const post_image5 = document.querySelector('#post_image5').files[0]; // Changed to post_image5
+    const category3 = document.querySelector('#category3').value;
 
-  const user = auth.currentUser;
-  if (!user) {
-    alert("You must be logged in to add a post.");
-    return;
-  }
+    const currentUser = auth.currentUser; // Get the current user
+    console.log("Current User:", currentUser); // Debugging statement
 
-  if (!post_image3) {
-    alert("Please select an image");
-    return;
-  }
+    if (!currentUser) {
+        alert("You must be logged in to add a post.");
+        return;
+    }
 
-  const id = Date.now();
-  const imageRef3 = storageRef(storage, `sponsors/${id}-${post_image3.name}`);
+    // Fetching the userName based on the UID
+    const userName = users[currentUser.uid] || "Anonymous"; // Get the user name
+    console.log("User Name:", userName); // Debugging statement
 
-  uploadBytes(imageRef3, post_image3).then((snapshot) => {
-    return getDownloadURL(snapshot.ref);
-  }).then((downloadURL) => {
-    return set(ref(db, 'sponsors/' + id), {
-      title: title,
-      imageURL: downloadURL,
-      category: category3,
-      userId: user.uid,  // Store user ID
-      userName: user.displayName || "Anonymous"  // Optionally store user name
+    if (!post_image5) {
+        alert("Please select an image");
+        return;
+    }
+
+    const id = Date.now();
+    const imageRef5 = storageRef(storage, `sponsors/${id}-${post_image5.name}`);
+
+    uploadBytes(imageRef5, post_image5).then((snapshot) => {
+        return getDownloadURL(snapshot.ref);
+    }).then((downloadURL) => {
+        return set(ref(db, 'sponsors/' + id), {
+            title: title,
+            imageURL: downloadURL,
+            category: category3,
+            userId: currentUser.uid,
+            userName: userName // Store the correct userName
+        });
+    }).then(() => {
+        notify.innerHTML = "Sponsor Added Successfully";
+        clearFieldsSponsors();
+        GetSponsorData();
+    }).catch((error) => {
+        console.error("Error uploading file: ", error);
+        notify.innerHTML = "Error adding sponsor";
     });
-  }).then(() => {
-    notify.innerHTML = "Sponsor Added Successfully";
-    clearFieldsSponsors();
-    GetSponsorData();
-  }).catch((error) => {
-    console.error("Error uploading file: ", error);
-    notify.innerHTML = "Error adding sponsor";
-  });
 }
 
 // Function to clear sponsor input fields
 function clearFieldsSponsors() {
-  document.querySelector('#title4').value = "";
-  document.querySelector('#post_image3').value = "";
-  document.querySelector('#category3').value = ""; 
+    document.querySelector('#title4').value = "";
+    document.querySelector('#post_image5').value = ""; // Changed to post_image5
+    document.querySelector('#category3').value = ""; 
 }
 
-// Function to retrieve sponsor data and display in the table
+// Function to retrieve sponsor data and display it in the table
 function GetSponsorData() {
-  const user_ref = ref(db, 'sponsors/');
-  get(user_ref).then((snapshot) => {
-    const data = snapshot.val();
-    let html = "";
-    const table = document.querySelector('#Sponsors');
+    const user_ref = ref(db, 'sponsors/');
+    get(user_ref).then((snapshot) => {
+        const data = snapshot.val();
+        let html = "";
+        const table = document.querySelector('#Sponsors');
 
-    for (const key in data) {
-      const { title, imageURL, category, userName } = data[key];
+        for (const key in data) {
+            const { title, imageURL, category, userName } = data[key];
 
-      html += `
-        <tr>
-          <td><span class="postNumber"></span></td>
-          <td class="separator">
-            <div><b>${title}</b></div>
-            <div>Added by: ${userName || "Unknown"}</div>
-            <img src="${imageURL}" alt="Sponsor Image" class="${category}" style="width:100px;height:100px;">
-          </td>
-          <td class="separator"><button class="delete" onclick="deleteSponsorData('${key}')">Delete</button></td>
-          <td class="separator"><button class="update" onclick="updateSponsorData('${key}')">Update</button></td>
-        </tr>
-      `;
-    }
-    table.innerHTML = html;
-  });
+            html += `
+                <tr>
+                    <td><span class="postNumber"></span></td>
+                    <td class="separator">
+                        <div><b>${title}</b></div>
+                        <div>Added by: ${userName || "Unknown"}</div>
+                        <img src="${imageURL}" alt="Sponsor Image" class="${category}" style="width:100px;height:100px;">
+                    </td>
+                    <td class="separator"><button class="delete" onclick="deleteSponsorData('${key}')">Delete</button></td>
+                    <td class="separator"><button class="update" onclick="updateSponsorData('${key}')">Update</button></td>
+                </tr>
+            `;
+        }
+        table.innerHTML = html;
+    });
 }
 
 // Function to delete sponsor data
 window.deleteSponsorData = function (key) {
-  const user = auth.currentUser;
-  if (!user) {
-    alert("You must be logged in to delete a post.");
-    return;
-  }
-
-  const user_ref = ref(db, `sponsors/${key}`);
-  get(user_ref).then((snapshot) => {
-    const data = snapshot.val();
-    if (!data) {
-      notify.innerHTML = "Sponsor not found";
-      return;
+    const currentUser = auth.currentUser;
+    if (!currentUser) {
+        alert("You must be logged in to delete a post.");
+        return;
     }
 
-    // Check if the current user is the owner of the post
-    if (data.userId !== user.uid) {
-      alert("You can only delete your own posts.");
-      return;
-    }
+    const user_ref = ref(db, `sponsors/${key}`);
+    get(user_ref).then((snapshot) => {
+        const data = snapshot.val();
+        if (!data) {
+            notify.innerHTML = "Sponsor not found";
+            return;
+        }
 
-    const imageRef = storageRef(storage, data.imageURL);
-    remove(user_ref).then(() => {
-      return deleteObject(imageRef);
-    }).then(() => {
-      notify.innerHTML = "Sponsor and associated image deleted successfully";
-      GetSponsorData();
-    }).catch((error) => {
-      console.error("Error deleting data: ", error);
-      notify.innerHTML = "Error deleting sponsor";
+        // Check if the current user is the owner of the post
+        if (data.userId !== currentUser.uid) {
+            alert("You can only delete your own posts.");
+            return;
+        }
+
+        const imageRef = storageRef(storage, data.imageURL);
+        remove(user_ref).then(() => {
+            return deleteObject(imageRef);
+        }).then(() => {
+            notify.innerHTML = "Sponsor and associated image deleted successfully";
+            GetSponsorData();
+        }).catch((error) => {
+            console.error("Error deleting data: ", error);
+            notify.innerHTML = "Error deleting sponsor";
+        });
     });
-  });
 }
 
 // Function to update sponsor data
 window.updateSponsorData = function (key) {
-  const user = auth.currentUser;
-  if (!user) {
-    alert("You must be logged in to update a post.");
-    return;
-  }
-
-  const user_ref = ref(db, `sponsors/${key}`);
-  get(user_ref).then((item) => {
-    const data = item.val();
-    if (!data) {
-      notify.innerHTML = "Sponsor not found";
-      return;
+    const currentUser = auth.currentUser;
+    if (!currentUser) {
+        alert("You must be logged in to update a post.");
+        return;
     }
 
-    // Check if the current user is the owner of the post
-    if (data.userId !== user.uid) {
-      alert("You can only update your own posts.");
-      return;
-    }
+    const user_ref = ref(db, `sponsors/${key}`);
+    get(user_ref).then((item) => {
+        const data = item.val();
+        if (!data) {
+            notify.innerHTML = "Sponsor not found";
+            return;
+        }
 
-    document.querySelector('#title4').value = data.title;
-    document.querySelector('#category3').value = data.category;
+        // Check if the current user is the owner of the post
+        if (data.userId !== currentUser.uid) {
+            alert("You can only update your own posts.");
+            return;
+        }
 
-    // Display update button and hide add button
-    document.querySelector('#update_btn4').style.display = 'block';
-    document.querySelector('#post_btn4').style.display = 'none';
+        document.querySelector('#title4').value = data.title;
+        document.querySelector('#category3').value = data.category;
 
-    // Bind update functionality
-    document.querySelector('#update_btn4').onclick = function() {
-      updateSponsorData(key, data.imageURL);
-    };
-  });
+        // Display update button and hide add button
+        document.querySelector('#update_btn4').style.display = 'block';
+        document.querySelector('#post_btn4').style.display = 'none';
+
+        // Bind update functionality
+        document.querySelector('#update_btn4').onclick = function() {
+            updateSponsorData(key, data.imageURL);
+        };
+    });
 }
 
 // Update sponsor data logic
 function updateSponsorData(key, oldImageURL) {
-  const title = document.querySelector('#title4').value;
-  const post_image3 = document.querySelector('#post_image3').files[0];
-  const category3 = document.querySelector('#category3').value;
+    const title = document.querySelector('#title4').value;
+    const post_image5 = document.querySelector('#post_image5').files[0]; // Changed to post_image5
+    const category3 = document.querySelector('#category3').value;
 
-  const deleteOldImage = (url) => {
-    const oldImageRef = storageRef(storage, url);
-    return deleteObject(oldImageRef);
-  };
+    const deleteOldImage = (url) => {
+        const oldImageRef = storageRef(storage, url);
+        return deleteObject(oldImageRef);
+    };
 
-  const uploadNewImage = (file, id) => {
-    const newImageRef = storageRef(storage, `sponsors/${id}-${file.name}`);
-    return uploadBytes(newImageRef, file).then(snapshot => getDownloadURL(snapshot.ref));
-  };
+    const uploadNewImage = (file, id) => {
+        const newImageRef = storageRef(storage, `sponsors/${id}-${file.name}`);
+        return uploadBytes(newImageRef, file).then(snapshot => getDownloadURL(snapshot.ref));
+    };
 
-  const promises = post_image3 ? deleteOldImage(oldImageURL).then(() => uploadNewImage(post_image3, key)) : Promise.resolve(oldImageURL);
+    const promises = post_image5 ? deleteOldImage(oldImageURL).then(() => uploadNewImage(post_image5, key)) : Promise.resolve(oldImageURL);
 
-  promises.then((newImageURL) => {
-    return update(ref(db, `sponsors/${key}`), {
-      title: title,
-      imageURL: newImageURL,
-      category: category3
+    promises.then((newImageURL) => {
+        return update(ref(db, `sponsors/${key}`), {
+            title: title,
+            imageURL: newImageURL,
+            category: category3
+        });
+    }).then(() => {
+        notify.innerHTML = "Sponsor updated successfully";
+        clearFieldsSponsors();
+        GetSponsorData();
+    }).catch((error) => {
+        console.error("Error updating sponsor: ", error);
+        notify.innerHTML = "Error updating sponsor";
     });
-  }).then(() => {
-    notify.innerHTML = "Sponsor updated successfully";
-    clearFieldsSponsors();
-    GetSponsorData();
-  }).catch((error) => {
-    console.error("Error updating sponsor: ", error);
-    notify.innerHTML = "Error updating sponsor";
-  });
 
-  document.querySelector('#update_btn4').style.display = 'none';
-  document.querySelector('#post_btn4').style.display = 'block';
+    document.querySelector('#update_btn4').style.display = 'none';
+    document.querySelector('#post_btn4').style.display = 'block';
 }
 
+// Add event listener for the post button
 document.querySelector('#post_btn4').addEventListener('click', AddSponsor);
 // Initial call to load sponsor data
 GetSponsorData();
+
 
         </script>
 
