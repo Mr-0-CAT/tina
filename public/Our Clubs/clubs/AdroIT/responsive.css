@@ -233,6 +233,16 @@
 
 
 @media only screen and (max-width: 500px){
+
+
+    .container1 h1 {
+        
+        top: 30%;
+       
+     
+      }
+      
+
     .main2 {
     
         top: 25%;

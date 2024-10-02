@@ -525,6 +525,7 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
   border: 20px;
   height: 240px;
   border-radius: 60px;
+  object-fit: contain;
 }
 .mem1{
   text-align: center;

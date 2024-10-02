@@ -474,7 +474,7 @@ overflow-x: hidden;
       .card1{
         /* text-align: center; */
         width: 300px;
-
+        height: auto;
         margin-bottom: 20px;
       }
       

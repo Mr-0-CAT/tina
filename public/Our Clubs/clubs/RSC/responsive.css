@@ -597,3 +597,9 @@ overflow-x: hidden;
       
 }
 
+@media only screen and (max-width: 500px) {
+    .card1 {
+        height: 620px;
+        margin-bottom: 20%;
+    }
+}

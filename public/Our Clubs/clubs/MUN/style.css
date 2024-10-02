@@ -279,35 +279,29 @@ ul.mega-menu-links li:last-child{
   overflow: hidden;
     width: 100%;
     height: 300px;
-    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  background-attachment: fixed;
+    background-color: #925423;
 }
 
- .container1 h1{
-  font-size: 65px;
-  /* color: #dadce2; */
-  margin-top: 100px;
-  text-align: center;
-  color: #fff;
-  text-shadow:
-      0 0 7px #fff,
-      0 0 10px #fff,
-      0 0 21px #fff,
-      0 0 42px #0fa,
-      0 0 82px #0fa,
-      0 0 92px #0fa,
-      0 0 102px #0fa,
-      0 0 151px #0fa;
+.container1 h1{
+  font-family: 'Lora', serif;
+font-family: 'Tilt Prism', cursive;
+color: white;
+font-size: 145px;
+background-attachment: fixed;
 }
 
-  .container1{
-    background: linear-gradient(45deg, rgba(45,45,45,1) 9%,rgba(0,0,0,1) 100%);
-    width: 100%;
-    height: 300px;
-  }
-  
+.container1 img{
+  margin-right: 0%;
+}
+
 .inner{
     text-align:center ;
 }
+
 .heading{
     text-align: center;
     padding-top: 40px
@@ -327,7 +321,6 @@ ul.mega-menu-links li:last-child{
 .info-txt p{
     font-family: 'Lora', serif;
     font-size: 20px;
-    text-align: justify;
 }
 .info-txt2{
     padding: 40px;
@@ -337,7 +330,6 @@ ul.mega-menu-links li:last-child{
 .info-txt2 p{
     font-family: 'Lora', serif;
     font-size: 20px;
-    text-align: justify;
 }
 .info-txt2 {
   margin-top: 50px;
@@ -348,77 +340,17 @@ ul.mega-menu-links li:last-child{
     font-size: 50px;
 }
 /* --------------------------------------------------------------------------------------------------------------------------------- */
-
-
-/* ---------------------------------------------------------------------------------------------------------------------------- */
-.inner img{
-    width: 250px;
-    height: 300px;
-    border-radius: 40px;
- 
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-.col-sm-4.qa img{
-    margin-top: 40px;
-width: 400px;
-height: 250px;
-border-radius: 40px;
-box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* ---------------------------------------------------------------------------------------- */
-
-/* 
-.ytv{
-    width: 800px;
-    height: 500px;
-    border-radius: 40px;
-  }
-  .mem2{
-    padding-bottom: 40px;
-    text-align: center;
-  }
-  .col.z{
-    margin-left: 150px;
-  }
-  .card2 {
-    width: 350px;
-    background: white;
-    padding: .4em;
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  }
-  .card-image2 {
-    background-color: rgb(236, 236, 236);
-    width: 340px;
-    height: 290px;
-    border-radius: 6px 6px 0 0;
-  }
-  .card-image2 img{
-  width: 340px;
-    height: 290px;
-    border-radius: 6px 6px 0 0;
-  
-  } */
-  
 .mem2{
   padding-bottom: 40px;
   text-align: center;
 }
-.col.z.a{
-  margin-left: 30px;
+.ach{
+  width: 700px;
+  border-radius: 40px;
+}
+.mem2 p{
+  padding: 30px;
+  font-size: 25px;
 }
 .card2 {
   width: 350px;
@@ -443,86 +375,25 @@ width: 340px;
   margin: 40px;
   margin-left: 120PX;
 }
-
-/* ----------------------------------------------------------------------------------------------------------- */
-
-.card1 {
-  max-width: 300px;
-  border-radius: 0.5rem;
-  background-color: #fff;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  border: 1px solid transparent;
-  border-radius: 60px;
-  /* margin: 15px; */
-  height: auto;  
-  width: 270px;
-  margin-left: 70px;
-  
-  
+/* ---------------------------------------------------------------------------------------------------------------------------- */
+.inner img{
+    width: 250px;
+    height: 300px;
+    border-radius: 40px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-
-.card1 a {
-  text-decoration: none
-}
-
-.content {
-  padding: 1rem;
-  text-align: center;
-}
-
-.image {
-  object-fit: cover;
-  width: 270px;
-  height: 240px;
-  background-color: rgb(239, 205, 255);
-  border-radius: 10px;
+.col-sm-3.qa img{
+    margin-top: 40px;
+width: 400px;
+height: 250px;
+border-radius: 40px;
+box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
 }
+.awards {
+  padding: 0%;
+  text-align: left;
 
-.title1 {
-  color: #111827;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-weight: 600;
-}
-
-.desc {
-  margin-top: 0.5rem;
-  color: #6B7280;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-.action {
-  display: inline-flex;
-  margin-top: 1rem;
-  color: #ffffff;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 500;
-  align-items: center;
-  gap: 0.25rem;
-  background-color: #2563EB;
-  padding: 4px 8px;
-  border-radius: 4px;
-  
-}
-
-.action span {
-  transition: .3s ease;
-}
-
-.action:hover span {
-  transform: translateX(4px);
-}
-.image img{
-  width: 270px;
-  border: 20px;
-  height: 240px;
-  border-radius: 20px;
-}
-.mem1{
-  text-align: center;
 }
 
 
@@ -530,6 +401,13 @@ width: 340px;
 
 
 
+
+
+
+
+
+
+/* ---------------------------------------------------------------------------------------- */
 
 
 
@@ -538,12 +416,132 @@ width: 340px;
 .mem-info{
     width: 100%;
     height:auto;
-    background-image: url(bg/bg1.png);
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/dbms-d5864.appspot.com/o/Files%2FBackground%2Fbg1.png?alt=media&token=31323eeb-4506-4b02-a26c-774f8fdfbcd6
+    );
     /* padding-bottom: 50px; */
     background-attachment: fixed;
+    background-position: center;
+background-size:contain;
+position: relative;
 }
 /* -------------------------------------------------------------------------------------------------------- */
+.gal{
+  margin: 0;
+  padding: 0;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+ text-align: center;
+ padding-bottom: 50px;
+}
+.slider{
+  width: 600px;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-left: 25%;
+  margin-top: 4%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
 
+.slides{
+  width: 500%;
+  height: 500px;
+  display: flex;
+}
+
+.slides input{
+  display: none;
+}
+
+.slide{
+  width: 20%;
+  transition: 2s;
+}
+
+.slide img{
+  width: 600px;
+  height: 500px;
+}
+
+/*css for manual slide navigation*/
+
+.navigation-manual{
+  position: absolute;
+  width: 600px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn{
+  border: 1px solid #0f1212;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+  margin-right: 40px;
+}
+
+.manual-btn:hover{
+  background: #050505;
+}
+
+#radio1:checked ~ .first{
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+  margin-left: -60%;
+}
+
+/*css for automatic navigation*/
+
+.navigation-auto{
+  position: absolute;
+  display: flex;
+  width: 600px;
+  justify-content: center;
+  margin-top: 460px;
+}
+
+.navigation-auto div{
+  border: 1px solid #0a1111;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+  margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+  background: #ffffff;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+  background: #f3f5f5;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+  background: #fdffff;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+  background: #f9ffff;
+}
 
   .join{
     width: 100%;
@@ -584,7 +582,7 @@ width: 340px;
 
 .footer{
     background-color: #d7d7d7;
-    background-image: url(bg/bg4.jpg);
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/dbms-d5864.appspot.com/o/Files%2FBackground%2Fbg4.jpg?alt=media&token=34eb04b3-68a2-4b34-a614-a3ec85b0f130);
     /* margin-bottom: 0; */
     /* bottom: 0%; */
     /* height: 300px; */

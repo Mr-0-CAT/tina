@@ -607,7 +607,3 @@ width: 340px;
     justify-content: center;
 }
 
-.row.s {
-  flex-direction: column-reverse;
-  margin: 0;
-}
