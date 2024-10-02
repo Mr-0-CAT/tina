@@ -148,6 +148,9 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy('./src/js/blog.js')
 
+    eleventyConfig.addPassthroughCopy('./src/timeline')
+
+
 
 
 
