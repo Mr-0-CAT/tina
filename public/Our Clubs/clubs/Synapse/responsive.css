@@ -118,7 +118,6 @@
 
 
 
-
 @media(width > 1050px){
     .info-txt{
         padding: 20px !important;
@@ -130,12 +129,8 @@
         padding: 20px;
 
     }
-    .col-sm-4.qa{
-        margin-left: 0% !important;
-    }
-    .col-sm-4.qa img{
-        margin-left: 10% !important;
-    }
+  
+   
     
 .card1 {
     height: 440px !important;  
@@ -157,7 +152,7 @@
 .card2 {
     width: 350px !important;
     height: 390px;
-    margin-left: 10% !important;
+    
 
   }
   .card-image2 {
@@ -170,9 +165,7 @@
     height: 290px;
   
   }
-  .slider{
-    margin-left: 25% !important;
-  }
+
 
 }
 
@@ -190,44 +183,19 @@
         padding: 20px;
 
     }
-    .col-sm-4.qa{
-        margin-left: -4% !important;
-        margin-top: 7%;
-    }
-
-    .col.z{
-        padding: 0%;
-        overflow: hidden !important;
-    }
+  
     
     .col-sm-4.qa img{
        width: 370px;
     }
 
-   
-.card1 {
-    width: 270px;
- height: 450px;
- margin-left: 7% !important;
-    
-  }
-
-  .image {  
-    
-    width: 270px;
-  }
-
-  .image img {  
-    
-    width: 270px;
-  }
-
+ 
   
 .card2 {
     width: 300px;
     height: 390px;
-    margin-left: 5%;
-    margin-bottom: 5%;
+
+
 
   }
   .card-image2 {
@@ -242,22 +210,7 @@
   }
 
 
-.col.a{
-  padding: 0%;
 }
-
-}
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -280,26 +233,22 @@
 
 
 @media only screen and (max-width: 500px){
-.main2 {
-/* font-weight: 600; */
-margin-top: -25%;
-font-size: 60px;
-overflow-x: hidden;
-
-}
-.col {
-    flex: 1 0 0%;
-    display: contents;
-}
+    .main2 {
+    
+        top: 25%;
+        left: 50%;
+     
+        font-size: 60px;
+     
+      }
 .container1 {
 height: 220px;
 overflow: hidden;
 overflow-x: hidden;
 }
-.col-sm-8.q{
-    padding: 0%;
-    padding-left: 20px;
-    }  
+.col-sm-3.a{
+padding: 0%;
+}   
  .info-txt{
         padding: 0px;
         margin-top: 0px;
@@ -311,9 +260,7 @@ overflow-x: hidden;
     }
     .row.s{
         flex-direction: column-reverse;
-        padding: 0% !important;
     }
-
 .card1{
     margin-bottom: 10%;
 }
@@ -321,19 +268,13 @@ overflow-x: hidden;
     overflow: hidden;
    }
 
-   .info-txt2{
-    padding: 20px;
-    /* padding-top: 20px; */
-    margin-top: 10px; 
-    margin-bottom: 0px !important; 
-    padding-bottom: 0px !important; 
-
-}
-.info-txt2 p{
-    font-size: 18px;
-    margin-bottom: 0px !important; 
-
-}
+    .info-txt2{
+        padding: 20px;
+        padding-top: 20px;
+    }
+    .info-txt2 p{
+        font-size: 18px;
+    }
     .info-txt2 {
         margin-bottom: 50px;
     }
@@ -352,42 +293,38 @@ overflow-x: hidden;
     }
     .mem1{
         text-align: center;
-        
-        display: flex;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-        flex-direction: column;
+
         
     }
     .mem2{
-        text-align: center;
-        display: flex;
+        text-align: center ;
         align-items: center;
-        align-content: center;
-        justify-content: center;
-        flex-direction: column;
         overflow: hidden;
     }
  
-  
-    .card1{
-        width: 350px;
+    .col.a{
+        padding: 0%;
+        margin-bottom: 5%;
+    }
+    .col.a.b{
+        margin: 0%;
+        
+    }
+.card1{
+    width: 300px;
 
-    
-    }
-    .image{
-        width: 350px;
-    }
-    .image img {
-        width: 350px;
-    }
-       
+}
+.image{
+    width: 300px;
+}
+.image img {
+    width: 300px;
+}
     .card2 {
         width: 300px;
         text-align: center;
         margin-bottom: 40px;
-    
+
     }
     .card-image2 img{
         width: 290px;
@@ -398,17 +335,11 @@ overflow-x: hidden;
             
             }
 
-
-
-.col-sm-4.qa{
-    margin-left: 5%;
-    
+.col.z.a{
+    margin-left: 4%;
 }
-.col-sm-4.qa img{
-    margin-top: 1% !important;
-    width: 95vw !important;
 
-}
+
 
 
     .gal{
@@ -418,7 +349,8 @@ overflow-x: hidden;
         width: 400px;
         height: 300px;
         overflow: hidden;
-       margin: auto;
+
+        margin-top: 4%;
         text-align: center;
     }
     .slides{
@@ -435,14 +367,17 @@ overflow-x: hidden;
     .navigation-manual{
         width: 400px;
     }
+    .mem1 h3{
+        padding: 0% !important;
+        font-size: 20px;
+      }
     .ytv{
-        width: 390px;
-        height: 390px;
-        text-align: center;
-        overflow: hidden;
+    width: 350px;
+    height: 270px;
+    text-align: center;
+    overflow: hidden;
    
-        
-        }
+}
     .navigation-auto{
         width: 400px;
         margin-top: 260px;
@@ -479,19 +414,15 @@ overflow-x: hidden;
         height: 150px;
         -webkit-box-reflect: below 1px linear-gradient(transparent, transparent , #0002 , #0004);
       }
-    
+      .col.a{
+        margin-left: -5%;
+      }
+      .col.a.b{
+        margin-left: -5%;
+        margin-top: 30px;
+      }
       .container1 text{
         font-size: 55px;
-      }
-      .col.z.a{
-        margin: 0%;
-        margin-left: 4% !important;
-      }
-      .col.z{
-        margin: 0% !important;
-        padding: 0%;
-        margin-left: 4% !important;
-
       }
 }
 
@@ -501,13 +432,8 @@ overflow-x: hidden;
       text-align: center;
 
     }
-    .ytv{
-        /* margin-left: -28% !important; */
-        width: 95vw !important;
-        height: 370px;
-        }
+   
          
-       
        
     .col.a{
       text-align: center;
@@ -516,11 +442,9 @@ overflow-x: hidden;
         padding: 0%;
     }
   
-    .col-sm-3.qa{
-        margin-left: 5%;
-    }
-    .col-sm-3.qa img{
-        width: 95vw;
+   
+    .col-sm-4.qa img{
+        width: 350px;
     }
     .info-txt p{
         font-size: 16px;
@@ -536,12 +460,16 @@ overflow-x: hidden;
         width: 350px;
         height: 250px;
         overflow: hidden;
-        margin-left: 3.5%;
+
         margin-top: 4%;
       }
       .slides{
         height: 250px;
      
+      }
+      .mem1 h3{
+        padding: 0% !important;
+        font-size: 17px;
       }
       .slide img{
         width: 350px;
@@ -553,31 +481,19 @@ overflow-x: hidden;
       .navigation-manual{
         width: 350px;
     }
-   
+    .manual-btn{
+       
+    }
     .navigation-auto{
         width: 350px;
         margin-top: 210px;
       }
 }
 
-@media(width>1420px){
-
-    .col-sm-4.qa img{
-       margin-top: 0%;
-    width: 100%;
-    height: 250px;
-    border-radius: 40px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    
-    }
-    .info-txt{
-        padding: 40px;
-        text-align: center;
-        margin-top: 60px;
-    }
-    .info-txt p{
-      text-align: justify;
-        font-family: 'Lora', serif;
-        font-size: 20px;
+@media only screen and (max-width: 500px) {
+    .row.s {
+        flex-direction: column-reverse;
+        padding: 0;
+        margin: 0;
     }
 }

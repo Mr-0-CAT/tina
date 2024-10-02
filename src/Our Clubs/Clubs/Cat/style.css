@@ -484,7 +484,7 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
   /* margin: 15px; */
   height: 500px;  
   width: 500px;
-  margin-left: 75px;
+
   
   
 }
@@ -600,6 +600,8 @@ position: relative;
   align-items: center;
  text-align: center;
  padding-bottom: 90px;
+ display: flex;
+ flex-direction: column;
 }
 .slider{
   width: 700px;

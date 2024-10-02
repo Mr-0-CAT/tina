@@ -6,6 +6,9 @@
   
     @media(max-width: 991px){
     
+.col.a.b{
+    margin-left: 0px;
+  }
     .navbar-toggler-icon i {
         color: #ff6500;
         font-size: 40px;
@@ -114,10 +117,8 @@
 
 
 
+
 @media(width > 1050px){
-.info-txt2{
-        margin-left: 10% !important;
-    }
     .info-txt{
         padding: 20px !important;
         margin-top: 20px;
@@ -128,14 +129,8 @@
         padding: 20px;
 
     }
-    .col-sm-4.qa{
-        margin-left: 0% !important;
-    }
-    .col-sm-4.qa img{
-        margin-left: 20% !important;
-     
-        margin-bottom: 20px;
-    }
+  
+   
     
 .card1 {
     height: 440px !important;  
@@ -157,7 +152,7 @@
 .card2 {
     width: 350px !important;
     height: 390px;
-
+    
 
   }
   .card-image2 {
@@ -178,24 +173,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media only screen and (min-width: 992px){
     .info-txt{
         padding: 20px !important;
@@ -206,41 +183,19 @@
         padding: 20px;
 
     }
-    
-
-    .col.z{
-        padding: 0%;
-        overflow: hidden !important;
-    }
+  
     
     .col-sm-4.qa img{
        width: 370px;
     }
 
-   
-.card1 {
-    width: 270px;
- height: 450px;
-
-    
-  }
-
-  .image {  
-    
-    width: 270px;
-  }
-
-  .image img {  
-    
-    width: 270px;
-  }
-
+ 
   
 .card2 {
     width: 300px;
     height: 390px;
 
-    margin-bottom: 5%;
+
 
   }
   .card-image2 {
@@ -262,19 +217,38 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width: 500px){
-.container1 h1 {
-font-weight: 600;
-margin-top: 30%;
-font-size: 60px;
-}
+    .main2 {
+    
+        top: 25%;
+        left: 50%;
+     
+        font-size: 60px;
+     
+      }
 .container1 {
 height: 220px;
+overflow: hidden;
+overflow-x: hidden;
 }
-.col-sm-8.q{
-    padding: 0%;
-    padding-left: 20px;
-    }  
+.col-sm-3.a{
+padding: 0%;
+}   
  .info-txt{
         padding: 0px;
         margin-top: 0px;
@@ -286,26 +260,21 @@ height: 220px;
     }
     .row.s{
         flex-direction: column-reverse;
-        padding: 0% !important;
     }
-
+.card1{
+    margin-bottom: 10%;
+}
    .con-info{
     overflow: hidden;
    }
 
-   .info-txt2{
-    padding: 20px;
-    /* padding-top: 20px; */
-    margin-top: 10px; 
-    margin-bottom: 0px !important; 
-    padding-bottom: 0px !important; 
-
-}
-.info-txt2 p{
-    font-size: 18px;
-    margin-bottom: 0px !important; 
-
-}
+    .info-txt2{
+        padding: 20px;
+        padding-top: 20px;
+    }
+    .info-txt2 p{
+        font-size: 18px;
+    }
     .info-txt2 {
         margin-bottom: 50px;
     }
@@ -325,37 +294,53 @@ height: 220px;
     .mem1{
         text-align: center;
 
-        margin-bottom: 0%;
         
     }
-    
+    .mem2{
+        text-align: center ;
+        align-items: center;
+        overflow: hidden;
+    }
  
-   
-      .col.a.b{
-        margin-left: 0%;
-        
-        margin-top: -30px;
-      }
-
-
-      .col.a{
+    .col.a{
         padding: 0%;
         margin-bottom: 5%;
     }
-
-
- .card1{
-    margin-bottom: 5%;
- }
-
-    .col-sm-4.qa{
-        margin-left: 5%;
+    .col.a.b{
+        margin: 0%;
+        
     }
-    .col-sm-4.qa img{
-    
-        width: 95vw !important;
-    
+.card1{
+    width: 300px;
+
+}
+.image{
+    width: 300px;
+}
+.image img {
+    width: 300px;
+}
+    .card2 {
+        width: 300px;
+        text-align: center;
+        margin-bottom: 40px;
+
     }
+    .card-image2 img{
+        width: 290px;
+        
+        }
+        .card-image2 {
+            width: 290px;
+            
+            }
+
+.col.z.a{
+    margin-left: 4%;
+}
+
+
+
 
     .gal{
         overflow: hidden;
@@ -364,7 +349,8 @@ height: 220px;
         width: 400px;
         height: 300px;
         overflow: hidden;
-     
+
+        margin-top: 4%;
         text-align: center;
     }
     .slides{
@@ -381,9 +367,17 @@ height: 220px;
     .navigation-manual{
         width: 400px;
     }
-    .manual-btn{
-    
-    }
+    .mem1 h3{
+        padding: 0% !important;
+        font-size: 20px;
+      }
+    .ytv{
+    width: 350px;
+    height: 270px;
+    text-align: center;
+    overflow: hidden;
+   
+}
     .navigation-auto{
         width: 400px;
         margin-top: 260px;
@@ -406,18 +400,41 @@ height: 220px;
         height: 100px;
         margin-bottom: -330px;
     }
+  
+    .heading h1{
+        font-size: 50px;
+    }
+    .swiper-slide {
+        width: 250px;
+      }
+    
+      .swiper-slide img {
+        display: block;
+        width: 250px;
+        height: 150px;
+        -webkit-box-reflect: below 1px linear-gradient(transparent, transparent , #0002 , #0004);
+      }
+      .col.a{
+        margin-left: -5%;
+      }
+      .col.a.b{
+        margin-left: -5%;
+        margin-top: 30px;
+      }
+      .container1 text{
+        font-size: 55px;
+      }
 }
 
 @media(width<400px){
-    .imgscroll{
-
-        width: 360px;
-        margin-left: 10px;
-    }
+  
     .col.b{
       text-align: center;
 
     }
+   
+         
+       
     .col.a{
       text-align: center;
        
@@ -425,10 +442,7 @@ height: 220px;
         padding: 0%;
     }
   
-    .col.b{
-        margin-left: 70px;
-    }
-    
+   
     .col-sm-4.qa img{
         width: 350px;
     }
@@ -446,11 +460,16 @@ height: 220px;
         width: 350px;
         height: 250px;
         overflow: hidden;
-     
+
+        margin-top: 4%;
       }
       .slides{
         height: 250px;
      
+      }
+      .mem1 h3{
+        padding: 0% !important;
+        font-size: 17px;
       }
       .slide img{
         width: 350px;
@@ -471,24 +490,27 @@ height: 220px;
       }
 }
 
-@media(width>1420px){
+@media only screen and (max-width: 500px) {
+    .row.s {
+        flex-direction: column-reverse;
+        padding: 0;
+        margin: 0;
+    }
+}
 
-    .col-sm-4.qa img{
-       margin-top: 0%;
-    width: 100%;
-    height: 250px;
-    border-radius: 40px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    
-    }
-    .info-txt{
-        padding: 40px;
-        text-align: center;
-        margin-top: 60px;
-    }
-    .info-txt p{
-      text-align: justify;
-        font-family: 'Lora', serif;
-        font-size: 20px;
-    }
+.col-sm-4.qa {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.col {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }

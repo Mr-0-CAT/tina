@@ -118,37 +118,22 @@
 
 
 
-
-
 @media(width > 1050px){
     .info-txt{
         padding: 20px !important;
         margin-top: 20px;
         
     }
-
-    .inner-txt{
-        background-color: #6B7280;
-    width: 310px !important;
-        height: 350px;
-        border-radius: 60px;
-        
-      }
     .info-txt p{
         font-size: 18px;
         padding: 20px;
 
     }
-    .col-sm-4.qa{
-        margin-left: 0% !important;
-    }
-    .col-sm-4.qa img{
-        margin-left: 10% !important;
-        margin-top: 0% !important;
-    }
+  
+   
     
 .card1 {
-    height: 570px !important;  
+    height: 440px !important;  
     width: 350px !important;
     
   }
@@ -167,7 +152,7 @@
 .card2 {
     width: 350px !important;
     height: 390px;
-    margin-left: 10% !important;
+    
 
   }
   .card-image2 {
@@ -180,9 +165,7 @@
     height: 290px;
   
   }
-  .slider{
-    margin-left: 25% !important;
-  }
+
 
 }
 
@@ -200,56 +183,19 @@
         padding: 20px;
 
     }
-    .col-sm-4.qa{
-        margin-left: -4% !important;
-        margin-top: 7%;
-    }
-
+  
     
     .col-sm-4.qa img{
        width: 370px;
     }
 
-    .inner-txt{
-        background-color: #6B7280;
-        width: 240px;
-        height: 250px;
-        border-radius: 60px;
-        
-      }
-      
-      .inner-txt h1{
-    font-size: 20px !important;
-        padding-bottom: 25px;
-        }
-        .inner-txt p{
-            font-size: 16px;
-            padding-bottom: 25px;
-            }
-
-.card1 {
-    width: 270px;
- height: 550px;
- margin-left: 7% !important;
-    
-  }
-
-  .image {  
-    
-    width: 270px;
-  }
-
-  .image img {  
-    
-    width: 270px;
-  }
-
+ 
   
-.card2{
-    width: 300px ;
+.card2 {
+    width: 300px;
     height: 390px;
-  margin-left: 4%;
-    margin-bottom: 5%;
+
+
 
   }
   .card-image2 {
@@ -262,10 +208,7 @@
     height: 290px;
   
   }
-.slider{
-margin-left: 18%;
 
-}
 
 }
 
@@ -290,57 +233,22 @@ margin-left: 18%;
 
 
 @media only screen and (max-width: 500px){
-.container1 h1 {
-font-weight: 600;
-margin-top: -15%;
-font-size: 60px;
-overflow-x: hidden;
-
-}
+    .main2 {
+    
+        top: 25%;
+        left: 50%;
+     
+        font-size: 60px;
+     
+      }
 .container1 {
 height: 220px;
 overflow: hidden;
 overflow-x: hidden;
 }
-.container1 span{
-    
-font-size: 30px;
-}
-
-.console-container {
-top: 150px;
-}
-.key{
-    width: 100% !important;
-    height: auto;
-    background-color: #f3f3f3;
-    justify-content: center;
-    text-align: center;
-  
-  }
-  .card2.a{
-    text-align: center;
-   
-  }
-  
-  .inner-txt{
-    justify-content: center;
-    text-align: center;
-  margin-left: 15% !important;
-  }
 .col-sm-3.a{
 padding: 0%;
-
 }   
-
-
-.col-sm-3.a{
-    /* margin-left: -5%; */
-    margin-bottom: 5%;
-  }
-  .inner-txt{
-    /* margin-left: -7%; */
-  }
  .info-txt{
         padding: 0px;
         margin-top: 0px;
@@ -355,7 +263,6 @@ padding: 0%;
     }
 .card1{
     margin-bottom: 10%;
-    height: 600px;
 }
    .con-info{
     overflow: hidden;
@@ -382,17 +289,11 @@ padding: 0%;
     overflow: hidden;
 }
     .mem-info h1{
-        font-size: 35px !important;
-margin-bottom: 0%;
-padding-bottom: 0%;
-height: 0px !important;
-    }
-    .col.a.b{
-        margin-top: 0%;
+        font-size: 50px;
     }
     .mem1{
         text-align: center;
-        margin: 20%;
+
         
     }
     .mem2{
@@ -411,7 +312,6 @@ height: 0px !important;
     }
 .card1{
     width: 300px;
-    height: 470px;
 
 }
 .image{
@@ -424,7 +324,7 @@ height: 0px !important;
         width: 300px;
         text-align: center;
         margin-bottom: 40px;
-    margin-left: 13%;
+
     }
     .card-image2 img{
         width: 290px;
@@ -435,22 +335,12 @@ height: 0px !important;
             
             }
 
-
- .ytv{
-    width: 390px;
-    height: 390px;
-    text-align: center;
-    overflow: hidden;
-    margin-left: 0% !important;
-    
-    }
-
-.col-sm-4.qa{
-    margin-left: 2.5%;
+.col.z.a{
+    margin-left: 4%;
 }
-.col-sm-4.qa img{
-    margin-top: 0%;
-}
+
+
+
 
     .gal{
         overflow: hidden;
@@ -459,7 +349,7 @@ height: 0px !important;
         width: 400px;
         height: 300px;
         overflow: hidden;
-        margin-left: 2.5%;
+
         margin-top: 4%;
         text-align: center;
     }
@@ -477,7 +367,17 @@ height: 0px !important;
     .navigation-manual{
         width: 400px;
     }
- 
+    .mem1 h3{
+        padding: 0% !important;
+        font-size: 20px;
+      }
+    .ytv{
+    width: 350px;
+    height: 270px;
+    text-align: center;
+    overflow: hidden;
+   
+}
     .navigation-auto{
         width: 400px;
         margin-top: 260px;
@@ -492,14 +392,6 @@ height: 0px !important;
         overflow: hidden;
     
     }
-
-
-.inner-txt p{
-    margin-top: 100px;
-}
-
-
-
     .join{
         overflow: hidden;
     }
@@ -509,9 +401,7 @@ height: 0px !important;
         margin-bottom: -330px;
     }
   
-    .heading h1{
-        font-size: 50px;
-    }
+    
     .swiper-slide {
         width: 250px;
       }
@@ -532,32 +422,17 @@ height: 0px !important;
       .container1 text{
         font-size: 55px;
       }
-      .key h1{
-        margin-bottom: 60px;
-      }
-      .inner-txt h1{
-        font-size: 25px !important;
-      }
 }
 
 @media(width<400px){
-    .inner-txt{
-        justify-content: center;
-        text-align: center;
-      margin-left: 11% !important;
-      }
-      
+  
     .col.b{
       text-align: center;
 
     }
-    .ytv{
-        width: 350px;
-        }
+   
          
-        .card1{
-            margin-left: -4.5%;
-        }
+       
     .col.a{
       text-align: center;
        
@@ -565,9 +440,7 @@ height: 0px !important;
         padding: 0%;
     }
   
-    .col-sm-4.qa{
-        margin-left: 4%;
-    }
+   
     .col-sm-4.qa img{
         width: 350px;
     }
@@ -585,12 +458,16 @@ height: 0px !important;
         width: 350px;
         height: 250px;
         overflow: hidden;
-        margin-left: 3.5%;
+
         margin-top: 4%;
       }
       .slides{
         height: 250px;
      
+      }
+      .mem1 h3{
+        padding: 0% !important;
+        font-size: 17px;
       }
       .slide img{
         width: 350px;
@@ -611,25 +488,41 @@ height: 0px !important;
       }
 }
 
-@media(width>1420px){
+@media only screen and (max-width: 500px) {
+    .row.s {
+        flex-direction: column-reverse;
+        padding: 0;
+        margin: 0;
+    }
+}
 
-    .col-sm-4.qa img{
-       margin-top: 0%;
-    width: 100%;
-    height: 250px;
-    border-radius: 40px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    
+.col-sm-4.qa {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.col {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+@media (min-width: 576px) {
+    .col-sm-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 100%;
     }
-    .info-txt{
-        padding: 40px;
-        text-align: center;
-        margin-top: 60px;
+}
+
+@media only screen and (max-width: 500px) {
+    .heading h1 {
+        font-size: 28px;
     }
-    .info-txt p{
-      text-align: justify;
-        font-family: 'Lora', serif;
-        font-size: 20px;
-    }
-    
 }

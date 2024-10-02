@@ -335,7 +335,7 @@ ul.mega-menu-links li:last-child{
     text-align: justify;
 }
 .info-txt2 {
-  margin-top: 50px;
+
     margin-bottom: 50px;
 }
 .info-txt2 h1{
@@ -354,7 +354,7 @@ ul.mega-menu-links li:last-child{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .col-sm-4.qa img{
-    margin-top: 100px;
+
 width: 400px;
 height: 250px;
 border-radius: 40px;
@@ -405,7 +405,7 @@ padding-bottom: 25px;
   border-radius: 60px;
   /* margin: 15px; */
   height: 500px;  
-  width: 350px;
+  width: 300px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   
   
@@ -427,7 +427,7 @@ padding-bottom: 25px;
 
 .image {
   object-fit: cover;
-  width: 350px;
+  width: 300px;
   height: 240px;
   background-color: rgb(239, 205, 255);
   border-radius: 60px;
@@ -471,7 +471,7 @@ padding-bottom: 25px;
   transform: translateX(4px);
 }
 .image img{
-  width: 350px;
+  width: 300px;
   border: 20px;
   height: 240px;
   border-radius: 60px;
@@ -480,10 +480,7 @@ padding-bottom: 25px;
   text-align: center;
 }
 
-.col.a.b{
-  margin-left: 30px;
-  margin-top: 0%;
-}
+
 
 
 .mem2{
