@@ -38,6 +38,24 @@ function GetTimeData() {
           </div>
         </div>
       </div>
+        <div class="col">   
+        <div class="card1">
+          <div class="image"><img class="${category}" src="${imageURL}" alt=""></div>
+          <div class="content">
+            <span class="title1">${title}</span>
+            <p class="desc"></p>
+          </div>
+        </div>
+      </div>
+        <div class="col">   
+        <div class="card1">
+          <div class="image"><img class="${category}" src="${imageURL}" alt=""></div>
+          <div class="content">
+            <span class="title1">${title}</span>
+            <p class="desc"></p>
+          </div>
+        </div>
+      </div>
       `;
     });
 
