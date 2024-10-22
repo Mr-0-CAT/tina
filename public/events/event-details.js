@@ -51,7 +51,7 @@ function getPostDetails(postId) {
       document.getElementById('fee').textContent = data.fee;
       document.getElementById('time').textContent = data.time;
       document.getElementById('cName').textContent = data.cName;
-      document.getElementById('department').textContent = data.Department;
+      document.getElementById('department').textContent = data.department;
       document.getElementById('outcome').textContent = data.outcome;
       document.getElementById('number1').textContent = data.number1;
       document.getElementById('number2').textContent = data.number2;
