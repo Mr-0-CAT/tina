@@ -452,10 +452,25 @@
         const update_btn = document.querySelector('.update_btn');
         
         // Admin UID and Regular User UIDs with names
-        const adminUID = {'n4GDbNQKRvS7DZMSHv2EBhenCwh1': 'Preetham'} ;  // Admin UID
+        const adminUID = {'QkNkwVJ8eva41VrDFcyvJxlQwLl1': 'ADMIN'} ;  // Admin UID
         const users = {
-          'QkNkwVJ8eva41VrDFcyvJxlQwLl1': 'CSE-DS',
-          '3OcTKWI54ZAeynbdFGQQf8cTmIdB3': 'Ai&Ml'
+          'wthrtDIUGUVvzyw4PC1M6rZXOY63': 'CSE',
+          'quZ07wePADe95oEStgNQAZQXsz43': 'DS',
+          '7EOyN1WeuGVIBIDBFPRrn0ShQLk1': 'AI&ML',
+          'g2vEL3fTo4dokz2T69Vc3YjHoHD3': 'ECE',
+          '6JnzSPiYLSbpVaxFmQ3KT0IVvJ93': 'Mechanical',
+          'UWLCuim8pQYzRKhO978TlZ3B1y93': 'CY',
+          '1TfsefP3v5SxSLwh3TZMn2j6JVA2': 'Civil',
+          'Ko1YNqBbuQhKYyNtVGuBUeU14Je2': 'ISE',
+          'JgEwgOBp9ASpkEbCgGSFfomTPQ92': 'EEE'
+
+
+
+
+          
+
+
+
         }; // Regular User UIDs and names
         
         onAuthStateChanged(auth, (user) => {
@@ -1047,7 +1062,7 @@ function GetTimeData() {
           <td><span class="postNumber"></span></td>
           <td class="separator">
             <div><b>${title}</b></div>
-            <div>Added by: ${userName || "Unknown"}</div>
+            <div>Added by: ${userName || "ADMIN"}</div>
             <img src="${imageURL1}" alt="Post Image 1" class="${category}" style="width:100px;height:100px;">
            
           </td>
@@ -1256,7 +1271,7 @@ function GetSponsorData() {
                     <td><span class="postNumber"></span></td>
                     <td class="separator">
                         <div><b>${title}</b></div>
-                        <div>Added by: ${userName || "Unknown"}</div>
+                        <div>Added by: ${userName || "ADMIN"}</div>
                         <img src="${imageURL}" alt="Sponsor Image" class="${category}" style="width:100px;height:100px;">
                     </td>
                     <td class="separator"><button class="delete" onclick="deleteSponsorData('${key}')">Delete</button></td>
