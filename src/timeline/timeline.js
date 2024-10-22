@@ -22,21 +22,26 @@ function GetTimeData() {
   get(user_ref).then((snapshot) => {
     const data = snapshot.val();
     let html = "";
-    const table = document.querySelector('.innerz .row');
+    const table = document.querySelector('.gallery');
 
     // Convert data object to an array and reverse it
     const dataArray = Object.entries(data).reverse();
 
-    dataArray.forEach(([key, { title, imageURL, category }]) => {
+    dataArray.forEach(([key, { title, imageURL1, imageURL2, imageURL3, category }]) => {
       html += `
-      <div class="col">   
-        <div class="card1">
-          <div class="image"><img class="${category}" src="${imageURL}" alt=""></div>
-          <div class="content">
-            <span class="title1">${title}</span>
-            <p class="desc"></p>
-          </div>
-        </div>
+       <div class="first" style="border-bottom: 2px solid #000;border-top: 2px solid #000;">
+        
+          <h1><i>${title}</i></h1>
+  
+  <div class="row">
+  
+  <div class="col-md-4"><img class="${category}" src="${imageURL1}" alt=""></div>
+  <div class="col-md-4"><img class="${category}" src="${imageURL2}" alt=""></div>
+  <div class="col-md-4"><img class="${category}" src="${imageURL3}" alt=""></div>
+
+  
+  </div>
+  
       </div>
       `;
     });

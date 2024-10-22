@@ -281,44 +281,6 @@ display: none;
 
 }
 
-
-.i-t{
-    height: 100%;
-    margin-top: 100px;
-background-color: #f3f3f3;
-
-
-}
- .custom-col {
-/* padding: 0% !important; */
-width: 10px;
-
-}
- .bgv{
-    /* position: absolute; */
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    height: 100%;
-    padding-bottom: 5% ;
-    padding-top: 2.5%;
-   
-}
-
-.img-i {
-    text-align: center;
-}
-
-.img-i img{
-   position: absolute;
-   margin-left: 35%;
-    width: 190px;
-    height: 150px;
-    /* margin-left: 60%; */
-    /* z-index: 2; */
-    margin-top: 55px;
-}
-
 .list1{
     align-items: center;
 justify-content: center;
@@ -330,6 +292,7 @@ background-size:contain;
 position: relative;
 text-align: center;
 overflow: hidden;
+margin-top: 0% !important;
 }
 
 .list1 h1 {
@@ -348,94 +311,33 @@ font-size: 55px;
 
 
 
-.card1 {
-    /* max-width: 300px; */
-    border-radius: 0.5rem;
-    background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    
-    border: 1px solid transparent;
-    border-radius: 60px;
-    /* margin: 15px; */
-    height: 310px;
-    width: 440px;
-    margin-bottom: 10%;
-    
-    
-  }
-  
-  .card1 a {
-    text-decoration: none
-  }
-  
-  .content {
-    padding: 1.1rem;
-    
-  }
-  
-  .image {
-    object-fit: cover;
+
+
+.gallery{
     width: 100%;
-  
-    height: 240px;
-    background-color: #09015f;
-    border-radius: 10px;
-  
-  }
-  
-  .title1 {
-    color: #111827;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-    font-weight: 600;
-  }
-  
-  .desc {
-    margin-top: 0.5rem;
-    color: #6B7280;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-  
-  .action {
-    display: inline-flex;
-    margin-top: 1rem;
-    color: #ffffff;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-weight: 500;
-    align-items: center;
-    gap: 0.25rem;
-    background-color: #2563EB;
-    padding: 4px 8px;
-    border-radius: 4px;
-    
-  }
-  
-  .action span {
-    transition: .3s ease;
-  }
-  
-  .action:hover span {
-    transform: translateX(4px);
-  }
-  .image img{
-    width: 100%;
+    height: auto;
+    overflow: hidden;
+
+}
+
+.gallery h1{
+    margin-top: 3%;
+    margin-bottom: 2%;
+}
+.gallery img {
+    overflow: hidden;
+    width: 95%;
    
-  
-    border: 20px;
-    height: 240px;
     border-radius: 20px;
-  }
-  
-  .col.a.b{
-    margin-left: 20px;
-  }
+    transition: transform 0.5s ease; /* Smooth transition */
+    margin-bottom: 5%;
+}
 
+/* Zoom effect on hover */
+.gallery img:hover {
+    transform: scale(1.1); /* Scales the image to 110% */
 
-
-
- 
+}
 
 /* ------------------------------------Footer----------------------------------- */
 
@@ -489,3 +391,19 @@ margin-bottom: 7px;
     object-fit: contain;
   }
   
+  .cover2-350px {
+    object-fit: cover;
+    height: 350px;
+}
+.start {
+    margin-top: 120px;
+    text-align: center;
+    /* font-size: 56px; */
+    height: 30vh;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/myapp-8ecc3.appspot.com/o/Cultfiesta%2Fbackground%2Fbg4.jpg?alt=media&token=bb6616ce-d1bf-461b-acd3-d37f6840953c);
+}
+
+.start h1{
+    font-size: 55px;
+    color: #fff;
+}

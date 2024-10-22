@@ -521,7 +521,11 @@ border-radius: 50px;
         border-radius: 50px;
         box-shadow: 10px 16px 32px rgba(243, 1, 1, 0.2);
       }
-      
+      .col {
+        flex: 1 0 0%;
+        display: flex;
+        justify-content: center;
+    }
       .card__content {
         position: absolute;
         top: 0;
@@ -846,3 +850,38 @@ padding: 20px;
 
 
 
+ .blinking {
+    animation: blinkingAnimation 1s infinite alternate;
+  }
+  
+  @keyframes blinkingAnimation {
+    from {
+      color: red;
+    }
+    to {
+      color: white;
+    }
+  }
+  .blinking {
+animation: blinkingAnimation 1s infinite alternate;
+}
+
+@keyframes blinkingAnimation {
+from {
+color: red;
+}
+to {
+color: white;
+}
+}
+
+@keyframes blinkingAnimation {
+    0% { color: red; }
+    50% { color: white; }
+    100% { color: red; }
+  }
+  
+  .blinking {
+    animation: blinkingAnimation 1s infinite;
+  }
+  

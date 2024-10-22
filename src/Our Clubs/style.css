@@ -704,3 +704,37 @@ color: rgb(254, 254, 255);
     align-content: center;
     justify-content: center;
 }
+.blinking {
+    animation: blinkingAnimation 1s infinite alternate;
+  }
+  
+  @keyframes blinkingAnimation {
+    from {
+      color: red;
+    }
+    to {
+      color: white;
+    }
+  }
+  .blinking {
+animation: blinkingAnimation 1s infinite alternate;
+}
+
+@keyframes blinkingAnimation {
+from {
+color: red;
+}
+to {
+color: white;
+}
+}
+
+@keyframes blinkingAnimation {
+    0% { color: red; }
+    50% { color: white; }
+    100% { color: red; }
+  }
+  
+  .blinking {
+    animation: blinkingAnimation 1s infinite;
+  }

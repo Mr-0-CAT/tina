@@ -44,10 +44,8 @@
     </div> 
 
     <div class="group1">
-      <marquee behavior="fast" direction="scroll" duration="1s">
-         <p class="t1">Last Day to register for Pantheon!!</p> <p class="t2">CultFiesta Is Hiring!!!!</p>
-         <p class="t3"> We are Hiringggg Apply Now!!!!</p>
-         
+      <marquee behavior="fast" direction="scroll" duration="1s" id="announ">
+      
 
       </marquee>
   </div>
@@ -670,7 +668,7 @@
   </div>
   <div class="pics">
 
-    <div class="row">
+    <div class="row"  style=" justify-content: center; ">
 
 
         <div class="col-md-4 c1" >
@@ -747,7 +745,57 @@
 
 
 
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+import { getDatabase, get, ref } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
 
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyClkiHJX3mR4SdQQ2jzuG-n7ZNzuYD2REE",
+  authDomain: "dbms-d5864.firebaseapp.com",
+  projectId: "dbms-d5864",
+  storageBucket: "dbms-d5864.appspot.com",
+  messagingSenderId: "478043315963",
+  appId: "1:478043315963:web:02a9cd2c70c4755bce5a5e",
+  measurementId: "G-W7EKCZXJ0J"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+function GetAnnounData() {
+  const user_ref = ref(db, 'announcement/');
+  get(user_ref).then((snapshot) => {
+      const data = snapshot.val();
+
+      let html = "";
+      const announElement = document.querySelector('#announ');
+      
+      // Convert data object to array and reverse it
+      const dataArray = Object.entries(data).reverse();
+      
+      dataArray.forEach(([key, { title, color }]) => {
+          const textColorClass = color === 'blinking' ? 'blinking' : ''; // Check if color is 'blinking'
+          html += `
+              <p class="t1 ${textColorClass}">${title}</p>
+          `;
+      });
+
+      announElement.innerHTML = html;
+  }).catch(error => {
+      console.error("Error fetching data:", error);
+  });
+}
+
+// Call the function to fetch and display the data
+GetAnnounData();
+
+
+
+
+
+</script>
 
 
 

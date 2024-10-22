@@ -393,7 +393,11 @@ color: rgb(254, 254, 255);
 
 
 
-
+ .col {
+    flex: 1 0 0%;
+    display: flex;
+    justify-content: center;
+}
 
 
 

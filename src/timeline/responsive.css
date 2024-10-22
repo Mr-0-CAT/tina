@@ -148,3 +148,9 @@
      
   }
 }
+@media(max-width: 500px){
+.start{
+    height: 20vh;
+}
+
+}

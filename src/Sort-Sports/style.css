@@ -23,6 +23,11 @@ html{scroll-behavior: smooth;}
     font-weight: 600;
     text-align: center;    
 }
+.col {
+    flex: 1 0 0%;
+    display: flex;
+    justify-content: center;
+}
 .heading_type4 h3::before {
     content: "";
     background-image:url(bg/);
@@ -846,3 +851,38 @@ padding: 20px;
 
 
 
+ .blinking {
+    animation: blinkingAnimation 1s infinite alternate;
+  }
+  
+  @keyframes blinkingAnimation {
+    from {
+      color: red;
+    }
+    to {
+      color: white;
+    }
+  }
+  .blinking {
+animation: blinkingAnimation 1s infinite alternate;
+}
+
+@keyframes blinkingAnimation {
+from {
+color: red;
+}
+to {
+color: white;
+}
+}
+
+@keyframes blinkingAnimation {
+    0% { color: red; }
+    50% { color: white; }
+    100% { color: red; }
+  }
+  
+  .blinking {
+    animation: blinkingAnimation 1s infinite;
+  }
+  
