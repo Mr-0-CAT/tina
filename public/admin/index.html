@@ -1022,7 +1022,7 @@ function AddTime() {
       ...imageData,
       category: category2,
       userId: user.uid,  // Store user ID
-      userName: user.displayName || "Anonymous"  // Optionally store the user’s name
+      userName: user.displayName || "ADMIN"  // Optionally store the user’s name
     });
   }).then(() => {
     notify.innerHTML = "Data Added";
