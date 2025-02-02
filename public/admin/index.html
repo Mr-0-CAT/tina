@@ -350,6 +350,110 @@
                   </div>
               </div>
           </div>
+
+          <!-- ========================================================= -->
+
+
+
+          <div class="container main">
+            <div class="dropdown_container">
+                <div class="dropdown_trigger"><h3>Clubs</h3></div>
+                <div class="dropdown_content">
+                    <div class="main_content" style="overflow: hidden;">
+                        <div class="row">
+                            <div class="col"> 
+                                <div class="post_form">
+                                    <label>Club Title</label>
+                                    <input type="text" id="Ctitle" placeholder="Enter club title">
+                                    
+                                    <label>Main Image (Right)</label>
+                                    <input type="file" id="imageR">
+                                    
+                                    <label>Main Image (Left)</label>
+                                    <input type="file" id="imageL">
+                                    
+                                    <label>Short Description</label>
+                                    <textarea id="description1" cols="30" rows="2" placeholder="Short description"></textarea>
+                                    
+                                    <label>Detailed Description</label>
+                                    <textarea id="description2" cols="30" rows="3" placeholder="Detailed description"></textarea>
+        
+                                    <h4>Activities</h4>
+                                    <div class="activity-section">
+                                        <!-- Activity 1 -->
+                                        <label>Activity 1 Title</label>
+                                        <input type="text" id="act_title" placeholder="Activity title">
+                                        <label>Activity 1 Description</label>
+                                        <textarea id="act_desc" placeholder="Activity description"></textarea>
+                                        <input type="file" id="act1">
+        
+                                        <!-- Activity 2 -->
+                                        <label>Activity 2 Title</label>
+                                        <input type="text" id="act_title2" placeholder="Activity title">
+                                        <label>Activity 2 Description</label>
+                                        <textarea id="act_desc2" placeholder="Activity description"></textarea>
+                                        <input type="file" id="act2">
+        
+                                        <!-- Activity 3 -->
+                                        <label>Activity 3 Title</label>
+                                        <input type="text" id="act_title3" placeholder="Activity title">
+                                        <label>Activity 3 Description</label>
+                                        <textarea id="act_desc3" placeholder="Activity description"></textarea>
+                                        <input type="file" id="act3">
+                                    </div>
+        
+                                    <h4>Gallery Images (8 images)</h4>
+                                    <div class="gallery-uploads">
+                                        <input type="file" id="gal1">
+                                        <input type="file" id="gal2">
+                                        <input type="file" id="gal3">
+                                        <input type="file" id="gal4">
+                                        <input type="file" id="gal5">
+                                        <input type="file" id="gal6">
+                                        <input type="file" id="gal7">
+                                        <input type="file" id="gal8">
+                                    </div>
+        
+                                    <h4>Contact Details</h4>
+                                    <label>Reach Out Text</label>
+                                    <input type="text" id="reach_out" placeholder="Reach out message">
+                                    
+                                    <label>Phone Numbers</label>
+                                    <input type="text" id="Cnumber1" placeholder="Primary number">
+                                    <input type="text" id="Cnumber2" placeholder="Secondary number">
+                                    
+                                    <label>Instagram Details</label>
+                                    <input type="url" id="instaURL" placeholder="Instagram URL">
+                                    <input type="text" id="insta_id" placeholder="Instagram Handle">
+                                    
+                                    <label>Email</label>
+                                    <input type="email" id="Email" placeholder="Club email">
+        
+                                    <label>Club Poster</label>
+                                    <input type="file" id="poster">
+        
+                                    <button id="club_post_btn" class="post_btn">Create Club</button>
+                                    <button id="club_update_btn" class="update_btn">Update Club</button>
+                                </div>
+                            </div>
+                            <div class="col">      
+                                <div class="my_content">
+                                    <h2>My Clubs</h2>
+                                    <table id="clubs_table">
+                                        <!-- Clubs will be populated here -->
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
             <script>
                 // JavaScript for toggling dropdown
                 document.addEventListener("DOMContentLoaded", function() {
@@ -1396,6 +1500,271 @@ function updateSponsorData(key, oldImageURL) {
 document.querySelector('#post_btn4').addEventListener('click', AddSponsor);
 // Initial call to load sponsor data
 GetSponsorData();
+
+
+
+
+// --------------------------------
+
+
+
+
+
+
+
+// Club Functions
+const club_post_btn = document.querySelector('#club_post_btn');
+const club_update_btn = document.querySelector('#club_update_btn');
+
+function Add_Club() {
+    const title = document.querySelector('#Ctitle').value;
+    const description1 = document.querySelector('#description1').value;
+    const description2 = document.querySelector('#description2').value;
+    const imageR = document.querySelector('#imageR').files[0];
+    const imageL = document.querySelector('#imageL').files[0];
+    const act1 = document.querySelector('#act1').files[0];
+    const act2 = document.querySelector('#act2').files[0];
+    const act3 = document.querySelector('#act3').files[0];
+    const act_title = document.querySelector('#act_title').value;
+    const act_desc = document.querySelector('#act_desc').value;
+    const act_title2 = document.querySelector('#act_title2').value;
+    const act_desc2 = document.querySelector('#act_desc2').value;
+    const act_title3 = document.querySelector('#act_title3').value;
+    const act_desc3 = document.querySelector('#act_desc3').value;
+    const poster = document.querySelector('#poster').files[0];
+    const galleryFiles = [
+        document.querySelector('#gal1').files[0],
+        document.querySelector('#gal2').files[0],
+        document.querySelector('#gal3').files[0],
+        document.querySelector('#gal4').files[0],
+        document.querySelector('#gal5').files[0],
+        document.querySelector('#gal6').files[0],
+        document.querySelector('#gal7').files[0],
+        document.querySelector('#gal8').files[0]
+    ];
+    const reach_out = document.querySelector('#reach_out').value;
+    const number1 = document.querySelector('#Cnumber1').value;
+    const number2 = document.querySelector('#Cnumber2').value;
+    const instaURL = document.querySelector('#instaURL').value;
+    const insta_id = document.querySelector('#insta_id').value;
+    const Email = document.querySelector('#Email').value;
+
+    const user = auth.currentUser;
+
+    if (!user) {
+        alert("You must be logged in to add a club.");
+        return;
+    }
+
+    if (!title || !description1 || !description2 || !imageR || !imageL || !act1 || !act2 || !act3 || !poster) {
+        alert("Please fill in all required fields and upload all required images.");
+        return;
+    }
+
+    const id = Date.now();
+
+    const uploadImages = async (files) => {
+        const urls = [];
+        for (const file of files) {
+            if (!file) continue;
+            const imageRef = storageRef(storage, `club_images/${id}-${file.name}`);
+            await uploadBytes(imageRef, file);
+            const downloadURL = await getDownloadURL(imageRef);
+            urls.push(downloadURL);
+        }
+        return urls;
+    };
+
+    Promise.all([
+        uploadImages([imageR, imageL, act1, act2, act3, poster, ...galleryFiles])
+    ]).then(([imageURLs]) => {
+        const [
+            imageR_URL, imageL_URL, act1_URL, act2_URL, act3_URL, poster_URL,
+            gal1_URL, gal2_URL, gal3_URL, gal4_URL, gal5_URL, gal6_URL, gal7_URL, gal8_URL
+        ] = imageURLs;
+
+        return set(ref(db, 'clubs/' + id), {
+            title: title,
+            description1: description1,
+            description2: description2,
+            imageR: imageR_URL,
+            imageL: imageL_URL,
+            activities: [
+                { title: act_title, description: act_desc, image: act1_URL },
+                { title: act_title2, description: act_desc2, image: act2_URL },
+                { title: act_title3, description: act_desc3, image: act3_URL }
+            ],
+            poster: poster_URL,
+            gallery: [gal1_URL, gal2_URL, gal3_URL, gal4_URL, gal5_URL, gal6_URL, gal7_URL, gal8_URL].filter(url => url),
+            reach_out: reach_out,
+            contact: {
+                number1: number1,
+                number2: number2,
+                instaURL: instaURL,
+                insta_id: insta_id,
+                Email: Email
+            },
+            uid: user.uid
+        });
+    }).then(() => {
+        alert("Club added successfully!");
+        clearClubFields();
+        GetClubData();
+    }).catch((error) => {
+        console.error("Error adding club: ", error);
+        alert("Error adding club. Please check console for details.");
+    });
+}
+
+function clearClubFields() {
+    document.querySelector('#Ctitle').value = "";
+    document.querySelector('#description1').value = "";
+    document.querySelector('#description2').value = "";
+    document.querySelector('#imageR').value = "";
+    document.querySelector('#imageL').value = "";
+    document.querySelector('#act1').value = "";
+    document.querySelector('#act2').value = "";
+    document.querySelector('#act3').value = "";
+    document.querySelector('#act_title').value = "";
+    document.querySelector('#act_desc').value = "";
+    document.querySelector('#act_title2').value = "";
+    document.querySelector('#act_desc2').value = "";
+    document.querySelector('#act_title3').value = "";
+    document.querySelector('#act_desc3').value = "";
+    document.querySelector('#poster').value = "";
+    document.querySelector('#gal1').value = "";
+    document.querySelector('#gal2').value = "";
+    document.querySelector('#gal3').value = "";
+    document.querySelector('#gal4').value = "";
+    document.querySelector('#gal5').value = "";
+    document.querySelector('#gal6').value = "";
+    document.querySelector('#gal7').value = "";
+    document.querySelector('#gal8').value = "";
+    document.querySelector('#reach_out').value = "";
+    document.querySelector('#Cnumber1').value = "";
+    document.querySelector('#Cnumber2').value = "";
+    document.querySelector('#instaURL').value = "";
+    document.querySelector('#insta_id').value = "";
+    document.querySelector('#Email').value = "";
+}
+
+function GetClubData() {
+    const club_ref = ref(db, 'clubs/');
+    get(club_ref).then((snapshot) => {
+        const data = snapshot.val();
+        let html = "";
+        const table = document.querySelector('#clubs_table');
+
+        for (const key in data) {
+            const club = data[key];
+            const username = users[club.uid] || "ADMIN";
+
+            html += `
+            <tr>
+                <td><span class="clubNumber"></span></td>
+                <td class="separator">
+                    <div><b>${club.title}</b> by <i>${username}</i></div>
+                    <img src="${club.imageR}" alt="Club Image" style="width:100px;height:100px;">
+                </td>
+                <td class="separator">
+                    <button class="delete" onclick="deleteClub('${key}', '${club.uid}')">Delete</button>
+                </td>
+                <td class="separator">
+                    <button class="update" onclick="updateClub('${key}', '${club.uid}')">Update</button>
+                </td>
+                <td class="separator">
+                    <a href="../club-details/index.html?id=${key}" class="details">View Details</a>
+                </td>
+            </tr>`;
+        }
+        table.innerHTML = html;
+    }).catch((error) => {
+        console.error("Error fetching clubs: ", error);
+        alert("Error fetching clubs. Please try again.");
+    });
+}
+
+window.deleteClub = function (key, clubUID) {
+    const user = auth.currentUser;
+    if (!user) return alert("You must be logged in to delete a club.");
+    
+    if (user.uid === adminUID || user.uid === clubUID) {
+        const club_ref = ref(db, `clubs/${key}`);
+        
+        get(club_ref).then((snapshot) => {
+            const data = snapshot.val();
+            const images = [
+                data.imageR, 
+                data.imageL, 
+                ...data.activities.map(act => act.image), 
+                data.poster, 
+                ...data.gallery
+            ].filter(url => url);
+
+            const deletePromises = images.map(url => {
+                const storagePath = decodeURIComponent(url.split('/o/')[1].split('?')[0]);
+                return deleteObject(storageRef(storage, storagePath));
+            });
+
+            return Promise.all([remove(club_ref), ...deletePromises]);
+        }).then(() => {
+            GetClubData();
+            alert("Club deleted successfully!");
+        }).catch(error => {
+            console.error("Delete error:", error);
+            alert("Error deleting club. Check console for details.");
+        });
+    } else {
+        alert("You can only delete clubs you created!");
+    }
+};
+
+window.updateClub = function (key, clubUID) {
+    const user = auth.currentUser;
+    if (!user) return alert("You must be logged in to update a club.");
+    
+    if (user.uid === adminUID || user.uid === clubUID) {
+        const club_ref = ref(db, `clubs/${key}`);
+        
+        get(club_ref).then((snapshot) => {
+            const data = snapshot.val();
+            
+            // Populate form fields
+            document.querySelector('#Ctitle').value = data.title;
+            document.querySelector('#description1').value = data.description1;
+            document.querySelector('#description2').value = data.description2;
+            document.querySelector('#act_title').value = data.activities[0].title;
+            document.querySelector('#act_desc').value = data.activities[0].description;
+            document.querySelector('#act_title2').value = data.activities[1].title;
+            document.querySelector('#act_desc2').value = data.activities[1].description;
+            document.querySelector('#act_title3').value = data.activities[2].title;
+            document.querySelector('#act_desc3').value = data.activities[2].description;
+            document.querySelector('#reach_out').value = data.reach_out;
+            document.querySelector('#Cnumber1').value = data.contact.number1;
+            document.querySelector('#Cnumber2').value = data.contact.number2;
+            document.querySelector('#instaURL').value = data.contact.instaURL;
+            document.querySelector('#insta_id').value = data.contact.insta_id;
+            document.querySelector('#Email').value = data.contact.Email;
+
+            club_update_btn.setAttribute('data-key', key);
+            club_post_btn.style.display = 'none';
+            club_update_btn.style.display = 'block';
+        });
+    } else {
+        alert("You can only update clubs you created!");
+    }
+};
+
+club_post_btn.addEventListener('click', Add_Club);
+club_update_btn.addEventListener('click', () => {
+    const key = club_update_btn.getAttribute('data-key');
+    // Implement update logic similar to Add_Club but with update() instead of set()
+    // You'll need to handle image updates carefully
+});
+
+// Initialize clubs
+GetClubData();
+
 
 
         </script>
