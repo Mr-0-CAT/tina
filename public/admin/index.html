@@ -1702,17 +1702,35 @@ window.deleteClub = function (key, clubUID) {
             ].filter(url => url);
 
             const deletePromises = images.map(url => {
-                const storagePath = decodeURIComponent(url.split('/o/')[1].split('?')[0]);
-                return deleteObject(storageRef(storage, storagePath));
+                try {
+                    // Properly decode the URL and extract the path
+                    const decodedUrl = decodeURIComponent(url);
+                    const pathStart = decodedUrl.indexOf('/o/') + 3;
+                    const pathEnd = decodedUrl.indexOf('?');
+                    const fullPath = decodedUrl.slice(pathStart, pathEnd);
+                    
+                    // Alternative method using URL object
+                    const urlObj = new URL(url);
+                    const pathFromUrl = decodeURIComponent(urlObj.pathname);
+                    const correctPath = pathFromUrl.replace('/v0/b/' + firebaseConfig.storageBucket + '/o/', '');
+                    
+                    return deleteObject(storageRef(storage, correctPath));
+                } catch (error) {
+                    console.warn("Error parsing URL:", url, error);
+                    return Promise.resolve(); // Skip invalid URLs
+                }
             });
 
-            return Promise.all([remove(club_ref), ...deletePromises]);
+            return Promise.all([
+                remove(club_ref),
+                ...deletePromises
+            ]);
         }).then(() => {
             GetClubData();
             alert("Club deleted successfully!");
         }).catch(error => {
             console.error("Delete error:", error);
-            alert("Error deleting club. Check console for details.");
+            alert("Club data deleted, but some images might not exist. Check console for details.");
         });
     } else {
         alert("You can only delete clubs you created!");
