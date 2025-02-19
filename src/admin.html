@@ -769,8 +769,7 @@ function GetPostData() {
 GetPostData();
 
 // Function to Delete a Post
-if (adminUID[user.uid] || user.uid === postUID) {
-
+window.delete_data = function (key, postUID) {
     const user = auth.currentUser;
 
     if (!user) {
@@ -778,7 +777,7 @@ if (adminUID[user.uid] || user.uid === postUID) {
         return;
     }
 
-    if (user.uid === adminUID || user.uid === postUID) { // Admin or owner can delete
+    if (adminUID[user.uid] || user.uid === postUID) { // Admin or owner can delete
         const post_ref = ref(db, `post/${key}`);
 
         get(post_ref).then((snapshot) => {
