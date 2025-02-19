@@ -769,7 +769,8 @@ function GetPostData() {
 GetPostData();
 
 // Function to Delete a Post
-window.delete_data = function (key, postUID) {
+if (adminUID[user.uid] || user.uid === postUID) {
+
     const user = auth.currentUser;
 
     if (!user) {
