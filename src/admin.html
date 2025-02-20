@@ -93,6 +93,12 @@
                                     <br>
                                     <input type="date" id="date">
                                     <br>
+                                    <script>
+                                      document.addEventListener("DOMContentLoaded", function () {
+                                        let today = new Date().toISOString().split("T")[0];
+                                        document.getElementById("date").setAttribute("min", today);
+                                      });
+                                    </script>
                                     <label>Venue</label>
                                     <br>
                                     <input type="text" id="venue" placeholder="Enter Venue">
@@ -820,7 +826,7 @@ window.update_data = function (key, postUID) {
         return;
     }
 
-    if (user.uid === adminUID || user.uid === postUID) { // Admin or owner can update
+    if (adminUID[user.uid] || user.uid === postUID) {  // Admin or owner can update
         update_btn.classList.remove('hide');
         add_post_btn.classList.add('hide');
         const post_ref = ref(db, `post/${key}`);
@@ -1029,7 +1035,7 @@ window.delete_data1 = function (key, announUID) {
 window.updateAnnouncement = function (key, announUID) {
   const user = auth.currentUser;
 
-  if (user.uid === adminUID || user.uid === announUID) { // Admin or owner can update
+  if (adminUID[user.uid] || user.uid === postUID) {  // Admin or owner can update
     update_btn1.classList.remove('hide');
     add_post_Btn1.classList.add('hide');
     const announ_ref = ref(db, `announcement/${key}`);
@@ -1688,7 +1694,7 @@ window.deleteClub = function (key, clubUID) {
     const user = auth.currentUser;
     if (!user) return alert("You must be logged in to delete a club.");
     
-    if (user.uid === adminUID || user.uid === clubUID) {
+    if (adminUID[user.uid] || user.uid === postUID) { 
         const club_ref = ref(db, `clubs/${key}`);
         
         get(club_ref).then((snapshot) => {
@@ -1741,7 +1747,7 @@ window.updateClub = function (key, clubUID) {
     const user = auth.currentUser;
     if (!user) return alert("You must be logged in to update a club.");
     
-    if (user.uid === adminUID || user.uid === clubUID) {
+    if (adminUID[user.uid] || user.uid === postUID) { 
         const club_ref = ref(db, `clubs/${key}`);
         
         get(club_ref).then((snapshot) => {
