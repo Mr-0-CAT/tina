@@ -538,6 +538,7 @@
 <script>document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".generate-btn").forEach(button => {
     button.addEventListener("click", function () {
+      console.log("Generate button clicked!"); 
       generatePDF();
     });
   });
@@ -822,7 +823,8 @@ function GetPostData() {
                     <button class="update" onclick="update_data('${key}', '${uid}')">Update</button>
                 </td>
                 <td class="separator">
-                   <button class="generate-btn">Generate</button>
+                   <button class="generate-btn" onclick="generatePDF()">Generate</button>
+
                 </td>
             </tr>`;
         }
