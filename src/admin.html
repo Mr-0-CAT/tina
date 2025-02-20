@@ -1,486 +1,532 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+   
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    <!-- Login Section -->
-    <div class="login-container">
-        <div class="login-box">
-            <h1>Admin Login</h1>
-            <form class="login-form">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Enter your email" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter your password" required>
-                </div>
-                <button type="submit" class="btn-login">Sign In</button>
+
+
+    
+    <div class="login">
+        <div class="container2">
+            <div class="heading">Log In</div>
+            <form class="form" action="">
+              <input
+                placeholder="E-mail"
+                id="email"
+                name="email"
+                type="email"
+                class="input"
+                required=""
+              />
+              <input
+                placeholder="Password"
+                id="password"
+                name="password"
+                type="password"
+                class="input"
+                required=""
+              />
+              
+              <input value="Log In" type="submit" class="login-button" id="sign_in">
             </form>
-        </div>
+           
+           
+          </div>
+          
     </div>
 
-    <!-- Dashboard Section -->
-    <div class="dashboard hidden">
-        <!-- Header -->
-        <header class="header">
+
+    <div class="my_blog11">
+
+     <!-- my blog area admin -->
+      <div class="my_blog">
+        <header>
             <nav>
                 <div class="logo">
-                    <img src="https://via.placeholder.com/40" alt="Logo">
-                    <span>Admin Panel</span>
+                    <a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/dbms-d5864.appspot.com/o/Cultfiesta%2Flogo.webp?alt=media&token=4ccaece3-b5db-4d8b-8691-a5a1b6353b81" alt="Logo"></a>
                 </div>
-                <ul class="nav-links">
-                    <li><a href="#" class="active">Dashboard</a></li>
-                    <li><a href="#">Reports</a></li>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                   
+                    <li><a href="../Analysis/index.html">Report</a></li>
+
                     <li><a href="#" id="logout">Logout</a></li>
                 </ul>
             </nav>
         </header>
+          <div class="notify"></div>
+          <div class="container main">
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Events Section -->
-            <section class="content-section">
-                <div class="section-header">
-                    <h2>Events</h2>
-                    <button class="btn-toggle">Toggle Form</button>
-                </div>
-                <div class="section-content">
-                    <form class="admin-form">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="title">Title</label>
-                                <input type="text" id="title" placeholder="Enter title">
+            
+            <div class="dropdown_container">
+                <div class="dropdown_trigger"><h3>Events</h3></div>
+                <div class="dropdown_content">
+                    <div class="main_content" style="overflow: hidden;">
+                        <!-- post form -->
+                        <div class="row">
+                            <div class="col"> 
+                                <div class="post_form">
+                                    <label>Title</label>
+                                    <br>
+                                    <input type="text" id="title" placeholder="Enter title">
+                                    <br>
+                                    <label>Poster</label>
+                                    <br>
+                                    <input type="file" id="post_image">
+                                    <br>
+                                    <label>Short Description</label>
+                                    <br>
+                                    <textarea id="post_content" cols="30" rows="2" placeholder="Short Description"></textarea>
+                                    <br>
+                                    <label>Long Description</label>
+                                    <br>
+                                    <textarea id="post2_content" cols="30" rows="3" placeholder="Long Description"></textarea>
+                                    <br>
+                                    <label>Date</label>
+                                    <br>
+                                    <input type="date" id="date">
+                                    <br>
+                                    <label>Venue</label>
+                                    <br>
+                                    <input type="text" id="venue" placeholder="Enter Venue">
+                                    <br>
+                                    <label>Pre-requisites</label>
+                                    <br>
+                                    <textarea id="prerequists" cols="30" rows="2" placeholder="Pre-requisites"></textarea>
+                                    <br>
+                                    <label>Fee</label>
+                                    <br>
+                                    <input type="text" id="fee" placeholder="Enter Fee">
+                                    <br>
+                                    <label>Time</label>
+                                    <br>
+                                    <input type="text" id="time" placeholder="Enter Time">
+                                    <br>
+                                    <label>Club Name</label>
+                                    <br>
+                                    <input type="text" id="cName" placeholder="Club Name">
+                                    <br>
+                                    <label for="department">Department:</label>
+                                    <br>
+                                    <select id="department">
+                                      <option value="AI&ML">AI&ML</option>
+                                      <option value="ECE">ECE</option>
+                                      <option value="CSE">CSE</option>
+                                      <option value="Mechanical">Mechanical</option>
+                                      <option value="Civil">Civil</option>
+                                      <option value="Electrical">Electrical</option>
+                                    </select>
+                                    
+                                    <br>
+                                    <label>Outcome</label>
+                                    <br>
+                                    <input type="text" id="outcome" placeholder="Outcome">
+                                    <br>
+                                    <label>Phone number</label>
+                                    <br>
+                                    <input type="text" id="number1" placeholder="Number 1">
+                                    <br>
+                                    <input type="text" id="number2" placeholder="Number 2">
+                                    <br>
+                                    <label>Registration Link</label>
+                                    <br>
+                                    <input type="text" id="link1" placeholder="Registration link">
+                                    <br>
+                                    <label>Club Link</label>
+                                    <br>
+                                    <input type="text" id="link2" placeholder="Club link">
+                                    <br>
+                                    <select id="category">
+                                        <option value="Technical">Technical</option>
+                                        <option value="Non-Technical">Non-Technical</option>
+                                        <option value="Sports">Sports</option>
+                                        <option value="Workshops">Workshops</option>
+                                      </select>
+                                    <button id="post_btn" class="post_btn">Post Now</button>
+                                    <br>
+                                    <button id="update_btn" class="update_btn">Update Post</button>
+                                    <br>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="post_image">Poster</label>
-                                <input type="file" id="post_image">
-                            </div>
-                            <div class="form-group full-width">
-                                <label for="post_content">Short Description</label>
-                                <textarea id="post_content" rows="2" placeholder="Short Description"></textarea>
-                            </div>
-                            <div class="form-group full-width">
-                                <label for="post2_content">Long Description</label>
-                                <textarea id="post2_content" rows="3" placeholder="Long Description"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="date">Date</label>
-                                <input type="date" id="date">
-                            </div>
-                            <div class="form-group">
-                                <label for="venue">Venue</label>
-                                <input type="text" id="venue" placeholder="Enter Venue">
-                            </div>
-                            <div class="form-group">
-                                <label for="prerequists">Pre-requisites</label>
-                                <textarea id="prerequists" rows="2" placeholder="Pre-requisites"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="fee">Fee</label>
-                                <input type="text" id="fee" placeholder="Enter Fee">
-                            </div>
-                            <div class="form-group">
-                                <label for="time">Time</label>
-                                <input type="text" id="time" placeholder="Enter Time">
-                            </div>
-                            <div class="form-group">
-                                <label for="cName">Club Name</label>
-                                <input type="text" id="cName" placeholder="Club Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="department">Department</label>
-                                <select id="department">
-                                    <option value="AI&ML">AI&ML</option>
-                                    <option value="ECE">ECE</option>
-                                    <option value="CSE">CSE</option>
-                                    <option value="Mechanical">Mechanical</option>
-                                    <option value="Civil">Civil</option>
-                                    <option value="Electrical">Electrical</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="outcome">Outcome</label>
-                                <input type="text" id="outcome" placeholder="Outcome">
-                            </div>
-                            <div class="form-group">
-                                <label for="number1">Phone Number 1</label>
-                                <input type="tel" id="number1" placeholder="Number 1">
-                            </div>
-                            <div class="form-group">
-                                <label for="number2">Phone Number 2</label>
-                                <input type="tel" id="number2" placeholder="Number 2">
-                            </div>
-                            <div class="form-group">
-                                <label for="link1">Registration Link</label>
-                                <input type="url" id="link1" placeholder="Registration link">
-                            </div>
-                            <div class="form-group">
-                                <label for="link2">Club Link</label>
-                                <input type="url" id="link2" placeholder="Club link">
-                            </div>
-                            <div class="form-group">
-                                <label for="category">Category</label>
-                                <select id="category">
-                                    <option value="Technical">Technical</option>
-                                    <option value="Non-Technical">Non-Technical</option>
-                                    <option value="Sports">Sports</option>
-                                    <option value="Workshops">Workshops</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-actions">
-                            <button type="submit" id="post_btn" class="btn-submit">Post Now</button>
-                            <button type="button" id="update_btn" class="btn-update">Update Post</button>
-                        </div>
-                    </form>
-                    
-                    <div class="table-container">
-                        <h3>Event List</h3>
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>Title</th>
-                                    <th>Date</th>
-                                    <th>Venue</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Table content will be dynamically populated -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Announcements Section -->
-            <section class="content-section">
-                <div class="section-header">
-                    <h2>Announcements</h2>
-                    <button class="btn-toggle">Toggle Form</button>
-                </div>
-                <div class="section-content">
-                    <form class="admin-form">
-                        <div class="form-grid">
-                            <div class="form-group full-width">
-                                <label for="title2">Announcement</label>
-                                <input type="text" id="title2" placeholder="Enter Announcement">
-                            </div>
-                            <div class="form-group">
-                                <label for="colorPicker">Text Color</label>
-                                <select id="colorPicker">
-                                    <option value="white">White</option>
-                                    <option value="black">Black</option>
-                                    <option value="red">Red</option>
-                                    <option value="green">Green</option>
-                                    <option value="blue">Blue</option>
-                                    <option value="blinking">Blinking (Red/White)</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-actions">
-                            <button type="submit" id="post_btn1" class="btn-submit">Post Now</button>
-                            <button type="button" id="update_btn1" class="btn-update">Update Post</button>
-                        </div>
-                    </form>
-                    
-                    <div class="table-container">
-                        <h3>Announcement List</h3>
-                        <table class="data-table" id="announcement_table">
-                            <thead>
-                                <tr>
-                                    <th>Announcement</th>
-                                    <th>Color</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Table content will be dynamically populated -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Timeline Section -->
-            <section class="content-section">
-                <div class="section-header">
-                    <h2>Timeline</h2>
-                    <button class="btn-toggle">Toggle Form</button>
-                </div>
-                <div class="section-content">
-                    <form class="admin-form">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="title3">Title</label>
-                                <input type="text" id="title3" placeholder="Enter title">
-                            </div>
-                            <div class="form-group image-upload-group">
-                                <label>Images</label>
-                                <div class="image-upload-container">
-                                    <div class="image-upload">
-                                        <input type="file" id="post_image2">
-                                        <select id="category2">
-                                            <option value="cover">Cover</option>
-                                            <option value="fill">Fill</option>
-                                            <option value="contain">Contain</option>
-                                        </select>
-                                    </div>
-                                    <div class="image-upload">
-                                        <input type="file" id="post_image3">
-                                        <select id="category2">
-                                            <option value="cover">Cover</option>
-                                            <option value="fill">Fill</option>
-                                            <option value="contain">Contain</option>
-                                        </select>
-                                    </div>
-                                    <div class="image-upload">
-                                        <input type="file" id="post_image4">
-                                        <select id="category2">
-                                            <option value="cover">Cover</option>
-                                            <option value="fill">Fill</option>
-                                            <option value="contain">Contain</option>
-                                            <option value="cover">Cover2-350px</option>
-                                        </select>
-                                    </div>
+                            <div class="col">      
+                                <div class="my_content">
+                                    <h2>My Posts</h2>
+                                    <table>
+                                        <!-- Table content -->
+                                    </table>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-actions">
-                            <button type="submit" id="post_btn3" class="btn-submit">Post Now</button>
-                            <button type="button" id="update_btn3" class="btn-update">Update Post</button>
-                        </div>
-                    </form>
-                    
-                    <div class="table-container">
-                        <h3>Timeline Posts</h3>
-                        <table class="data-table" id="timeline">
-                            <thead>
-                                <tr>
-                                    <th>Title</th>
-                                    <th>Images</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Table content will be dynamically populated -->
-                            </tbody>
-                        </table>
+                        <!-- Table -->
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+            <!-- Announcements -->
+            <div class="container main" >
 
-            <!-- Sponsors Section -->
-            <section class="content-section">
-                <div class="section-header">
-                    <h2>Sponsors</h2>
-                    <button class="btn-toggle">Toggle Form</button>
-                </div>
-                <div class="section-content">
-                    <form class="admin-form">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="title4">Title</label>
-                                <input type="text" id="title4" placeholder="Enter title">
+            
+                <div class="dropdown_container">
+                    <div class="dropdown_trigger"><h3>Announcements</h3></div>
+                    <div class="dropdown_content">
+                        <div class="main_content" style="overflow: hidden;">
+                            <!-- post form -->
+                            <div class="row">
+                                <div class="col-md-7"> 
+                                    <div class="post_form">
+                                        <label>Title</label>
+                                        <br>
+                                        <input type="text" id="title2" placeholder="Enter Announcement">
+                                        <br>
+                                       
+                                        <select id="colorPicker">
+                                            <option value="white">White</option>
+
+                                            <option value="black">Black</option>
+                                            <option value="red">Red</option>
+                                            <option value="green">Green</option>
+                                            <option value="blue">Blue</option>
+                                            <option value="blinking">Blinking (Red/White)</option>
+                                        </select>
+                                        <style>.blinking {
+                                            animation: blinkingAnimation 1s infinite alternate;
+                                          }
+                                          
+                                          @keyframes blinkingAnimation {
+                                            from {
+                                              color: red;
+                                            }
+                                            to {
+                                              color: white;
+                                            }
+                                          }
+                                          .blinking {
+  animation: blinkingAnimation 1s infinite alternate;
+}
+
+@keyframes blinkingAnimation {
+  from {
+    color: red;
+  }
+  to {
+    color: white;
+  }
+}
+
+                                          </style>
+                                        <button id="post_btn1" class="post_btn1">Post Now</button>
+                                        <br>
+                                        <button id="update_btn1" class="update_btn1">Update Post</button>
+                                        <br>
+                                    </div>
+                                </div>
+                                <div class="col">      
+                                    <div class="my_content2">
+                                     
+                                        <table id="announcement_table">
+                                            <!-- Table content -->
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="post_image5">Poster</label>
-                                <input type="file" id="post_image5">
-                                <select id="category3">
-                                    <option value="cover">Cover</option>
-                                    <option value="fill">Fill</option>
-                                    <option value="contain">Contain</option>
-                                </select>
-                            </div>
+                            <!-- Table -->
                         </div>
-                        <div class="form-actions">
-                            <button type="submit" id="post_btn4" class="btn-submit">Post Now</button>
-                            <button type="button" id="update_btn4" class="btn-update">Update Post</button>
-                        </div>
-                    </form>
-                    
-                    <div class="table-container">
-                        <h3>Sponsors List</h3>
-                        <table class="data-table" id="Sponsors">
-                            <thead>
-                                <tr>
-                                    <th>Title</th>
-                                    <th>Image</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Table content will be dynamically populated -->
-                            </tbody>
-                        </table>
                     </div>
                 </div>
-            </section>
+            </div> 
+            <!-- ====================================
+            
+            -->
+            <div class="container main">
 
-            <!-- Clubs Section -->
-            <section class="content-section">
-                <div class="section-header">
-                    <h2>Clubs</h2>
-                    <button class="btn-toggle">Toggle Form</button>
+            
+                <div class="dropdown_container">
+                    <div class="dropdown_trigger"><h3 >Timeline</h3></div>
+                    <div class="dropdown_content">
+                        <div class="main_content" style="overflow: hidden;">
+                            <!-- post form -->
+
+    <div class="row">
+                                <div class="col"> 
+                                    <div class="post_form">
+                                        <label>Title</label>
+                                        <br>
+                                        <input type="text" id="title3" placeholder="Enter title">
+                                        <br>
+                                        <label>Poster</label>
+                                        <br>
+                                        <input type="file" id="post_image2">
+                                        
+                                        <select id="category2">
+                                            <option value="cover">Cover</option>
+                                            <option value="fill">Fill</option>
+                                            <option value="contain">Contain</option>
+                                          </select>
+                                          <input type="file" id="post_image3">
+                                        
+                                          <select id="category2">
+                                              <option value="cover">Cover</option>
+                                              <option value="fill">Fill</option>
+                                              <option value="contain">Contain</option>
+                                            </select>
+                                            
+                                            <input type="file" id="post_image4">
+                                        
+                                            <select id="category2">
+                                                <option value="cover">Cover</option>
+                                                <option value="fill">Fill</option>
+                                                <option value="contain">Contain</option>
+                                                <option value="cover">Cover2-350px</option>
+                                              </select>
+                                        <button id="post_btn3" class="post_btn3">Post Now</button>
+                                        <br>
+                                        <button id="update_btn3" class="update_btn3">Update Post</button>
+                                        <br>
+                                    </div>
+                                </div>
+                                <div class="col">      
+                                    <div class="my_content">
+                                        <h2>My Posts</h2>
+                                        <table id="timeline">
+                                            <!-- Table content -->
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Table -->
+                        </div>
+                    </div>
                 </div>
-                <div class="section-content">
-                    <form class="admin-form">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="Ctitle">Club Title</label>
-                                <input type="text" id="Ctitle" placeholder="Enter club title">
-                            </div>
-                            <div class="form-group">
-                                <label for="imageR">Main Image (Right)</label>
-                                <input type="file" id="imageR">
-                            </div>
-                            <div class="form-group">
-                                <label for="imageL">Main Image (Left)</label>
-                                <input type="file" id="imageL">
-                            </div>
-                            <div class="form-group full-width">
-                                <label for="description1">Short Description</label>
-                                <textarea id="description1" rows="2" placeholder="Short description"></textarea>
-                            </div>
-                            <div class="form-group full-width">
-                                <label for="description2">Detailed Description</label>
-                                <textarea id="description2" rows="3" placeholder="Detailed description"></textarea>
-                            </div>
+            </div>
+            <!-- ====================================
+            
+            -->
+            <div class="container main">
+              <div class="dropdown_container">
+                  <div class="dropdown_trigger"><h3>Sponsors</h3></div>
+                  <div class="dropdown_content">
+                      <div class="main_content" style="overflow: hidden;">
+                          <div class="row">
+                              <div class="col"> 
+                                  <div class="post_form">
+                                      <label>Title</label>
+                                      <br>
+                                      <input type="text" id="title4" placeholder="Enter title">
+                                      <br>
+                                      <label>Poster</label>
+                                      <br>
+                                      <input type="file" id="post_image5">
+                                      <select id="category3">
+                                          <option value="cover">Cover</option>
+                                          <option value="fill">Fill</option>
+                                          <option value="contain">Contain</option>
+                                          
 
-                            <!-- Activities Section -->
-                            <div class="form-group full-width">
-                                <h4 class="subsection-title">Activities</h4>
-                                <div class="activities-container">
-                                    <!-- Activity 1 -->
-                                    <div class="activity-group">
-                                        <label for="act_title">Activity 1 Title</label>
+                                      </select>
+                                      <button id="post_btn4" class="post_btn3">Post Now</button>
+                                      <br>
+                                      <button id="update_btn4" class="update_btn3">Update Post</button>
+                                      <br>
+                                  </div>
+                              </div>
+                              <div class="col">      
+                                  <div class="my_content">
+                                      <h2>My Posts</h2>
+                                      <table id="Sponsors">
+                                          <!-- Table content -->
+                                      </table>
+                                  </div>
+                              </div>
+                          </div>
+                          <div id="notify"></div> <!-- Notification Element -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- ========================================================= -->
+
+
+
+          <div class="container main">
+            <div class="dropdown_container">
+                <div class="dropdown_trigger"><h3>Clubs</h3></div>
+                <div class="dropdown_content">
+                    <div class="main_content" style="overflow: hidden;">
+                        <div class="row">
+                            <div class="col"> 
+                                <div class="post_form">
+                                    <label>Club Title</label>
+                                    <input type="text" id="Ctitle" placeholder="Enter club title">
+                                    
+                                    <label>Main Image (Right)</label>
+                                    <input type="file" id="imageR">
+                                    
+                                    <label>Main Image (Left)</label>
+                                    <input type="file" id="imageL">
+                                    
+                                    <label>Short Description</label>
+                                    <textarea id="description1" cols="30" rows="2" placeholder="Short description"></textarea>
+                                    
+                                    <label>Detailed Description</label>
+                                    <textarea id="description2" cols="30" rows="3" placeholder="Detailed description"></textarea>
+        
+                                    <h4>Activities</h4>
+                                    <div class="activity-section">
+                                        <!-- Activity 1 -->
+                                        <label>Activity 1 Title</label>
                                         <input type="text" id="act_title" placeholder="Activity title">
-                                        <label for="act_desc">Activity 1 Description</label>
+                                        <label>Activity 1 Description</label>
                                         <textarea id="act_desc" placeholder="Activity description"></textarea>
                                         <input type="file" id="act1">
-                                    </div>
-
-                                    <!-- Activity 2 -->
-                                    <div class="activity-group">
-                                        <label for="act_title2">Activity 2 Title</label>
+        
+                                        <!-- Activity 2 -->
+                                        <label>Activity 2 Title</label>
                                         <input type="text" id="act_title2" placeholder="Activity title">
-                                        <label for="act_desc2">Activity 2 Description</label>
+                                        <label>Activity 2 Description</label>
                                         <textarea id="act_desc2" placeholder="Activity description"></textarea>
                                         <input type="file" id="act2">
-                                    </div>
-
-                                    <!-- Activity 3 -->
-                                    <div class="activity-group">
-                                        <label for="act_title3">Activity 3 Title</label>
+        
+                                        <!-- Activity 3 -->
+                                        <label>Activity 3 Title</label>
                                         <input type="text" id="act_title3" placeholder="Activity title">
-                                        <label for="act_desc3">Activity 3 Description</label>
+                                        <label>Activity 3 Description</label>
                                         <textarea id="act_desc3" placeholder="Activity description"></textarea>
                                         <input type="file" id="act3">
                                     </div>
+        
+                                    <h4>Gallery Images (8 images)</h4>
+                                    <div class="gallery-uploads">
+                                        <input type="file" id="gal1">
+                                        <input type="file" id="gal2">
+                                        <input type="file" id="gal3">
+                                        <input type="file" id="gal4">
+                                        <input type="file" id="gal5">
+                                        <input type="file" id="gal6">
+                                        <input type="file" id="gal7">
+                                        <input type="file" id="gal8">
+                                    </div>
+        
+                                    <h4>Contact Details</h4>
+                                    <label>Reach Out Text</label>
+                                    <input type="text" id="reach_out" placeholder="Reach out message">
+                                    
+                                    <label>Phone Numbers</label>
+                                    <input type="text" id="Cnumber1" placeholder="Primary number">
+                                    <input type="text" id="Cnumber2" placeholder="Secondary number">
+                                    
+                                    <label>Instagram Details</label>
+                                    <input type="url" id="instaURL" placeholder="Instagram URL">
+                                    <input type="text" id="insta_id" placeholder="Instagram Handle">
+                                    
+                                    <label>Email</label>
+                                    <input type="email" id="Email" placeholder="Club email">
+        
+                                    <label>Club Poster</label>
+                                    <input type="file" id="poster">
+        
+                                    <button id="club_post_btn" class="post_btn">Create Club</button>
+                                    <button id="club_update_btn" class="update_btn">Update Club</button>
                                 </div>
                             </div>
-
-                            <!-- Gallery Section -->
-                            <div class="form-group full-width">
-                                <h4 class="subsection-title">Gallery Images (8 images)</h4>
-                                <div class="gallery-grid">
-                                    <input type="file" id="gal1">
-                                    <input type="file" id="gal2">
-                                    <input type="file" id="gal3">
-                                    <input type="file" id="gal4">
-                                    <input type="file" id="gal5">
-                                    <input type="file" id="gal6">
-                                    <input type="file" id="gal7">
-                                    <input type="file" id="gal8">
+                            <div class="col">      
+                                <div class="my_content">
+                                    <h2>My Clubs</h2>
+                                    <table id="clubs_table">
+                                        <!-- Clubs will be populated here -->
+                                    </table>
                                 </div>
                             </div>
-
-                            <!-- Contact Details -->
-                            <div class="form-group">
-                                <label for="reach_out">Reach Out Text</label>
-                                <input type="text" id="reach_out" placeholder="Reach out message">
-                            </div>
-                            <div class="form-group">
-                                <label for="Cnumber1">Primary Phone</label>
-                                <input type="tel" id="Cnumber1" placeholder="Primary number">
-                            </div>
-                            <div class="form-group">
-                                <label for="Cnumber2">Secondary Phone</label>
-                                <input type="tel" id="Cnumber2" placeholder="Secondary number">
-                            </div>
-                            <div class="form-group">
-                                <label for="instaURL">Instagram URL</label>
-                                <input type="url" id="instaURL" placeholder="Instagram URL">
-                            </div>
-                            <div class="form-group">
-                                <label for="insta_id">Instagram Handle</label>
-                                <input type="text" id="insta_id" placeholder="Instagram Handle">
-                            </div>
-                            <div class="form-group">
-                                <label for="Email">Email</label>
-                                <input type="email" id="Email" placeholder="Club email">
-                            </div>
-                            <div class="form-group">
-                                <label for="poster">Club Poster</label>
-                                <input type="file" id="poster">
-                            </div>
                         </div>
-                        <div class="form-actions">
-                            <button type="submit" id="club_post_btn" class="btn-submit">Create Club</button>
-                            <button type="button" id="club_update_btn" class="btn-update">Update Club</button>
-                        </div>
-                    </form>
-                    
-                    <div class="table-container">
-                        <h3>Clubs List</h3>
-                        <table class="data-table" id="clubs_table">
-                            <thead>
-                                <tr>
-                                    <th>Club Name</th>
-                                    <th>Email</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Table content will be dynamically populated -->
-                            </tbody>
-                        </table>
                     </div>
                 </div>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <h4>About Us</h4>
-            <p>You Plan, We gather! <br>Our club deals with Organising, Conducting and Organising events</p>
-            <div class="social-links">
-                <a href="https://www.instagram.com/" target="_blank" class="social-link">Instagram</a>
-                <a href="#" class="social-link">Discord</a>
-                <span class="social-link">Phone</span>
-                <span class="social-link">Location</span>
             </div>
-            <p class="copyright">Made with ♥ by CultFiesta</p>
-        </footer>
+        </div>
+
+
+
+
+
+            <script>
+                // JavaScript for toggling dropdown
+                document.addEventListener("DOMContentLoaded", function() {
+                    document.querySelectorAll(".dropdown_trigger").forEach(function(trigger) {
+                        trigger.addEventListener("click", function() {
+                            var content = this.nextElementSibling;
+                            content.style.display = content.style.display === "block" ? "none" : "block";
+                        });
+                    });
+                });
+            </script>
+          
+
+
+
+
+
+
+
+
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+      </div>
     </div>
-
-    <script>
-        // Toggle section content
-        document.querySelectorAll('.btn-toggle').forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.closest('.content-section').querySelector('.section-content');
-                content.style.display = content.style.display === 'none' ? 'block' : 'none';
-            });
-        });
-    </script>
-
+<section class="footer">
+    <h4>About Us</h4>
+    <p>You Plan, We gather! <br>Our club dea
+      ls with Organising, Conducting
+        and Organising events </p>
+        <div class="icons">
+           <a href="https://www.instagram.com/cristiano/?hl=en"> <i class="fa-brands fa-instagram fa-beat-fade"></i></a>
+           <a href=""> <i class="fa-brands fa-discord"></i></a>
+                <i class="fa-solid fa-phone"></i>
+                <i class="fa-solid fa-location-dot"></i>
+  
+        </div>
+  <p>Made With  <i class="fa-regular fa-heart"></i> by CultFiesta</p>
+  
+  </section>
       <script type="module" >// Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
         import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
@@ -1741,447 +1787,857 @@ GetClubData();
 
         </script>
 
-     
+      <style>
+        /* Styles for dropdown */
+        .dropdown_content {
+            display: none;
+            /* Adjust other styles as needed */
+
+
+
+
+
+        }
+    </style>
 </body>
 </html>
 
+
+
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,900;1,500;1,700&display=swap');
 
-/* Base Styles */
-:root {
-    --primary-color: #4f46e5;
-    --primary-hover: #4338ca;
-    --secondary-color: #6b7280;
-    --success-color: #10b981;
-    --danger-color: #ef4444;
-    --warning-color: #f59e0b;
-    --background-color: #f3f4f6;
-    --card-background: #ffffff;
-    --text-primary: #111827;
-    --text-secondary: #6b7280;
-    --border-color: #e5e7eb;
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
 
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-primary);
-    line-height: 1.5;
-}
-
-/* Login Styles */
-.login-container {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-    padding: 1rem;
-}
-
-.login-box {
-    background: var(--card-background);
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: var(--shadow-lg);
-    width: 100%;
-    max-width: 400px;
-}
-
-.login-box h1 {
-    text-align: center;
-    color: var(--primary-color);
-    margin-bottom: 2rem;
-    font-size: 1.875rem;
-}
-
-.login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-/* Header Styles */
-.header {
-    background: var(--card-background);
-    box-shadow: var(--shadow-sm);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-.header nav {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-weight: 600;
-    font-size: 1.25rem;
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
+    text-decoration: none;
     list-style: none;
 }
 
-.nav-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.5rem;
-    border-radius: 0.375rem;
-    transition: all 0.2s;
+body{
+    font-family: 'Roboto', sans-serif;
+    counter-reset: section;
+    
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--primary-color);
-    background-color: #f3f4f6;
-}
 
-/* Main Content Styles */
-.main-content {
-    max-width: 1280px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
+/* login  */
 
-.content-section {
-    background: var(--card-background);
-    border-radius: 0.5rem;
-    box-shadow: var(--shadow);
-    margin-bottom: 2rem;
-}
-
-.section-header {
-    padding: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.section-header h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-}
-
-.section-content {
-    padding: 1.5rem;
-}
-
-/* Form Styles */
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-}
-
-.form-group {
-    margin-bottom: 1rem;
-}
-
-.form-group.full-width {
-    grid-column: 1 / -1;
-}
-
-label {
-    display: block;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    margin-bottom: 0.5rem;
-}
-
-input,
-select,
-textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid var(--border-color);
-    border-radius: 0.375rem;
-    background-color: white;
-    color: var(--text-primary);
-    font-size: 0.875rem;
-    transition: all 0.2s;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
-}
-
-/* Activities Styles */
-.activities-container {
-    display: grid;
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-
-.activity-group {
-    background: #f9fafb;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid var(--border-color);
-}
-
-/* Gallery Styles */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-/* Image Upload Styles */
-.image-upload-container {
-    display: grid;
-    gap: 1rem;
-}
-
-.image-upload {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-}
-
-.image-upload select {
-    width: auto;
-    min-width: 120px;
-}
-
-/* Button Styles */
-.btn-toggle,
-.btn-submit,
-.btn-update,
-.btn-login {
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 0.375rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.btn-toggle {
-    background-color: var(--background-color);
-    color: var(--text-secondary);
-}
-
-.btn-submit {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.btn-update {
-    background-color: var(--warning-color);
-    color: white;
-}
-
-.btn-login {
-    background-color: var(--primary-color);
-    color: white;
-    width: 100%;
-}
-
-.btn-toggle:hover {
-    background-color: #e5e7eb;
-}
-
-.btn-submit:hover,
-.btn-login:hover {
-    background-color: var(--primary-hover);
-}
-
-.btn-update:hover {
-    background-color: #d97706;
-}
-
-/* Table Styles */
-.table-container {
-    margin-top: 2rem;
-    overflow-x: auto;
-}
-
-.table-container h3 {
-    margin-bottom: 1rem;
-    font-size: 1.125rem;
-    color: var(--text-secondary);
-}
-
-.data-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.data-table th,
-.data-table td {
-    padding: 0.75rem;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.data-table th {
-    background-color: #f9fafb;
-    font-weight: 500;
-    color: var(--text-secondary);
-}
-
-.data-table tr:hover {
-    background-color: #f9fafb;
-}
-
-/* Footer Styles */
-.footer {
-    background-color: #1f2937;
-    color: white;
-    padding: 3rem 1rem;
-    text-align: center;
-    margin-top: 4rem;
-}
-
-.footer h4 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.social-links {
+.login{
+    width: 50%;
+    margin: 0 auto;
+    height: 100vh;
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
-    margin: 1.5rem 0;
+    align-items: center;
+    flex-direction: column;
+
 }
 
-.social-link {
-    color: white;
+.login h1{
+    text-align: end;
+    padding: 5px;
+}
+
+.login input {
+    display: block;
+    margin: 10px 0;
+    padding: 5px 10px;
+    border: 1px solid #111;
+     outline: none;
+     width: 100%;
+}
+
+.login button{
+    width: 100%;
+    padding: 5px 10px;
+    background: #111;
+    border: 1px solid #111;
+    color: #fff;
+    text-align: center;
+    transition: 0.4s ease-in;
+    cursor: pointer;
+
+}
+
+.login button:hover{
+    background: transparent;
+    color: #111;
+}
+
+
+.container.main{
+  
+border-radius: 200px;
+    padding: 0% !important;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(164, 19, 19, 0.24) 0px 1px 2px;
+
+}
+/* header */
+
+header {
+    background: #09015f;
+    color: #fff;
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    margin-left: 20px;
+}
+
+header .logo img {
+    height: 40px; /* Adjust according to your logo size */
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    justify-content: space-between;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+    padding: 0;
+}
+
+header ul li {
+    margin: 0 15px;
+}
+
+header ul li a {
+    color: #fff;
     text-decoration: none;
-    opacity: 0.8;
-    transition: opacity 0.2s;
+    transition: color 0.3s ease;
 }
 
-.social-link:hover {
-    opacity: 1;
+header ul li a:hover {
+    color: #ff9900; /* Change to your desired hover color */
 }
 
-.copyright {
-    opacity: 0.6;
-    font-size: 0.875rem;
+
+.notify {
+    background: green;
+    color: #fff;
+    text-align: center;
+    width: 50% !important;
+
+    font-size: 18px;
+    border-radius: 20px;
+ margin-bottom: 2% !important;
+ margin-top: 2% !important;
+
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-/* Utility Classes */
-.hidden {
+
+
+/* post */
+
+.main_content{
+    display: grid;
+  border: 2px solid;
+  border-radius: 40px; 
+}
+
+.main_content .post_form {
+    width: 450px;
+
+
+    padding: 20px !important;
+}
+
+.main_content .post_form input ,textarea{
+    width: 100%;
+    border: 2px solid #111;
+    padding: 5px ;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.main_content .post_form button{
+    width: 100%;
+    background: #111;
+    color: #fafafa;
+    padding: 5px 0;
+    border: 1px solid #111;
+    transition: 0.5s ease-in-out;
+    margin-top: 5%;
+    border-radius: 20px;
+}
+.main_content .post_form button:hover{
+    background: midnightblue;
+}
+
+
+/* update_btn */
+
+.my_blog{
+    display: none;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/myapp-8ecc3.appspot.com/o/Cultfiesta%2Fbackground%2Fbg1.png?alt=media&token=d1f773fe-4a2d-4b91-b74b-3ce3a714fb0b);
+    min-height: 70vh;
+    background-position: center;
+    background-size:contain;
+    position: relative;
+    background-color: white;
+    background-attachment: fixed;
+}
+
+
+.update_btn {
     display: none;
 }
-
-.subsection-title {
-    color: var(--text-secondary);
-    font-size: 1.125rem;
-    margin: 1.5rem 0 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border-color);
+.update_btn1 {
+    display: none;
 }
-
-/* Animation for Blinking Text */
-@keyframes blink {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
+.update_btn3 {
+    display: none;
 }
-
-.blinking {
-    animation: blink 1s infinite alternate;
+.show{
+    display: block;
 }
+.hide{
+    display: none;
+}
+/* notify */
 
-/* Responsive Design */
-@media (max-width : 768px) {
-    .nav-links {
-        display: none;
-    }
+.notify {
+    width: 80%;
+    display: block;
+    margin:  0 auto;
+    text-align: center;
+    background: green;
+    color: #fff;
+    margin-top: 70px;
     
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .section-header {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .btn-toggle {
-        width: 100%;
-    }
-
-    .image-upload {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .image-upload select {
-        width: 100%;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .activities-container {
-        grid-template-columns: 1fr;
-    }
-
-    .social-links {
-        flex-direction: column;
-        gap: 1rem;
-    }
 }
 
-@media (max-width: 480px) {
-    .login-box {
-        padding: 1.5rem;
-    }
 
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
+/* my_content */
+.dropdown_container{
+width: 100% !important;
+margin-bottom: 2%;
+padding: 10px;
+border-radius: 20px;
+background-color: #ffffff; /* Optional: Add a background color */
+box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
 
-    .data-table {
-        font-size: 0.875rem;
-    }
-
-    .data-table th,
-    .data-table td {
-        padding: 0.5rem;
-    }
-
-    .btn-submit,
-    .btn-update {
-        width: 100%;
-        margin-bottom: 0.5rem;
-    }
 }
+.dropdown_trigger{
+    z-index: -1000;
+text-align: center;
+background-color: #ffffff; /* Optional: Add a background color */
+
+
+}
+
+.dropdown_trigger h3{
+    border-radius: 200px;
+    
+}
+
+
+.separator {
+    border-bottom: 3px solid black;
+    padding-bottom: 5%;
+}
+
+.my_content {
+    
+    width: 100%;
+ 
+    
+    
+}
+
+.my_content table td img{
+    object-fit: contain;
+    height: 150px !important;
+    margin-top: 0% !important;
+}
+
+.my_content table td b{
+  font-size: larger;
+  
+}
+.my_content table {
+    width: 100%;
+    margin: 50px auto;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 50px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border-radius: 30px;
+}
+
+.my_content table tr{
+    margin: 30px 0;
+    width: 100%;
+    padding-left: 2% !important;
+  
+}
+
+
+
+.my_content table tr button{
+    padding: 7px 10px;
+    border: 1px solid #111;
+    border-radius: 15px;
+   transition: .5s ease-in;
+   color: #fff;
+   cursor: pointer;
+}
+
+.my_content table tr button.delete{
+    background: rgb(106, 8, 8);
+}
+.my_content table tr button.update{
+    background: rgb(8, 67, 106);
+}
+.my_content table tr button:hover{
+    background: transparent;
+    color: #111;
+}
+
+/* -----------------------------------------÷
+ */
+ .my_content2 {
+    width: 100%;
+ 
+    
+    
+}
+.col {
+  flex: 1 0 0%;
+  display: flex;
+  justify-content: center;
+}
+ 
+.my_content2 table td b{
+    font-size: larger;
+    
+  }
+  .my_content2 table {
+      width: 100%;
+      margin: 50px auto;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      padding: 50px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+      border-radius: 20px;
+      background-color: #060616;
+  }
+  
+  .my_content2 table tr{
+      margin: 30px 0;
+      width: 100%;
+      padding-left: 2% !important;
+    
+  }
+  
+  
+  
+  .my_content2 table tr button{
+      padding: 7px 10px;
+      border: 1px solid #111;
+      border-radius: 15px;
+     transition: .5s ease-in;
+     color: #fff;
+     cursor: pointer;
+     margin: 5%;
+  }
+  
+  .my_content2 table tr button.delete{
+      background: rgb(106, 8, 8);
+  }
+  .my_content2 table tr button.update{
+      background: rgb(8, 67, 106);
+  }
+  .my_content2 table tr button:hover{
+      background: transparent;
+      color: #111;
+  }
+  
+/* id */
+
+.postNumber{
+    height: 20px;
+    display: inline-block;
+    width: 20px;
+}
+
+.postNumber::before{
+    counter-increment: section;
+    content: counter(section) ;
+}
+
+
+/*  */
+
+
+.main {
+
+    margin: 0  auto;
+    padding: 60px 0;
+}
+
+.post {
+    margin: 20px 0;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 20px;
+}
+.post h2{
+    padding: 10px 0;
+}
+
+footer{
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    color: #fff;
+    background: #111;
+    text-align: center;
+}
+
+.white {
+    color: white;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+
+.cover {
+    object-fit: cover;
+  }
+  
+  .fill {
+    object-fit: fill;
+  }
+  
+  .contain {
+    object-fit: contain;
+  }
+  
+
+  /* ------------------------------ */
+  
+/* ------------------------------------Footer----------------------------------- */
+
+.footer{
+    background-color: #d7d7d7;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/myapp-8ecc3.appspot.com/o/Cultfiesta%2Fbackground%2Fbg4.jpg?alt=media&token=bb6616ce-d1bf-461b-acd3-d37f6840953c );
+  
+
+
+    
+    /* height: 300px; */
+    
+width: 100%;
+text-align: center;
+padding: 30px 0;
+color: #feffff;
+
+}
+.footer h4{
+margin-bottom: 25px;
+margin-top: 15PX;
+font-weight: 600;
+font-size: 40px;
+
+
+}
+
+.icons{
+margin-bottom: 7px;
+
+}
+.icons a {
+    text-decoration: none;
+    color: #ffffff;
+    
+
+}
+
+
+
+/* ----------------------------------------------------------------------------------------- */
+.container2 {
+ width: 80%;
+    background: #f8f9fd;
+    background: linear-gradient(
+      0deg,
+      rgb(255, 255, 255) 0%,
+      rgb(244, 247, 251) 100%
+    );
+    border-radius: 40px;
+    padding: 25px 35px;
+    border: 5px solid rgb(255, 255, 255);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
+    margin: 20px;
+  }
+  
+  .heading {
+    text-align: center;
+    font-weight: 900;
+    font-size: 30px;
+    color: rgb(16, 137, 211);
+  }
+  
+  .form {
+    margin-top: 20px;
+  }
+  
+  .form .input {
+    width: 100%;
+    background: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin-top: 15px;
+    box-shadow: #cff0ff 0px 10px 10px -5px;
+    border-inline: 2px solid transparent;
+  }
+  
+  .form .input::-moz-placeholder {
+    color: rgb(170, 170, 170);
+  }
+  
+  .form .input::placeholder {
+    color: rgb(170, 170, 170);
+  }
+  
+  .form .input:focus {
+    outline: none;
+    border-inline: 2px solid #12b1d1;
+  }
+  
+  .form .forgot-password {
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  
+  .form .forgot-password a {
+    font-size: 11px;
+    color: #0099ff;
+    text-decoration: none;
+  }
+  
+  .form .login-button {
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    background: linear-gradient(
+      45deg,
+      rgb(16, 137, 211) 0%,
+      rgb(18, 177, 209) 100%
+    );
+    color: white;
+    padding-block: 15px;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+    border: none;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .form .login-button:hover {
+    transform: scale(1.03);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+  }
+  
+  .form .login-button:active {
+    transform: scale(0.95);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+  }
+  
+  .social-account-container {
+    margin-top: 25px;
+  }
+  
+  .social-account-container .title {
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    color: rgb(170, 170, 170);
+  }
+  
+  .social-account-container .social-accounts {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 5px;
+  }
+  
+  .social-account-container .social-accounts .social-button {
+    background: linear-gradient(45deg, rgb(0, 0, 0) 0%, rgb(112, 112, 112) 100%);
+    border: 5px solid white;
+    padding: 5px;
+    border-radius: 50%;
+    width: 40px;
+    aspect-ratio: 1;
+    display: grid;
+    place-content: center;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 12px 10px -8px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .social-account-container .social-accounts .social-button .svg {
+    fill: white;
+    margin: auto;
+  }
+  
+  .social-account-container .social-accounts .social-button:hover {
+    transform: scale(1.2);
+  }
+  
+  .social-account-container .social-accounts .social-button:active {
+    transform: scale(0.9);
+  }
+  
+  .agreement {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .agreement a {
+    text-decoration: none;
+    color: #0099ff;
+    font-size: 9px;
+  }
+  </style>
+
+
+
+
+<!-- responsive   -->
+
+
+<style>@media(max-width: 1199px){
+  .header_sec_bottom_in ul.navbar-nav a.nav-link {
+      font-size: 15px; 
+      padding: 0 9px;   
+  }
+
+  @media(max-width: 991px){
+  
+  .navbar-toggler-icon i {
+      color: #ff6500;
+      font-size: 40px;
+  }
+  .navbar-toggler {
+      padding: 0;
+      line-height: 1;
+      font-size: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  span.navbar-toggler-icon {
+      width: auto;
+      height: auto;
+  }
+  .navbar-toggler:focus{
+      outline: 0;
+  }
+  .header_sec_bottom_in ul.navbar-nav a.nav-link {
+      font-size: 15px;
+      margin: 10px 0;
+      padding: 0;
+      border: 0;
+  }
+  .navbar-collapse {
+      padding-top: 10px;
+  }
+  .navbar_right {
+      display: flex;
+      align-items: center;
+      margin-left: 0;
+      margin-top: 11px;
+      margin-bottom: 15px;
+  }
+  .navbar_right_seach {
+      position: inherit;
+  }
+  .navbar_right_seach_con {
+      position: absolute;
+      left: 0;
+      background: #09015f;
+      border-radius: 7px;
+      width: 100%;
+      margin-top: 5px;
+      z-index: 1;
+      right: auto;
+  }
+  .form-control {
+      height: 40px;
+  }
+
+  }
+  
+  @media(width > 1500px){
+      .bgv{
+          /* position: absolute; */
+          right: 0;
+          bottom: 0;
+          z-index: -1;
+          height: 100% !important;
+        
+         
+      }
+
+
+
+  }
+  @media(max-width: 767px){
+ 
+  a.navbar-brand {
+      flex: 0 0 60px;
+  }
+  .navbar-toggler-icon i {
+      font-size: 30px;
+  }
+  .navbar-toggler {
+      width: 30px;
+      height: 30px;
+  }
+
+  .tabs_sec1 .nav-tabs .nav-link {
+      min-width: 80px;
+      font-size: 14px;
+  }
+  .nav-tabs .nav-item {
+      min-width: 140px;
+      max-width: 140px;
+  }
+  .tabs_sec1 .nav-tabs {
+      margin-bottom: 10px;
+  }
+
+  .header_sec_links ul {
+      display: block;
+      text-align: center;
+  }
+  .header_sec_links ul li {
+      display: inline-block;
+      padding: 0 10px;
+      vertical-align:middle;
+      max-width:110px;
+  }
+      
+  .header_sec_links > ul > li > a {
+      font-size:13px;
+      white-space:normal;
+  }	
+  
+  }
+  
+}
+
+@media(width<400px){
+
+  .main_content .post_form {
+ 
+      width: 90% !important;
+   
+      
+  }
+  
+  .main_content .post_form input ,textarea{
+      width: 95%;
+    
+   
+     
+  }
+  .main_content .post_form button{
+      width: 95%;
+    
+  }
+  .my_content2 {
+      width: 100%;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+  }
+
+  .my_content {
+      width: 100%;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+
+}
+
+@media only screen and (max-width: 500px){
+.main_content .post_form input, textarea {
+  width: 90%;
+  border: 2px solid #111;
+  padding: 5px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.my_content {
+  width: 100%;
+  padding:0;
+}
+
+.my_content table {
+  width: 90%;
+  margin: 0;
+  margin-top: 10%;
+}
+
+
+.my_content2 {
+  width: 100%;
+  padding: 0;
+}
+
+.my_content2 table {
+  width: 90%;
+ 
+  background-color: #1d1d5e;
+  border-radius: 20px;
+}
+
+.my_content2 table {
+
+  margin:0;
+  margin-top: 5%;
+  margin-bottom: 5%;
+
+}
+
+}
+
+.container2 {
+
+  width: 350px;
+
+}
+
+
 
 </style>
