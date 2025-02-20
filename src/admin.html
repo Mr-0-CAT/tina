@@ -533,6 +533,8 @@
   <p>Made With  <i class="fa-regular fa-heart"></i> by CultFiesta</p>
   
   </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.1.2/docx.min.js"></script>
+
       <script type="module" >// Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
         import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
@@ -775,8 +777,7 @@ function GetPostData() {
 GetPostData();
 
 
-
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".generate-btn").forEach(button => {
       button.addEventListener("click", function () {
         generateDocx();
@@ -784,42 +785,70 @@ GetPostData();
     });
   });
 
-  function generateDocx() {
-    let title = document.querySelector('#title').value;
-    let date = document.querySelector('#date').value;
-    let time = document.querySelector('#time').value;
-    let venue = document.querySelector('#venue').value;
-    let club = document.querySelector('#cName').value;
-    let department = document.querySelector('#department').value;
-    let coord1 = document.querySelector('#number1').value;
-    let coord2 = document.querySelector('#number2').value;
+  async function generateDocx() {
+    let title = document.querySelector('#title').value || "Event Name";
+    let date = document.querySelector('#date').value || "Date";
+    let time = document.querySelector('#time').value || "Time";
+    let venue = document.querySelector('#venue').value || "Venue";
+    let club = document.querySelector('#cName').value || "Club";
+    let department = document.querySelector('#department').value || "Department";
+    let coord1 = document.querySelector('#number1').value || "Coordinator 1";
+    let coord2 = document.querySelector('#number2').value || "Coordinator 2";
 
-    let content = `  
-    R N SHETTY TRUST®  
-    RNS INSTITUTE OF TECHNOLOGY  
-    Autonomous Institution Affiliated to VTU, Recognized by GOK, Approved by AICTE  
-    NAAC ‘A+ Grade’ Accredited, NBA Accredited (UG - CSE, ECE, ISE, EIE and EEE)  
-    Channasandra, Dr. Vishnuvardhan Road, Bengaluru - 560 098  
-    Ph:(080)28611880,28611881 URL: www.rnsit.ac.in  
+    const { Document, Packer, Paragraph, TextRun, AlignmentType } = window.docx;
 
-    ----------------------------
+    const doc = new Document({
+      sections: [
+        {
+          properties: {},
+          children: [
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({ text: "R N SHETTY TRUST®", bold: true, size: 32 }),
+                new TextRun("\n"),
+                new TextRun({ text: "RNS INSTITUTE OF TECHNOLOGY", bold: true, size: 28 }),
+                new TextRun("\n"),
+                new TextRun("Autonomous Institution Affiliated to VTU, Recognized by GOK, Approved by AICTE"),
+                new TextRun("\n"),
+                new TextRun("NAAC ‘A+ Grade’ Accredited, NBA Accredited (UG - CSE, ECE, ISE, EIE and EEE)"),
+                new TextRun("\n"),
+                new TextRun("Channasandra, Dr. Vishnuvardhan Road, Bengaluru - 560 098"),
+                new TextRun("\n"),
+                new TextRun("Ph:(080)28611880,28611881 URL: www.rnsit.ac.in"),
+              ],
+            }),
+            new Paragraph({ text: "------------------------------------------------------", alignment: AlignmentType.CENTER }),
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [new TextRun({ text: title.toUpperCase(), bold: true, size: 26 })],
+            }),
+            new Paragraph("\n"),
+            new Paragraph({
+              children: [
+                new TextRun(`The ${title} was conducted on ${date}, ${time} at ${venue} by the club ${club} of the department ${department}.`),
+              ],
+            }),
+            new Paragraph("\n"),
+            new Paragraph({ text: "Coordinators:", bold: true }),
+            new Paragraph(`- ${coord1}`),
+            new Paragraph(`- ${coord2}`),
+          ],
+        },
+      ],
+    });
 
-    ${title.toUpperCase()}
-
-    The ${title} was conducted on ${date}, ${time} at ${venue} by the club ${club} of the department ${department}.  
-
-    Coordinators:  
-    - ${coord1}  
-    - ${coord2}  
-    `;
-
-    let blob = new Blob([content], { type: "application/msword" });
-    let a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = `${title}.docx`;
-    a.click();
+    // Generate and download the DOCX file
+    Packer.toBlob(doc).then(blob => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${title}.docx`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    });
   }
-
 
 
 
