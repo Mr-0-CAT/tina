@@ -760,7 +760,7 @@ function GetPostData() {
                     <button class="update" onclick="update_data('${key}', '${uid}')">Update</button>
                 </td>
                 <td class="separator">
-                    <a href="../events/index.html?id=${key}" class="details">View Details</a>
+                   <button class="generate-btn" data-key="${key}">Generate</button>
                 </td>
             </tr>`;
         }
@@ -773,6 +773,66 @@ function GetPostData() {
 }
 
 GetPostData();
+
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".generate-btn").forEach(button => {
+      button.addEventListener("click", function () {
+        generateDocx();
+      });
+    });
+  });
+
+  function generateDocx() {
+    let title = document.querySelector('#title').value;
+    let date = document.querySelector('#date').value;
+    let time = document.querySelector('#time').value;
+    let venue = document.querySelector('#venue').value;
+    let club = document.querySelector('#cName').value;
+    let department = document.querySelector('#department').value;
+    let coord1 = document.querySelector('#number1').value;
+    let coord2 = document.querySelector('#number2').value;
+
+    let content = `  
+    R N SHETTY TRUST®  
+    RNS INSTITUTE OF TECHNOLOGY  
+    Autonomous Institution Affiliated to VTU, Recognized by GOK, Approved by AICTE  
+    NAAC ‘A+ Grade’ Accredited, NBA Accredited (UG - CSE, ECE, ISE, EIE and EEE)  
+    Channasandra, Dr. Vishnuvardhan Road, Bengaluru - 560 098  
+    Ph:(080)28611880,28611881 URL: www.rnsit.ac.in  
+
+    ----------------------------
+
+    ${title.toUpperCase()}
+
+    The ${title} was conducted on ${date}, ${time} at ${venue} by the club ${club} of the department ${department}.  
+
+    Coordinators:  
+    - ${coord1}  
+    - ${coord2}  
+    `;
+
+    let blob = new Blob([content], { type: "application/msword" });
+    let a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = `${title}.docx`;
+    a.click();
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Function to Delete a Post
 window.delete_data = function (key, postUID) {
