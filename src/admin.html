@@ -545,55 +545,48 @@
 });
 
 function generatePDF() {
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF();
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
 
-  let title = document.querySelector('#title').value || "Event Name";
-  let date = document.querySelector('#date').value || "Date";
-  let time = document.querySelector('#time').value || "Time";
-  let venue = document.querySelector('#venue').value || "Venue";
-  let club = document.querySelector('#cName').value || "Club";
-  let department = document.querySelector('#department').value || "Department";
-  let coord1 = document.querySelector('#number1').value || "Coordinator 1";
-  let coord2 = document.querySelector('#number2').value || "Coordinator 2";
+    // Set document title
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(18);
+    doc.text("R N SHETTY TRUST®", 105, 20, { align: "center" });
+    doc.text("RNS INSTITUTE OF TECHNOLOGY", 105, 30, { align: "center" });
 
-  // Set document title
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(18);
-  doc.text("R N SHETTY TRUST®", 105, 20, { align: "center" });
-  doc.text("RNS INSTITUTE OF TECHNOLOGY", 105, 30, { align: "center" });
+    // Normal text
+    doc.setFontSize(12);
+    doc.setFont("helvetica", "normal");
+    doc.text("Autonomous Institution Affiliated to VTU, Recognized by GOK, Approved by AICTE", 105, 40, { align: "center" });
+    doc.text("NAAC ‘A+ Grade’ Accredited, NBA Accredited (UG - CSE, ECE, ISE, EIE and EEE)", 105, 50, { align: "center" });
+    doc.text("Channasandra, Dr. Vishnuvardhan Road, Bengaluru - 560 098", 105, 60, { align: "center" });
+    doc.text("Ph: (080)28611880, 28611881 | URL: www.rnsit.ac.in", 105, 70, { align: "center" });
 
-  // Normal text
-  doc.setFontSize(12);
-  doc.setFont("helvetica", "normal");
-  doc.text("Autonomous Institution Affiliated to VTU, Recognized by GOK, Approved by AICTE", 105, 40, { align: "center" });
-  doc.text("NAAC ‘A+ Grade’ Accredited, NBA Accredited (UG - CSE, ECE, ISE, EIE and EEE)", 105, 50, { align: "center" });
-  doc.text("Channasandra, Dr. Vishnuvardhan Road, Bengaluru - 560 098", 105, 60, { align: "center" });
-  doc.text("Ph: (080)28611880, 28611881 | URL: www.rnsit.ac.in", 105, 70, { align: "center" });
+    // Divider
+    doc.line(20, 75, 190, 75);
 
-  // Divider
-  doc.line(20, 75, 190, 75);
+    // Event Name (Centered)
+    doc.setFontSize(16);
+    doc.setFont("helvetica", "bold");
+    doc.text((document.querySelector('#title').value || "Event Name").toUpperCase(), 105, 90, { align: "center" });
 
-  // Event Name (Centered)
-  doc.setFontSize(16);
-  doc.setFont("helvetica", "bold");
-  doc.text(title.toUpperCase(), 105, 90, { align: "center" });
+    // Event Details
+    doc.setFontSize(12);
+    doc.setFont("helvetica", "normal");
+    doc.text(`The ${document.querySelector('#title').value || "Event Name"} was conducted on ${document.querySelector('#date').value || "Date"}, ${document.querySelector('#time').value || "Time"} at ${document.querySelector('#venue').value || "Venue"} by the`, 20, 110);
+    doc.text(`${document.querySelector('#cName').value || "Club Name"} of the department ${document.querySelector('#department').value || "Department"}.`, 20, 120);
 
-  // Event Details
-  doc.setFontSize(12);
-  doc.setFont("helvetica", "normal");
-  doc.text(`The ${title} was conducted on ${date}, ${time} at ${venue} by the`, 20, 110);
-  doc.text(`club ${club} of the department ${department}.`, 20, 120);
+    // Coordinators
+    doc.setFont("helvetica", "bold");
+    doc.text("Coordinators:", 20, 140);
+    doc.setFont("helvetica", "normal");
+    doc.text(`- ${document.querySelector('#number1').value || "Coordinator 1"}`, 20, 150);
+    doc.text(`- ${document.querySelector('#number2').value || "Coordinator 2"}`, 20, 160);
 
-  // Coordinators
-  doc.setFont("helvetica", "bold");
-  doc.text("Coordinators:", 20, 140);
-  doc.setFont("helvetica", "normal");
-  doc.text(`- ${coord1}`, 20, 150);
-  doc.text(`- ${coord2}`, 20, 160);
+    // Save the PDF
+    doc.save(`${document.querySelector('#title').value || "Event Name"}.pdf`);
+}
 
-  // Save the PDF
-  doc.save(`${title}.pdf`);
 }</script>
 
       <script type="module" >// Import the functions you need from the SDKs you need
