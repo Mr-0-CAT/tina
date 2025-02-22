@@ -93,12 +93,7 @@
                                     <br>
                                     <input type="date" id="date">
                                     <br>
-                                    <script>
-                                      document.addEventListener("DOMContentLoaded", function () {
-                                        let today = new Date().toISOString().split("T")[0];
-                                        document.getElementById("date").setAttribute("min", today);
-                                      });
-                                    </script>
+                                    
                                     <label>Venue</label>
                                     <br>
                                     <input type="text" id="venue" placeholder="Enter Venue">
@@ -533,101 +528,6 @@
   <p>Made With  <i class="fa-regular fa-heart"></i> by CultFiesta</p>
   
   </section>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-  console.log("Script is running!");
-
-  const buttons = document.querySelectorAll(".generate-btn");
-
-  if (buttons.length === 0) {
-    console.warn("No '.generate-btn' buttons found! Check your HTML.");
-    return;
-  }
-
-  buttons.forEach(button => {
-    button.addEventListener("click", function () {
-      console.log("Generate button clicked!");
-
-      // Debugging: Check if values are retrieved correctly
-      let title = document.querySelector("#title")?.value;
-      let date = document.querySelector("#date")?.value;
-      let time = document.querySelector("#time")?.value;
-      let venue = document.querySelector("#venue")?.value;
-      let cName = document.querySelector("#cName")?.value;
-      let department = document.querySelector("#department")?.value;
-      let coord1 = document.querySelector("#number1")?.value;
-      let coord2 = document.querySelector("#number2")?.value;
-
-      console.log("Title:", title);
-      console.log("Date:", date);
-      console.log("Time:", time);
-      console.log("Venue:", venue);
-      console.log("Club Name:", cName);
-      console.log("Department:", department);
-      console.log("Coordinator 1:", coord1);
-      console.log("Coordinator 2:", coord2);
-
-      generatePDF();
-    });
-  });
-});
-
-function generatePDF() {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-
-    let title = document.querySelector('#title')?.value || "Event Name";
-    let date = document.querySelector('#date')?.value || "Date";
-    let time = document.querySelector('#time')?.value || "Time";
-    let venue = document.querySelector('#venue')?.value || "Venue";
-    let cName = document.querySelector('#cName')?.value || "Club Name";
-    let department = document.querySelector('#department')?.value || "Department";
-    let coord1 = document.querySelector('#number1')?.value || "Coordinator 1";
-    let coord2 = document.querySelector('#number2')?.value || "Coordinator 2";
-
-    // Set document title
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(18);
-    doc.text("R N SHETTY TRUST®", 105, 20, { align: "center" });
-    doc.text("RNS INSTITUTE OF TECHNOLOGY", 105, 30, { align: "center" });
-
-    // Normal text
-    doc.setFontSize(12);
-    doc.setFont("helvetica", "normal");
-    doc.text("Autonomous Institution Affiliated to VTU, Recognized by GOK, Approved by AICTE", 105, 40, { align: "center" });
-    doc.text("NAAC ‘A+ Grade’ Accredited, NBA Accredited (UG - CSE, ECE, ISE, EIE and EEE)", 105, 50, { align: "center" });
-    doc.text("Channasandra, Dr. Vishnuvardhan Road, Bengaluru - 560 098", 105, 60, { align: "center" });
-    doc.text("Ph: (080)28611880, 28611881 | URL: www.rnsit.ac.in", 105, 70, { align: "center" });
-
-    // Divider
-    doc.line(20, 75, 190, 75);
-
-    // Event Name (Centered)
-    doc.setFontSize(16);
-    doc.setFont("helvetica", "bold");
-    doc.text(title.toUpperCase(), 105, 90, { align: "center" });
-
-    // Event Details
-    doc.setFontSize(12);
-    doc.setFont("helvetica", "normal");
-    doc.text(`The ${title} was conducted on ${date}, ${time} at ${venue} by the`, 20, 110);
-    doc.text(`${cName} of the department ${department}.`, 20, 120);
-
-    // Coordinators
-    doc.setFont("helvetica", "bold");
-    doc.text("Coordinators:", 20, 140);
-    doc.setFont("helvetica", "normal");
-    doc.text(`- ${coord1}`, 20, 150);
-    doc.text(`- ${coord2}`, 20, 160);
-
-    // Save the PDF
-    doc.save(`${title}.pdf`);
-}
-</script>
-</script>
-
       <script type="module" >// Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
         import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
@@ -855,8 +755,7 @@ function GetPostData() {
                     <button class="update" onclick="update_data('${key}', '${uid}')">Update</button>
                 </td>
                 <td class="separator">
-                   <button class="generate-btn" onclick="generatePDF()">Generate</button>
-
+                    <a href="../events/index.html?id=${key}" class="details">View Details</a>
                 </td>
             </tr>`;
         }
@@ -869,20 +768,6 @@ function GetPostData() {
 }
 
 GetPostData();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Function to Delete a Post
 window.delete_data = function (key, postUID) {
