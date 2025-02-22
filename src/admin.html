@@ -157,7 +157,7 @@
                                       </select>
                                     <button id="post_btn" class="post_btn">Post Now</button>
                                     <br>
-                                    <button id="update_btn" class="e">Update Post</button>
+                                    <button id="update_btn" class="update_btn">Update Post</button>
                                     <br>
                                 </div>
                             </div>
@@ -941,7 +941,7 @@ window.update_data = function (key, postUID) {
     }
 
     if (adminUID[user.uid] || user.uid === postUID) {  // Admin or owner can update
-        update_btn.classList.remove('hide');
+        update_btn.classList.remove('update_btn');
         add_post_btn.classList.add('hide');
         const post_ref = ref(db, `post/${key}`);
         get(post_ref).then((snapshot) => {
