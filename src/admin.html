@@ -854,12 +854,13 @@ function generatePDF(button) {
         doc.setFontSize(12);
         doc.setFont("helvetica", "normal");
         doc.text("Autonomous Institution Affiliated to VTU, Recognized by GOK, Approved by AICTE", 105, 40, { align: "center" });
-        doc.text("NAAC ‘A+ Grade’ Accredited, NBA Accredited (UG - CSE, ECE, ISE, EIE and EEE)", 105, 50, { align: "center" });
-        doc.text("Channasandra, Dr. Vishnuvardhan Road, Bengaluru - 560 098", 105, 60, { align: "center" });
-        doc.text("Ph: (080)28611880, 28611881 | URL: www.rnsit.ac.in", 105, 70, { align: "center" });
+        doc.text("NAAC ‘A+ Grade’ Accredited, NBA Accredited (UG - CSE, ECE, ISE, EIE and EEE)", 105, 45, { align: "center" });
+        doc.text("Channasandra, Dr. Vishnuvardhan Road, Bengaluru - 560 098", 105, 50, { align: "center" });
+        doc.text("Ph: (080)28611880, 28611881 | URL: www.rnsit.ac.in", 105, 55, { align: "center" });
 
         // Divider
-        doc.line(20, 75, 190, 75);
+        doc.setLineWidth(1.5); // Set thickness (default is 0.2)
+        doc.line(20, 60, 190, 75);
 
         // Event Name (Uppercase)
         doc.setFontSize(16);
@@ -871,8 +872,8 @@ function generatePDF(button) {
         doc.setFont("helvetica", "normal");
         doc.text(`The ${title} was conducted on ${date}, ${time} at ${venue} by the`, 20, 110);
         doc.text(`${cName} Club, of the department ${department}.`, 20, 120);
-        doc.text(` The prerequisite for the events are ${pre} and the out comes are ${out}.`, 20, 120);
-        doc.text(` The fee for participation is ${fee}`, 20, 120);
+        doc.text(` The prerequisite for the events are ${pre} and the out comes are ${out}.`, 20, 130);
+        doc.text(` The fee for participation is ${fee}`, 20, 140);
 
 
 
