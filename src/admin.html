@@ -798,10 +798,19 @@ function GetPostData() {
         console.error("Error fetching posts: ", error);
     });
 }
-
 function generatePDF(button) {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
+
+    // Get values from the form (with fallback defaults)
+    let title = document.querySelector('#title')?.value || "Event Name";
+    let date = document.querySelector('#date')?.value || "Date";
+    let time = document.querySelector('#time')?.value || "Time";
+    let venue = document.querySelector('#venue')?.value || "Venue";
+    let cName = document.querySelector('#cName')?.value || "Club Name";
+    let department = document.querySelector('#department')?.value || "Department";
+    let coord1 = document.querySelector('#number1')?.value || "Coordinator 1";
+    let coord2 = document.querySelector('#number2')?.value || "Coordinator 2";
 
     // Load local image dynamically
     let img = new Image();
@@ -827,7 +836,7 @@ function generatePDF(button) {
         // Divider
         doc.line(20, 75, 190, 75);
 
-        // Event Name
+        // Event Name (Uppercase)
         doc.setFontSize(16);
         doc.setFont("helvetica", "bold");
         doc.text(title.toUpperCase(), 105, 90, { align: "center" });
@@ -848,7 +857,12 @@ function generatePDF(button) {
         // Save the PDF after image loads
         doc.save(`${title}.pdf`);
     };
+
+    img.onerror = function () {
+        console.error("Error loading image!");
+    };
 }
+
 
 
 
