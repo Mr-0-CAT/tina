@@ -535,18 +535,23 @@
   </section>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-<script>document.addEventListener("DOMContentLoaded", function () {
+<script>
+     document.addEventListener("DOMContentLoaded", function () {
+  console.log("Script is running!");
+
   document.querySelectorAll(".generate-btn").forEach(button => {
     button.addEventListener("click", function () {
-      console.log("Generate button clicked!"); 
-      console.log("Title:", document.querySelector('#title').value);
-console.log("Date:", document.querySelector('#date').value);
-console.log("Time:", document.querySelector('#time').value);
-console.log("Venue:", document.querySelector('#venue').value);
-console.log("Club:", document.querySelector('#cName').value);
-console.log("Department:", document.querySelector('#department').value);
-console.log("Coordinator 1:", document.querySelector('#number1').value);
-console.log("Coordinator 2:", document.querySelector('#number2').value);
+      console.log("Generate button clicked!");
+
+      // Debugging: Check if values are retrieved correctly
+      console.log("Title:", document.querySelector("#title")?.value);
+      console.log("Date:", document.querySelector("#date")?.value);
+      console.log("Time:", document.querySelector("#time")?.value);
+      console.log("Venue:", document.querySelector("#venue")?.value);
+      console.log("Club Name:", document.querySelector("#cName")?.value);
+      console.log("Department:", document.querySelector("#department")?.value);
+      console.log("Coordinator 1:", document.querySelector("#number1")?.value);
+      console.log("Coordinator 2:", document.querySelector("#number2")?.value);
 
       generatePDF();
     });
@@ -556,6 +561,15 @@ console.log("Coordinator 2:", document.querySelector('#number2').value);
 function generatePDF() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
+
+    let title = document.querySelector('#title')?.value || "Event Name";
+    let date = document.querySelector('#date')?.value || "Date";
+    let time = document.querySelector('#time')?.value || "Time";
+    let venue = document.querySelector('#venue')?.value || "Venue";
+    let cName = document.querySelector('#cName')?.value || "Club Name";
+    let department = document.querySelector('#department')?.value || "Department";
+    let coord1 = document.querySelector('#number1')?.value || "Coordinator 1";
+    let coord2 = document.querySelector('#number2')?.value || "Coordinator 2";
 
     // Set document title
     doc.setFont("helvetica", "bold");
@@ -577,25 +591,25 @@ function generatePDF() {
     // Event Name (Centered)
     doc.setFontSize(16);
     doc.setFont("helvetica", "bold");
-    doc.text((document.querySelector('#title').value || "Event Name").toUpperCase(), 105, 90, { align: "center" });
+    doc.text(title.toUpperCase(), 105, 90, { align: "center" });
 
     // Event Details
     doc.setFontSize(12);
     doc.setFont("helvetica", "normal");
-    doc.text(`The ${document.querySelector('#title').value || "Event Name"} was conducted on ${document.querySelector('#date').value || "Date"}, ${document.querySelector('#time').value || "Time"} at ${document.querySelector('#venue').value || "Venue"} by the`, 20, 110);
-    doc.text(`${document.querySelector('#cName').value || "Club Name"} of the department ${document.querySelector('#department').value || "Department"}.`, 20, 120);
+    doc.text(`The ${title} was conducted on ${date}, ${time} at ${venue} by the`, 20, 110);
+    doc.text(`${cName} of the department ${department}.`, 20, 120);
 
     // Coordinators
     doc.setFont("helvetica", "bold");
     doc.text("Coordinators:", 20, 140);
     doc.setFont("helvetica", "normal");
-    doc.text(`- ${document.querySelector('#number1').value || "Coordinator 1"}`, 20, 150);
-    doc.text(`- ${document.querySelector('#number2').value || "Coordinator 2"}`, 20, 160);
+    doc.text(`- ${coord1}`, 20, 150);
+    doc.text(`- ${coord2}`, 20, 160);
 
     // Save the PDF
-    doc.save(`${document.querySelector('#title').value || "Event Name"}.pdf`);
+    doc.save(`${title}.pdf`);
 }
-
+</script>
 </script>
 
       <script type="module" >// Import the functions you need from the SDKs you need
