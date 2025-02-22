@@ -764,22 +764,32 @@ function GetPostData() {
             const username = users[uid] || "ADMIN"; // Get username or default to "ADMIN"
 
             html += `
-            <tr>
-                <td><span class="postNumber"></span></td>
-                <td class="separator">
-                    <div><b>${title}</b> by <i>${username}</i></div>
-                    <img src="${imageURL}" alt="Post Image" style="width:100px;height:100px;">
-                </td>
-                <td class="separator">
-                    <button class="delete" onclick="delete_data('${key}', '${uid}')">Delete</button>
-                </td>
-                <td class="separator">
-                    <button class="update" onclick="update_data('${key}', '${uid}')">Update</button>
-                </td>
-                <td class="separator">
-                   <button class="generate-btn" data-title="${title}" data-user="${username}">Generate</button>
-                </td>
-            </tr>`;
+<tr>
+    <td><span class="postNumber"></span></td>
+    <td class="separator">
+        <div><b>${title}</b> by <i>${username}</i></div>
+        <img src="${imageURL}" alt="Post Image" style="width:100px;height:100px;">
+    </td>
+    <td class="separator">
+        <button class="delete" onclick="delete_data('${key}', '${uid}')">Delete</button>
+    </td>
+    <td class="separator">
+        <button class="update" onclick="update_data('${key}', '${uid}')">Update</button>
+    </td>
+    <td class="separator">
+       <button class="generate-btn" 
+           data-title="${title}"
+           data-user="${username}"
+           data-date="${data[key].date || 'Date'}"
+           data-time="${data[key].time || 'Time'}"
+           data-venue="${data[key].venue || 'Venue'}"
+           data-club="${data[key].cName || 'Club Name'}"
+           data-department="${data[key].department || 'Department'}"
+           data-coord1="${data[key].number1 || 'Coordinator 1'}"
+           data-coord2="${data[key].number2 || 'Coordinator 2'}"
+       >Generate</button>
+    </td>
+</tr>`;
         }
 
         table.innerHTML = html;
@@ -793,23 +803,52 @@ function generatePDF(button) {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
-    let title = button.getAttribute("data-title") || "Event Name";
-    let username = button.getAttribute("data-user") || "Unknown User";
+    // Load local image dynamically
+    let img = new Image();
+    img.src = "logo.jpeg"; // Image in the same folder
 
-    console.log(`Generating PDF for: ${title} by ${username}`);
+    img.onload = function () {
+        doc.addImage(img, "PNG", 10, 10, 30, 30); // Adjust (x, y, width, height)
 
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(18);
-    doc.text("Event Details", 105, 20, { align: "center" });
+        // PDF Header
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(18);
+        doc.text("R N SHETTY TRUST®", 105, 20, { align: "center" });
+        doc.text("RNS INSTITUTE OF TECHNOLOGY", 105, 30, { align: "center" });
 
-    doc.setFontSize(12);
-    doc.setFont("helvetica", "normal");
-    doc.text(`Title: ${title}`, 20, 40);
-    doc.text(`Organized by: ${username}`, 20, 50);
+        // Normal text
+        doc.setFontSize(12);
+        doc.setFont("helvetica", "normal");
+        doc.text("Autonomous Institution Affiliated to VTU, Recognized by GOK, Approved by AICTE", 105, 40, { align: "center" });
+        doc.text("NAAC ‘A+ Grade’ Accredited, NBA Accredited (UG - CSE, ECE, ISE, EIE and EEE)", 105, 50, { align: "center" });
+        doc.text("Channasandra, Dr. Vishnuvardhan Road, Bengaluru - 560 098", 105, 60, { align: "center" });
+        doc.text("Ph: (080)28611880, 28611881 | URL: www.rnsit.ac.in", 105, 70, { align: "center" });
 
-    doc.save(`${title}.pdf`);
+        // Divider
+        doc.line(20, 75, 190, 75);
+
+        // Event Name
+        doc.setFontSize(16);
+        doc.setFont("helvetica", "bold");
+        doc.text(title.toUpperCase(), 105, 90, { align: "center" });
+
+        // Event Details
+        doc.setFontSize(12);
+        doc.setFont("helvetica", "normal");
+        doc.text(`The ${title} was conducted on ${date}, ${time} at ${venue} by the`, 20, 110);
+        doc.text(`${cName} of the department ${department}.`, 20, 120);
+
+        // Coordinators
+        doc.setFont("helvetica", "bold");
+        doc.text("Coordinators:", 20, 140);
+        doc.setFont("helvetica", "normal");
+        doc.text(`- ${coord1}`, 20, 150);
+        doc.text(`- ${coord2}`, 20, 160);
+
+        // Save the PDF after image loads
+        doc.save(`${title}.pdf`);
+    };
 }
-
 
 
 
