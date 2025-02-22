@@ -787,6 +787,14 @@ function GetPostData() {
            data-department="${data[key].department || 'Department'}"
            data-coord1="${data[key].number1 || 'Coordinator 1'}"
            data-coord2="${data[key].number2 || 'Coordinator 2'}"
+           data-pre="${data[key].prerequists || 'prerequists'}"
+           data-fee="${data[key].fee || 'fee'}"
+           data-outcome="${data[key].outcome || 'outcome'}"
+
+
+           
+
+
        >Generate</button>
     </td>
 </tr>`;
@@ -819,6 +827,14 @@ function generatePDF(button) {
     let department = button.getAttribute("data-department") || "Department";
     let coord1 = button.getAttribute("data-coord1") || "Coordinator 1";
     let coord2 = button.getAttribute("data-coord2") || "Coordinator 2";
+    let pre = button.getAttribute("data-pre") || "prerequists";
+    let fee = button.getAttribute("data-fee") || "Fee";
+    let out = button.getAttribute("data-outcome") || "outcome";
+
+
+    
+  
+
 
     // Load local image dynamically
     let img = new Image();
@@ -854,7 +870,12 @@ function generatePDF(button) {
         doc.setFontSize(12);
         doc.setFont("helvetica", "normal");
         doc.text(`The ${title} was conducted on ${date}, ${time} at ${venue} by the`, 20, 110);
-        doc.text(`${cName} of the department ${department}.`, 20, 120);
+        doc.text(`${cName} Club, of the department ${department}.`, 20, 120);
+        doc.text(` The prerequisite for the events are ${pre} and the out comes are ${out}.`, 20, 120);
+        doc.text(` The fee for participation is ${fee}`, 20, 120);
+
+
+
 
         // Coordinators
         doc.setFont("helvetica", "bold");
