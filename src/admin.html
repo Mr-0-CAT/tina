@@ -166,6 +166,11 @@
                                     <h2>My Posts</h2>
                                     <table>
                                         <!-- Table content -->
+                                        <td class="separator">
+                                          <button class="generate-btn" onclick="generatePDF()">Generate</button>
+                       
+                                       </td>
+                                   </tr>
                                     </table>
                                 </div>
                             </div>
@@ -762,11 +767,7 @@ function GetPostData() {
                 <td class="separator">
                     <button class="update" onclick="update_data('${key}', '${uid}')">Update</button>
                 </td>
-                <td class="separator">
-                   <button class="generate-btn" onclick="generatePDF()">Generate</button>
-
-                </td>
-            </tr>`;
+               `;
         }
 
         table.innerHTML = html;
