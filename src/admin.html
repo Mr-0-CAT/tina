@@ -805,7 +805,7 @@ function generatePDF(button) {
 
     // Load local image dynamically
     let img = new Image();
-    img.src = "./logo.jpeg"; // Image in the same folder
+    img.src = "../logo.jpeg"; // Image in the same folder
 
     img.onload = function () {
         doc.addImage(img, "PNG", 10, 10, 30, 30); // Adjust (x, y, width, height)
