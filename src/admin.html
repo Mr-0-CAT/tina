@@ -798,26 +798,35 @@ function GetPostData() {
         console.error("Error fetching posts: ", error);
     });
 }
+document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("generate-btn")) {
+            generatePDF(event.target);
+        }
+    });
+});
+
 function generatePDF(button) {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
-    // Get values from the form (with fallback defaults)
-    let title = document.querySelector('#title')?.value || "Event Name";
-    let date = document.querySelector('#date')?.value || "Date";
-    let time = document.querySelector('#time')?.value || "Time";
-    let venue = document.querySelector('#venue')?.value || "Venue";
-    let cName = document.querySelector('#cName')?.value || "Club Name";
-    let department = document.querySelector('#department')?.value || "Department";
-    let coord1 = document.querySelector('#number1')?.value || "Coordinator 1";
-    let coord2 = document.querySelector('#number2')?.value || "Coordinator 2";
+    // Get values from the clicked button
+    let title = button.getAttribute("data-title") || "Event Name";
+    let date = button.getAttribute("data-date") || "Date";
+    let time = button.getAttribute("data-time") || "Time";
+    let venue = button.getAttribute("data-venue") || "Venue";
+    let cName = button.getAttribute("data-club") || "Club Name";
+    let department = button.getAttribute("data-department") || "Department";
+    let coord1 = button.getAttribute("data-coord1") || "Coordinator 1";
+    let coord2 = button.getAttribute("data-coord2") || "Coordinator 2";
 
     // Load local image dynamically
     let img = new Image();
-    img.src = "../logo.webp"; // Image in the same folder
+    img.src = "../logo.webp"; // Ensure correct path
 
     img.onload = function () {
-        doc.addImage(img, "PNG", 10, 10, 30, 30); // Adjust (x, y, width, height)
+        // Add Image (Smaller Size)
+        doc.addImage(img, "PNG", 10, 10, 20, 20); // Adjusted size
 
         // PDF Header
         doc.setFont("helvetica", "bold");
@@ -862,6 +871,7 @@ function generatePDF(button) {
         console.error("Error loading image!");
     };
 }
+
 
 
 
