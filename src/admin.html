@@ -1033,7 +1033,7 @@ update_btn.addEventListener('click', () => {
         notify.innerHTML = "Data Updated";
         clearFields();
         GetPostData();
-        update_btn.classList.add('hide');
+        update_btn.classList.add('update_btn');
         add_post_btn.classList.remove('hide');
     }).catch((error) => {
         console.error("Error updating data: ", error);
