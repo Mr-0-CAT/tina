@@ -539,6 +539,15 @@
   document.querySelectorAll(".generate-btn").forEach(button => {
     button.addEventListener("click", function () {
       console.log("Generate button clicked!"); 
+      console.log("Title:", document.querySelector('#title').value);
+console.log("Date:", document.querySelector('#date').value);
+console.log("Time:", document.querySelector('#time').value);
+console.log("Venue:", document.querySelector('#venue').value);
+console.log("Club:", document.querySelector('#cName').value);
+console.log("Department:", document.querySelector('#department').value);
+console.log("Coordinator 1:", document.querySelector('#number1').value);
+console.log("Coordinator 2:", document.querySelector('#number2').value);
+
       generatePDF();
     });
   });
