@@ -151,6 +151,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy('./src/timeline')
 
 
+    eleventyConfig.addPassthroughCopy('./src/logo.jpeg')
 
 
 
