@@ -865,25 +865,25 @@ function generatePDF(button) {
         // Event Name (Uppercase)
         doc.setFontSize(16);
         doc.setFont("helvetica", "bold");
-        doc.text(title.toUpperCase(), 105, 90, { align: "center" });
+        doc.text(title.toUpperCase(), 105, 65, { align: "center" });
 
         // Event Details
         doc.setFontSize(12);
         doc.setFont("helvetica", "normal");
-        doc.text(`The ${title} was conducted on ${date}, ${time} at ${venue} by the`, 20, 110);
-        doc.text(`${cName} Club, of the department ${department}.`, 20, 115);
-        doc.text(` The prerequisite for the events are ${pre} and the out comes are ${out}.`, 20, 125);
-        doc.text(` The fee for participation is ${fee}`, 20, 130);
+        doc.text(`The ${title} was conducted on ${date}, ${time} at ${venue} by the`, 20, 80);
+        doc.text(`${cName} Club, of the department ${department}.`, 20, 85);
+        doc.text(` The prerequisite for the events are ${pre} and the out comes are ${out}.`, 20, 90);
+        doc.text(` The fee for participation is ${fee}`, 20, 95);
 
 
 
 
         // Coordinators
         doc.setFont("helvetica", "bold");
-        doc.text("Coordinators:", 20, 135);
+        doc.text("Coordinators:", 20, 100);
         doc.setFont("helvetica", "normal");
-        doc.text(`- ${coord1}`, 20, 140);
-        doc.text(`- ${coord2}`, 20, 145);
+        doc.text(`- ${coord1}`, 20, 105);
+        doc.text(`- ${coord2}`, 20, 110);
 
         // Save the PDF after image loads
         doc.save(`${title}.pdf`);
